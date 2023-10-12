@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <title>更多</title>
+  </head>
+	<style>
+		body {
+		  font-family: Arial, sans-serif; /* 设置字体 */
+		  margin: 0; /* 去除页面的默认边距 */
+		  padding: 0; /* 去除页面的默认内边距 */
+		}
+		
+		header {
+		  background-color: #343434; /* 设置背景颜色 */
+		  padding: 10px; /* 设置内边距 */
+		}
+		
+		h1 {
+		  color: #FFF; /* 设置文字颜色 */
+		  margin: 0; /* 去除标题的默认外边距 */
+		}
+		
+		nav {
+		  background-color: #DDD; /* 设置背景颜色 */
+		  padding: 10px; /* 设置内边距 */
+		}
+		
+		nav ul {
+		  list-style-type: none; /* 去除列表项的默认样式 */
+		  margin: 0; /* 去除列表的默认外边距 */
+		  padding: 0; /* 去除列表的默认内边距 */
+		}
+		
+		nav ul li {
+		  display: inline; /* 将列表项显示为行内元素 */
+		  margin-right: 10px; /* 设置列表项之间的右边距 */
+		}
+		
+		.search-container {
+		  text-align: center; /* 将搜索框居中对齐 */
+		  margin-top: 20px; /* 设置顶部外边距 */
+		}
+		
+		.search-container input[type=text] {
+		  padding: 10px; /* 设置内边距 */
+		  width: 300px; /* 设置宽度 */
+		}
+		
+		.search-container select {
+		  padding: 10px; /* 设置内边距 */
+		}
+		
+		.search-container button {
+		  padding: 10px; /* 设置内边距 */
+		  background-color: #4CAF50; /* 设置背景颜色 */
+		  color: white; /* 设置文字颜色 */
+		  border: none; /* 去除边框 */
+		  cursor: pointer; /* 设置鼠标样式为手型 */
+		}
+		
+		.bo {
+		  display: grid; /* 使用网格布局 */
+		  grid-template-columns: repeat(8, 160px); /* 设置网格列的数量和宽度 */
+		  grid-gap: 20px; /* 设置网格间距 */
+		  margin-top: 20px; /* 设置顶部外边距 */
+		}
+		
+		.box {
+		  text-align: center; /* 将网格项内的内容居中对齐 */
+		  padding: 10px; /* 设置内边距 */
+		  background-color: #EEE; /* 设置背景颜色 */
+		  border-radius: 10px; /* 设置边框圆角 */
+		}
+		
+		.box img {
+		  width: 50px; /* 设置图片宽度 */
+		  height: 50px; /* 设置图片高度 */
+		  margin-bottom: 10px; /* 设置底部外边距 */
+		}
+	</style>
+	<style>
+		  /* ...其他样式... */
+		  .website-grid {
+		    padding: 0 60px; /* 添加左右边距 */
+		  }
+		  
+		  /* ...其他样式... */
+			a {
+			  color: inherit; /* 继承父元素的文本颜色 */
+			  text-decoration: none; /* 去除下划线 */
+			}
+			
+			a:hover {
+			  color: red; /* 鼠标悬停时的颜色 */
+			}
+			
+			
+			/* 添加收藏夹的样式 */
+			nav ul li.favorite {
+			  position: relative; /* 设置为相对定位 */
+			}
+			
+			nav ul li.favorite:hover ul {
+			  display: block; /* 鼠标悬停时显示下拉菜单 */
+			}
+			
+			nav ul li.favorite ul {
+			  display: none; /* 默认隐藏下拉菜单 */
+			  position: absolute; /* 设置为绝对定位 */
+			  top: 100%; /* 下拉菜单相对于父元素的位置 */
+			  left: 10; /* 下拉菜单相对于父元素的位置 */
+			  background-color: #DDD; /* 设置背景颜色 */
+			  padding: 10px; /* 设置内边距 */
+			}
+		</style>
+		
+	<style>
+	 
+	  body {
+	    background-image: url("default-background.jpg");
+	    background-size: cover;
+	    background-repeat: no-repeat;
+	    background-position: center;
+	  }
+	
+	  .custom-background {
+	        position: fixed; /* 修改为固定定位 */
+	        top: 10px; /* 设置距离顶部的距离 */
+	        right: 10px; /* 设置距离右侧的距离 */
+	        background-color: rgba(0, 0, 0, 0.5);
+	        display: flex;
+	        align-items: center;
+	        justify-content: center;
+	        border-radius: 5px; /* 添加圆角 */
+	      }
+	
+	  .custom-background input[type="file"] {
+	    display: none;
+	  }
+	
+	  .custom-background label {
+	    padding: 10px 20px;
+	    background-color: #4CAF50;
+	    color: white;
+	    cursor: pointer;
+	  }
+		
+		
+		
+	</style>
+  <body>
+	<header>
+	    <h1>光是遇见，就已经很美好了</h1>
+	  </header>
+	
+	  
+		
+	  <nav>
+	    <ul>
+	      <li><a href="https://www.1023.love">首页</a></li>
+	      <li><a href="https://painting.1023.love">绘画</a></li>
+	      <li><a href="https://blog.1023.love">博客</a></li>
+		  <li><a href="https://test.1023.love">测试</a></li>
+		  <li class="favorite">云盘
+		    <ul>
+		      <li><a href="https://cloud.189.cn/web/main/file/folder/82368145672960597">奶牛</a></li>
+		      <li><a href="https://pc.woozooo.com/u">蓝奏</a></li>
+		      <li><a href="https://cloud.189.cn/web/main/file/folder/82368145672960597">天翼</a></li>
+		    </ul>
+		  </li>
+	    </ul>
+	  </nav>
+	  
+	  
+	  
+    <H3>2022</H3>
+<div class="bo">
+    <div class="box">
+      <A HREF="https://cg.163.com/#/mobile" src="#" alt="#"><img src="https://ts4.cn.mm.bing.net/th?id=ODLS.6257e05a-f7fd-4bf1-9dba-6b57752fe63d&w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2"></a><p><a href="https://cg.163.com/#/mobile">网易云游戏平台</a></p>
+    </div>
+
+    <div class="box">
+      <A HREF="https://sls.cdb.com.cn/#/index" src="#" alt="#"><img src="https://ts2.cn.mm.bing.net/th?id=ODLS.393429ee-85ba-4c88-a043-3c3f4e45adbd&w=32&h=32&qlt=91&pcl=fffffa&o=6&pid=1.2"></a><p><a href="https://sls.cdb.com.cn/#/index">国家开发银行助学贷款学生在线系统</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://zhtj.youth.cn/zhtj/mine/" src="#" alt="#"><img src="https://ts4.cn.mm.bing.net/th?id=ODLS.db1fc6ed-a19c-4724-91e3-ddd5dcf06c40&w=32&h=32&qlt=91&pcl=fffffa&o=6&pid=1.2"></a><p><a href="https://zhtj.youth.cn/zhtj/mine/">网上共青团·智慧团建</a></p>
+    </div>
+    <div class="box">
+      <A HREF="http://mail.su88.tech/" src="#" alt="#"><img src=""></a><p><a href="http://mail.su88.tech/">Roundcube Webmail :: 欢迎使用 Roundcube Webmail</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://www.fosshub.com/" src="#" alt="#"><img src=""></a><p><a href="https://www.fosshub.com/">福斯哈布</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://mail.163.com/js6/main.jsp?sid=WDVKgsgAzKbWaCRWFgAAjLSJRARadLsw&df=mail163_letter#module=welcome.WelcomeModule%7C%7B%7D" src="#" alt="#"><img src="https://ts3.cn.mm.bing.net/th?id=ODLS.4e6e9a31-be32-4a79-861d-7f5e158cde2e&w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2"></a><p><a href="https://mail.163.com/js6/main.jsp?sid=WDVKgsgAzKbWaCRWFgAAjLSJRARadLsw&df=mail163_letter#module=welcome.WelcomeModule%7C%7B%7D">网易邮箱</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://jixia.baidui.vip/#/jxdo" src="#" alt="#"><img src=""></a><p><a href="https://jixia.baidui.vip/#/jxdo">极下DownLoad</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://cet-kw.neea.edu.cn/" src="#" alt="#"><img src="https://ts3.cn.mm.bing.net/th?id=ODLS.83f1976f-eaec-4e21-b61b-7c4b3a365ef4&w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2"></a><p><a href="https://cet-kw.neea.edu.cn/">全国大学英语四、六级考试报名网</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://www.apple.com.cn/" src="#" alt="#"><img src="https://ts1.cn.mm.bing.net/th?id=ODLS.9852c66c-5019-41d4-9b6c-92cc54e13b4a&w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2"></a><p><a href="https://www.apple.com.cn/">Apple (中国大陆) - 官方网站</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://mail.qq.com/" src="#" alt="#"><img src="https://ts1.cn.mm.bing.net/th/id/R-C.5fe246fcaa1c4759f4300ed7df4a3ca7?rik=OrvotDY4SSjdEQ&riu=http%3a%2f%2fwww.kuaipng.com%2fUploads%2fpic%2fw%2f2021%2f04-07%2f98952%2fwater_98952_698_698_.png&ehk=qH7Qzhlcyi5gyiFRZTdEuZcGib8NCgsiEAlzWwUdoj8%3d&risl=&pid=ImgRaw&r=0"></a><p><a href="https://mail.qq.com/">登录QQ邮箱</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://support.apple.com/zh-cn/apple-id" src="#" alt="#"><img src="https://ts1.cn.mm.bing.net/th?id=ODLS.9852c66c-5019-41d4-9b6c-92cc54e13b4a&w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2"></a><p><a href="https://support.apple.com/zh-cn/apple-id">Apple ID - 官方 Apple 支持</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://www.126.com/" src="#" alt="#"><img src="https://ts3.cn.mm.bing.net/th?id=ODLS.41496ade-0ae3-42f9-a838-52288accf63c&w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2"></a><p><a href="https://www.126.com/">126网易免费邮-你的专业电子邮局</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://id.163.com/mail/index.html#/email" src="#" alt="#"><img src="https://ts1.cn.mm.bing.net/th?id=ODLS.97955b02-ebe2-4937-9bed-81c2ad5d5e24&w=32&h=32&qlt=92&pcl=fffffa&o=6&pid=1.2"></a><p><a href="https://id.163.com/mail/index.html#/email">网易邮箱帐号安全中心</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://user.mihoyo.com/#/login/captcha" src="#" alt="#"><img src="https://ts1.cn.mm.bing.net/th?id=ODLS.9ff3240f-a74f-4e6e-b3ed-b691e5423c6f&w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2"></a><p><a href="https://user.mihoyo.com/#/login/captcha">米哈游</a></p>
+    </div>
+    <div class="box">
+      <A HREF="http://i.chaoxing.com/base?t=1666962206542" src="#" alt="#"><img src="https://ts2.cn.mm.bing.net/th?id=ODLS.8b958b28-4e48-446b-bd85-29cd3a166a1d&w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2"></a><p><a href="http://i.chaoxing.com/base?t=1666962206542">学习通</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://www.12321.cn/" src="#" alt="#"><img src="https://ts3.cn.mm.bing.net/th?id=ODLS.49436980-2468-4ae0-9e2f-4ab2d4f497c7&w=32&h=32&qlt=94&pcl=fffffa&o=6&pid=1.2"></a><p><a href="https://www.12321.cn/">12321网络不良与垃圾信息举报受理中心</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://gitee.com/qq209364619/hearts/blob/master/hearts.html#" src="#" alt="#"><img src="https://gitee.com/static/images/logo-black.svg?t=158106664"></a><p><a href="https://gitee.com/qq209364619/hearts/blob/master/hearts.html#">hearts.html · hph/爱心代码 - 码云 - 开源中国</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://ncre.neea.edu.cn/" src="#" alt="#"><img src="https://ts3.cn.mm.bing.net/th?id=ODLS.83f1976f-eaec-4e21-b61b-7c4b3a365ef4&w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2"></a><p><a href="https://ncre.neea.edu.cn/">NCRE - 计算机</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://www.zhihuishu.com/" src="#" alt="#"><img src="https://ts1.cn.mm.bing.net/th?id=ODLS.1f1480d3-b675-4d6e-bf9c-3d66e9893db9&w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2"></a><p><a href="https://www.zhihuishu.com/">智慧树网</a></p>
+    </div>
+    <div class="box">
+      <A HREF="http://fjsdxy.alphacoding.cn/home" src="#" alt="#"><img src="http://fjsdxy.alphacoding.cn/logos/logo.svg"></a><p><a href="http://fjsdxy.alphacoding.cn/home">阿尔法编程</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://chatexcel.com/convert" src="#" alt="#"><img src="https://chatexcel.com/static/pic/logo/logo-white-bold.png"></a><p><a href="https://chatexcel.com/convert">酷表ChatExcel</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://support.activision.com/cn/zh/ban-appeal" src="#" alt="#"><img src="https://bkimg.cdn.bcebos.com/pic/dc54564e9258d109b3de7d3f7a0cdbbf6c81810ae7bb?x-bce-process=image/resize,m_lfit,w_536,limit_1/format,f_auto"></a><p><a href="https://support.activision.com/cn/zh/ban-appeal">封号申诉 | 动视客户支持</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://bigjpg.com/" src="#" alt="#"><img src=""></a><p><a href="https://bigjpg.com/">Bigjpg - AI人工智能图片无损放大 - 使用人工智能深度卷积神经网络(CNN)无损放大图片</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://arc.tencent.com/zh/ai-demos/humansegmentation" src="#" alt="#"><img src=""></a><p><a href="https://arc.tencent.com/zh/ai-demos/humansegmentation">ARC官网-腾讯</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://www.zhizuotu.com/buttonColor" src="#" alt="#"><img src=""></a><p><a href="https://www.zhizuotu.com/buttonColor">图片去底色 背景变透明在线工具-制作图</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://www.logosc.cn/make" src="#" alt="#"><img src=""></a><p><a href="https://www.logosc.cn/make">Logo在线制作；logo设计神器 - 标小智LOGO神器</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://www.w3school.com.cn/tiy/t.asp?f=eg_html_audio_embed" src="#" alt="#"><img src=""></a><p><a href="https://www.w3school.com.cn/tiy/t.asp?f=eg_html_audio_embed">W3School TIY Editor</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://picwish.cn/remove-background" src="#" alt="#"><img src=""></a><p><a href="https://picwish.cn/remove-background">佐糖 - 免费在线图片处理工具_在线抠图_证件照换底色_一键抠图</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://www.pexels.com/zh-cn/search/%E7%BD%91%E7%AB%99%E8%83%8C%E6%99%AF/" src="#" alt="#"><img src=""></a><p><a href="https://www.pexels.com/zh-cn/search/%E7%BD%91%E7%AB%99%E8%83%8C%E6%99%AF/">400,000+张最精彩的“网站背景”图片 · 100%免费下载 · Pexels素材图片</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://www.pubyun.com/user/dyndns/rrs/" src="#" alt="#"><img src=""></a><p><a href="https://www.pubyun.com/user/dyndns/rrs/">管理页面-公云pubyun</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://www.dadighost.com/help/46876.html" src="#" alt="#"><img src=""></a><p><a href="https://www.dadighost.com/help/46876.html">windows11专业版激活码永久最新 windows11专业版激活密钥免费-大地系统</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://okmiku.com/" src="#" alt="#"><img src=""></a><p><a href="https://okmiku.com/">MikuTools - 一个轻量的工具集合</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://ncre.neea.edu.cn/" src="#" alt="#"><img src=""></a><p><a href="https://ncre.neea.edu.cn/">NCRE - 计算机</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://www.xitongzhijia.net/xtjc/20221111/257476.html" src="#" alt="#"><img src=""></a><p><a href="https://www.xitongzhijia.net/xtjc/20221111/257476.html">最新Win11跳过联网激活的三种方法！ - 系统之家</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://htmlpage.cn/builder/?id=47" src="#" alt="#"><img src=""></a><p><a href="https://htmlpage.cn/builder/?id=47">HTML网页构建器v3 - htmlpage.cn</a></p>
+    </div>
+    <div class="box">
+      <A HREF="http://www.html5code.net/sucai/youxi/list_69_2.html" src="#" alt="#"><img src=""></a><p><a href="http://www.html5code.net/sucai/youxi/list_69_2.html">游戏代码-html5模板网</a></p>
+    </div>
+    <div class="box">
+      <A HREF="http://web.tanganbin.cn/geren.php" src="#" alt="#"><img src=""></a><p><a href="http://web.tanganbin.cn/geren.php">个人网页制作_TAB在线页面制作-全自动网页制作系统</a></p>
+    </div>
+    <div class="box">
+      <A HREF="http://www.58html.com/html/" src="#" alt="#"><img src=""></a><p><a href="http://www.58html.com/html/">可视化html编辑器</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://v079fj9n6te.feishu.cn/docx/Zotzd1wDFoKrZUxaYdrcCLohnJf" src="#" alt="#"><img src=""></a><p><a href="https://v079fj9n6te.feishu.cn/docx/Zotzd1wDFoKrZUxaYdrcCLohnJf">AICK-KC创客联盟AIGC免费资料整理（持续更新） - 飞书云文档</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://www.cnblogs.com/cxspace/p/8325360.html" src="#" alt="#"><img src=""></a><p><a href="https://www.cnblogs.com/cxspace/p/8325360.html">网络端口地址转换的NAPT配置 - FJN-CLOUD - 博客园</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://yuncode.net/list/python/1000" src="#" alt="#"><img src=""></a><p><a href="https://yuncode.net/list/python/1000">python代码库 - 云代码</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://developers.redhat.com/products/openjdk/getting-started?success=true&tcWhenSigned=January+1%2C+1970&tcWhenEnds=January+1%2C+1970&tcEndsIn=0&tcDuration=365&tcDownloadFileName=java-1.8.0-openjdk-1.8.0.352-2.b08.redhat.windows.x86_64.zip&tcRedirect=5000&tcSrcLink=https%3A%2F%2Fdevelopers.redhat.com%2Fcontent-gateway%2Fcontent%2Forigin%2Ffiles%2Fsha256%2F5d%2F5db6b3ed77cb70887802e0eb5bd538e62a608cdfb6ef79dedb0fabdfb179d492%2Fjava-1.8.0-openjdk-1.8.0.352-2.b08.redhat.windows.x86_64.zip&p=Product%3A+OpenJDK&pv=October+2022&tcDownloadURL=https%3A%2F%2Faccess.cdn.redhat.com%2Fcontent%2Forigin%2Ffiles%2Fsha256%2F5d%2F5db6b3ed77cb70887802e0eb5bd538e62a608cdfb6ef79dedb0fabdfb179d492%2Fjava-1.8.0-openjdk-1.8.0.352-2.b08.redhat.windows.x86_64.zip%3F_auth_%3D1672062263_d0bfc48706cc3a744d7202c1cf8b0b9c" src="#" alt="#"><img src=""></a><p><a href="https://developers.redhat.com/products/openjdk/getting-started?success=true&tcWhenSigned=January+1%2C+1970&tcWhenEnds=January+1%2C+1970&tcEndsIn=0&tcDuration=365&tcDownloadFileName=java-1.8.0-openjdk-1.8.0.352-2.b08.redhat.windows.x86_64.zip&tcRedirect=5000&tcSrcLink=https%3A%2F%2Fdevelopers.redhat.com%2Fcontent-gateway%2Fcontent%2Forigin%2Ffiles%2Fsha256%2F5d%2F5db6b3ed77cb70887802e0eb5bd538e62a608cdfb6ef79dedb0fabdfb179d492%2Fjava-1.8.0-openjdk-1.8.0.352-2.b08.redhat.windows.x86_64.zip&p=Product%3A+OpenJDK&pv=October+2022&tcDownloadURL=https%3A%2F%2Faccess.cdn.redhat.com%2Fcontent%2Forigin%2Ffiles%2Fsha256%2F5d%2F5db6b3ed77cb70887802e0eb5bd538e62a608cdfb6ef79dedb0fabdfb179d492%2Fjava-1.8.0-openjdk-1.8.0.352-2.b08.redhat.windows.x86_64.zip%3F_auth_%3D1672062263_d0bfc48706cc3a744d7202c1cf8b0b9c">OpenJDK 入门|的红帽构建红帽开发人员</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://jingyan.baidu.com/article/e4511cf3015b8c2b855eaf49.html" src="#" alt="#"><img src=""></a><p><a href="https://jingyan.baidu.com/article/e4511cf3015b8c2b855eaf49.html">路由器如何配置DHCP-百度经验</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://xydh.fun/" src="#" alt="#"><img src=""></a><p><a href="https://xydh.fun/">炫猿</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://www.toolnb.com/" src="#" alt="#"><img src=""></a><p><a href="https://www.toolnb.com/">爱资料工具-好用的在线工具箱</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://www.runoob.com/html/html-tutorial.html" src="#" alt="#"><img src=""></a><p><a href="https://www.runoob.com/html/html-tutorial.html">HTML 教程 | 菜鸟教程</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://www.sanfengyun.com/control/#/freeServerList" src="#" alt="#"><img src=""></a><p><a href="https://www.sanfengyun.com/control/#/freeServerList">三丰云-控制台</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://down.chinaz.com/" src="#" alt="#"><img src=""></a><p><a href="https://down.chinaz.com/">源码_网站源码_源码下载_源码之家 - 站长源码</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://www.bt.cn/admin/servers#wcu" src="#" alt="#"><img src=""></a><p><a href="https://www.bt.cn/admin/servers#wcu">安装宝塔</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://onionseo.com/30883.html" src="#" alt="#"><img src=""></a><p><a href="https://onionseo.com/30883.html">win11设置几小时后自动关机(Win11设置几小时后自动关机操作指南) - 洋葱SEO</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://mirrors.tuna.tsinghua.edu.cn/" src="#" alt="#"><img src=""></a><p><a href="https://mirrors.tuna.tsinghua.edu.cn/">清华大学开源软件镜像站 | Tsinghua Open Source Mirror</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://www.18183.com/gonglue/202205/3965822.html" src="#" alt="#"><img src=""></a><p><a href="https://www.18183.com/gonglue/202205/3965822.html">我的世界附魔指令大全2022 MC最全附魔指令汇总_18183我的世界专区</a></p>
+    </div>
+    <div class="box">
+      <A HREF="http://www.mobanwang.com/mb/cartoon/" src="#" alt="#"><img src=""></a><p><a href="http://www.mobanwang.com/mb/cartoon/">卡通网页模板,动漫网站模板免费下载 - 模板王</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://ol.3dmgame.com/gl/103300.html" src="#" alt="#"><img src=""></a><p><a href="https://ol.3dmgame.com/gl/103300.html">我的世界创世神怎么用_MC创世神使用方法_3DM网游</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://www.gamersky.com/handbook/201705/906855.shtml" src="#" alt="#"><img src=""></a><p><a href="https://www.gamersky.com/handbook/201705/906855.shtml">《缺氧》Debug模式开启及用法 缺氧控制台作弊模式开启方法-游民星空 GamerSky.com</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://www.mcmod.cn/tools/cbcreator/" src="#" alt="#"><img src=""></a><p><a href="https://www.mcmod.cn/tools/cbcreator/">命令方块指令生成器 - 实用工具 - MC百科|最大的Minecraft中文MOD百科</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://blog.csdn.net/LingLing1301/article/details/126604558" src="#" alt="#"><img src=""></a><p><a href="https://blog.csdn.net/LingLing1301/article/details/126604558">我的世界4个实用指令生成网站：自定义物品/名称，自定义药水，自定义实体，数据包编写_凌凌1301的博客-CSDN博客_我的世界指令生成器</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://www.mcmod.cn/download/609.html" src="#" alt="#"><img src=""></a><p><a href="https://www.mcmod.cn/download/609.html">MOD下载 - [WE]创世神 (WorldEdit) - MC百科|最大的Minecraft中文MOD百科</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://gametame.com/" src="#" alt="#"><img src=""></a><p><a href="https://gametame.com/"">GameTame.com：赚取免费礼品卡和Steam游戏</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://blog.csdn.net/weixin_45445598/article/details/115253558" src="#" alt="#"><img src=""></a><p><a href="https://blog.csdn.net/weixin_45445598/article/details/115253558">(1条消息) 保姆级在自己电脑搭建我的世界服务器教程_奋斗的小牛的博客-CSDN博客_mc服务器搭建</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://pointsprizes.com/" src="#" alt="#"><img src=""></a><p><a href="https://pointsprizes.com/">积分奖品 - 赚取积分，领取免费礼品卡！</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://www.natfrp.com/user/" src="#" alt="#"><img src=""></a><p><a href="https://www.natfrp.com/user/">SakuraFrp</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://www.bilibili.com/read/cv5675800/" src="#" alt="#"><img src=""></a><p><a href="https://www.bilibili.com/read/cv5675800/">使用BungeeCord搭建MCDR群组服务器!!! - 哔哩哔哩</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://xxxxx520.com/" src="#" alt="#"><img src=""></a><p><a href="https://xxxxx520.com/">Switch520</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://dl.3dmgame.com/patch/220151.html" src="#" alt="#"><img src=""></a><p><a href="https://dl.3dmgame.com/patch/220151.html">欧洲卡车模拟2v1.44修改器下载_欧卡模拟2十五项修改器下载_3DM单机</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://xxxxx520.com/13570.html" src="#" alt="#"><img src=""></a><p><a href="https://xxxxx520.com/13570.html">无人深空 支持原生4K|官方中文|V4.12-引领真正奥义+全DLC|安装即撸|-Switch520</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://gametame.com/earn-cn/" src="#" alt="#"><img src=""></a><p><a href="https://gametame.com/earn-cn/">赚取积分 - 游戏驯服</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://aternos.org/create/" src="#" alt="#"><img src=""></a><p><a href="https://aternos.org/create/">创建服务器 | Aternos | 免费Minecraft服务器</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://cloud.189.cn/web/main/file/folder/82368145672960597" src="#" alt="#"><img src=""></a><p><a href="https://cloud.189.cn/web/main/file/folder/82368145672960597">天翼云盘 珍藏美好生活 家庭云|网盘|文件备份|资源分享</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://platform.openai.com/account/api-keys" src="#" alt="#"><img src=""></a><p><a href="https://platform.openai.com/account/api-keys">Account API Keys - OpenAI API</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://sms-activate.org/getNumber" src="#" alt="#"><img src=""></a><p><a href="https://sms-activate.org/getNumber">获取虚拟手机号码。短期手机号码。手机短信激活服务</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://pc.woozooo.com/u" src="#" alt="#"><img src=""></a><p><a href="https://pc.woozooo.com/u">蓝奏云-控制台</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://www.qiyueba.com/1235.html" src="#" alt="#"><img src=""></a><p><a href="https://www.qiyueba.com/1235.html">阿里云盘/百度网盘本地化教程 试试Alist+RaiDrive稳定挂载-柒月吧</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://cowtransfer.com/?isNewUser=false" src="#" alt="#"><img src=""></a><p><a href="https://cowtransfer.com/?isNewUser=false">奶牛快传｜免费大文件传输工具，上传下载不限速 CowTransfer | Unlimited Send Large Files</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://platform.openai.com/playground/p/default-chat?model=text-davinci-003" src="#" alt="#"><img src=""></a><p><a href="https://platform.openai.com/playground/p/default-chat?model=text-davinci-003">Playground - OpenAI API</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://chat.openai.com/chat/06d18e8b-a8d7-4771-bc9d-a8057e846519" src="#" alt="#"><img src=""></a><p><a href="https://chat.openai.com/chat/06d18e8b-a8d7-4771-bc9d-a8057e846519">Sum of 1+1: 2</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://platform.openai.com/account/api-keys" src="#" alt="#"><img src=""></a><p><a href="https://platform.openai.com/account/api-keys">Account API Keys - OpenAI API</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://loop.microsoft.com/recent" src="#" alt="#"><img src=""></a><p><a href="https://loop.microsoft.com/recent">最近</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://ai-bot.cn/" src="#" alt="#"><img src=""></a><p><a href="https://ai-bot.cn/">AI工具集导航 | 500+ AI工具导航和AI工具箱集合，国内外AI工具集合网站大全</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://poe.com/sage" src="#" alt="#"><img src=""></a><p><a href="https://poe.com/sage">Poe - Sage</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://console.cloud.tencent.com/cloudpages" src="#" alt="#"><img src=""></a><p><a href="https://console.cloud.tencent.com/cloudpages">主页 - 腾讯云建站 - 控制台</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://sv1.scriptinstall.rocks:2083/cpsess8268400714/frontend/x3/softaculous/index.live.php?act=wordpress&insid=26_43397" src="#" alt="#"><img src=""></a><p><a href="https://sv1.scriptinstall.rocks:2083/cpsess8268400714/frontend/x3/softaculous/index.live.php?act=wordpress&insid=26_43397">Softaculous - WordPress Management</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://www.appbsl.cn/home" src="#" alt="#"><img src=""></a><p><a href="https://www.appbsl.cn/home">变色龙app-封装打包App，原生App</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://www.freehost.cc/login.php" src="#" alt="#"><img src=""></a><p><a href="https://www.freehost.cc/login.php">登录控制面板-免费主机freehost.cc</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://console.cloud.tencent.com/domain/all-domain" src="#" alt="#"><img src=""></a><p><a href="https://console.cloud.tencent.com/domain/all-domain">我的域名 - 域名注册 - 控制台</a></p>
+    </div>
+    <div class="box">
+      <A HREF="http://localhost:19798/#/?a=1&from=%E9%98%BF%E9%87%8C%E4%BA%91%E7%9B%98" src="#" alt="#"><img src=""></a><p><a href="http://localhost:19798/#/?a=1&from=%E9%98%BF%E9%87%8C%E4%BA%91%E7%9B%98">CloudDriveWasm</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://kinhdown.kinh.cc/?Type=Web" src="#" alt="#"><img src=""></a><p><a href="https://kinhdown.kinh.cc/?Type=Web">KinhDown - 网页版</a></p>
+    </div>
+    <div class="box">
+      <A HREF="http://www.mobanwang.com/mb/cartoon/" src="#" alt="#"><img src=""></a><p><a href="http://www.mobanwang.com/mb/cartoon/">卡通网页模板,动漫网站模板免费下载 - 模板王</a></p>
+    </div>
+    <div class="box">
+      <A HREF="http://www.htmleaf.com/" src="#" alt="#"><img src=""></a><p><a href="http://www.htmleaf.com/">jQuery之家-自由分享jQuery、html5、css3的插件库</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://wallhaven.cc/hot?page=10" src="#" alt="#"><img src=""></a><p><a href="https://wallhaven.cc/hot?page=10">热门壁纸 - wallhaven.cc</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://tool.wanxiangsucai.com/ziyuan/inde.php?page=2" src="#" alt="#"><img src=""></a><p><a href="https://tool.wanxiangsucai.com/ziyuan/inde.php?page=2">网站源码-免费PHP网站源码模板,插件软件资源分享平台！- 万象资源箱</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://www.oschina.net/p/docker?hmsr=aladdin1e1" src="#" alt="#"><img src=""></a><p><a href="https://www.oschina.net/p/docker?hmsr=aladdin1e1">Docker首页、文档和下载 - 应用容器引擎 - OSCHINA - 中文开源技术交流社区</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://ywyj.cn/" src="https://www.log><img src=""></a><p><a href=">速版 - 一起发现有趣的新产品</a></p>osc.cn/oss/icons/2022/06/02/e0UJFu2OHsecjv1.png" alt="#"></a>
+    </div>
+    <div class="box">
+      <A HREF="https://www.w3school.com.cn/site/index.asp" src="#" alt="#"><img src=""></a><p><a href="https://www.w3school.com.cn/site/index.asp">网站构建教程</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://next.itellyou.cn/Original/Index" src="#" alt="#"><img src=""></a><p><a href="https://next.itellyou.cn/Original/Index">原版软件</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://gitee.com/virus010101/linfeng-community?_from=gitee_search#https://gitee.com/link?target=https%3A%2F%2Fdev.linfeng.tech" src="#" alt="#"><img src=""></a><p><a href="https://gitee.com/virus010101/linfeng-community?_from=gitee_search#https://gitee.com/link?target=https%3A%2F%2Fdev.linfeng.tech">社交论坛</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://cloud.tencent.com/act/pro/domain-sales?fromSource=gwzcw.1293314.1293314.1293314&cps_key=6bc5384dcb0ce52527005b2dbe2dc321" src="#" alt="#"><img src=""></a><p><a href="https://cloud.tencent.com/act/pro/domain-sales?fromSource=gwzcw.1293314.1293314.1293314&cps_key=6bc5384dcb0ce52527005b2dbe2dc321">域名专场特惠</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://www.apicloud.com/appoverview" src="#" alt="#"><img src=""></a><p><a href="https://www.apicloud.com/appoverview">概览</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://wzfou.com/kaiyuan-daohang/#:~:text=%E5%85%8D%E8%B4%B9%E5%BC%80%E6%BA%90%E7%9A%84%E7%BD%91%E5%9D%80%E5%AF%BC%E8%88%AA%E6%BA%90%E7%A0%81%E6%94%B6%E9%9B%86%E6%95%B4%E7%90%86%E6%B1%87%E6%80%BB-%E8%87%AA%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%AF%BC%E8%88%AA%E4%B8%BB%E9%A1%B5,-%20%E6%8C%96%E7%AB%99%E5%90%A6-%E6%8C%96%E6%8E%98%E5%BB%BA%E7%AB%99%E7%9A%84%E4%B9%90%E8%B6%A3" src="#" alt="#"><img src=""></a><p><a href="https://wzfou.com/kaiyuan-daohang/#:~:text=%E5%85%8D%E8%B4%B9%E5%BC%80%E6%BA%90%E7%9A%84%E7%BD%91%E5%9D%80%E5%AF%BC%E8%88%AA%E6%BA%90%E7%A0%81%E6%94%B6%E9%9B%86%E6%95%B4%E7%90%86%E6%B1%87%E6%80%BB-%E8%87%AA%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%AF%BC%E8%88%AA%E4%B8%BB%E9%A1%B5,-%20%E6%8C%96%E7%AB%99%E5%90%A6-%E6%8C%96%E6%8E%98%E5%BB%BA%E7%AB%99%E7%9A%84%E4%B9%90%E8%B6%A3">挖站否-挖掘建站的乐趣</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://www.rclou.cn/yuanma?price_type=1" src="#" alt="#"><img src=""></a><p><a href="https://www.rclou.cn/yuanma?price_type=1">网站源码</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://blog.csdn.net/sj349781478/article/details/130243884" src="#" alt="#"><img src=""></a><p><a href="https://blog.csdn.net/sj349781478/article/details/130243884">server2022激活</a></p>
+    </div>
+    <div class="box">
+      <A HREF="http://li1023.nndx.ml/" src="#" alt="#"><img src=""></a><p><a href="http://li1023.nndx.ml/">樱花漫天飞舞</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://www.shixiseng.com/" src="#" alt="#"><img src=""></a><p><a href="https://www.shixiseng.com/">实习僧</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://www.zhipin.com/web/geek/job?query=&city=100010000&position=100901" src="#" alt="#"><img src=""></a><p><a href="https://www.zhipin.com/web/geek/job?query=&city=100010000&position=100901">BOSS直聘</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://abcxueyuan.baidu.com/campus/10000001123" src="#" alt="#"><img src=""></a><p><a href="https://abcxueyuan.baidu.com/campus/10000001123">教学实验管理平台</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://tushuo.baidu.com/" src="#" alt="#"><img src=""></a><p><a href="https://tushuo.baidu.com/">图说</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://www.peterx.cn/" src="#" alt="#"><img src=""></a><p><a href="https://www.peterx.cn/"">PM HOME | 产品经理之家</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://www.newrank.cn/" src="#" alt="#"><img src=""></a><p><a href="https://www.newrank.cn/">新榜——新媒体，找新榜</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://li1023.flarum.cloud/" src="#" alt="#"><img src=""></a><p><a href="https://li1023.flarum.cloud/">A FreeFlarum Forum</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://app.site123.com/manager/wizard.php?wu=64818a9703196-64818a9703197-64818a9703198" src="#" alt="#"><img src=""></a><p><a href="https://app.site123.com/manager/wizard.php?wu=64818a9703196-64818a9703197-64818a9703198">晚夜深秋 (8164595)- 编辑器 - SITE123</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://cloud.189.cn/web/share?code=FFnMvu6bqUrq" src="#" alt="#"><img src=""></a><p><a href="https://cloud.189.cn/web/share?code=FFnMvu6bqUrq">苹果Macos 免费高速下载 | 天翼云盘</a></p>
+    </div>
+    
+    <div class="box">
+      <A HREF="http://localhost/" src="#" alt="#"><img src=""></a><p><a href="http://localhost/"">localhost</a></p>
+    </div>
+    <div class="box">
+      <A HREF="http://localhost/phpMyAdmin4.8.5/server_databases.php" src="#" alt="#"><img src=""></a><p><a href="http://localhost/phpMyAdmin4.8.5/server_databases.php">localhost / localhost | phpMyAdmin 4.8.5</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://www.123pan.com/s/FBJrVv-usnPA" src="#" alt="#"><img src=""></a><p><a href="https://www.123pan.com/s/FBJrVv-usnPA">Windows Server 2022 v21H2123云盘</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://rewards.bing.com/?wa=wsignin1.0" src="#" alt="#"><img src=""></a><p><a href="https://rewards.bing.com/?wa=wsignin1.0"">Microsoft Rewards</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://www.hhyx.vip/" src="#" alt="#"><img src=""></a><p><a href="https://www.hhyx.vip/"">HHYX-游戏仓库-大型电脑单机游戏</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://wwlh.lanzouw.com/b01r3i1ij" src="#" alt="#"><img src=""></a><p><a href="https://wwlh.lanzouw.com/b01r3i1ij"">网盘不限速</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://www.aigei.com/icon/class/" src="#" alt="#"><img src=""></a><p><a href="https://www.aigei.com/icon/class/"">图标下载,ICON(PNG/ICO/SVG/矢量)</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://www.logosc.cn/logo/" src="#" alt="#"><img src=""></a><p><a href="https://www.logosc.cn/logo/"">标小智LOGO神器</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://ionic.io/ionicons" src="#" alt="#"><img src=""></a><p><a href="https://ionic.io/ionicons"">免费图标库的提示</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://www.php.cn/" src="#" alt="#"><img src=""></a><p><a href="https://www.php.cn/"">php中文网</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://cn.wordpress.org/" src="#" alt="#"><img src=""></a><p><a href="https://cn.wordpress.org/"">适用于博客到大型网站的 CMS</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://weibo.com/u/7849892498" src="#" alt="#"><img src=""></a><p><a href="https://weibo.com/u/7849892498"">@阿狸在线ing 的个人主页 - 微博</a></p>
+    </div>
+    <div class="box">
+      <A HREF="http://mirrors.163.com/" src="#" alt="#"><img src=""></a><p><a href="http://mirrors.163.com/"">网易开源镜像站</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://cloud.tencent.com/act/campus" src="#" alt="#"><img src=""></a><p><a href="https://cloud.tencent.com/act/campus"">学生云服务器腾讯云</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://cloud.tencent.com/lab" src="#" alt="#"><img src=""></a><p><a href="https://cloud.tencent.com/lab"">腾讯云实验室</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://mp.weixin.qq.com/" src="#" alt="#"><img src=""></a><p><a href="https://mp.weixin.qq.com/"">微信公众平台</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://www.ffkk.top/?aff=43" src="#" alt="#"><img src=""></a><p><a href="https://www.ffkk.top/?aff=43"">FFKK-资源站</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://www.freewebhostingarea.com/" src="#" alt="#"><img src=""></a><p><a href="https://www.freewebhostingarea.com/"">免费虚拟主机区</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://newserv.freewha.com/" src="#" alt="#"><img src=""></a><p><a href="https://newserv.freewha.com/"">免费虚拟主机区 - 登录控制面板</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://blog.csdn.net/weixin_44869002/article/details/108533939" src="#" alt="#"><img src=""></a><p><a href="https://blog.csdn.net/weixin_44869002/article/details/108533939"">VS Code 实用快捷键</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://developer.android.google.cn/studio/index.html" src="#" alt="#"><img src=""></a><p><a href="https://developer.android.google.cn/studio/index.html"">下载 Android Studio</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://www.oracle.com/java/technologies/downloads/#java8-mac" src="#" alt="#"><img src=""></a><p><a href="https://www.oracle.com/java/technologies/downloads/#java8-mac"">爪哇下载 |神谕</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://www.oracle.com/cn/java/technologies/downloads/" src="#" alt="#"><img src=""></a><p><a href="https://www.oracle.com/cn/java/technologies/downloads/"">爪哇下载 |甲骨文中国</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://www.zhihu.com/tardis/zm/art/374517847?source_id=1005" src="#" alt="#"><img src=""></a><p><a href="https://www.zhihu.com/tardis/zm/art/374517847?source_id=1005"">Android Studio汉化教程</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://www.aigei.com/lib/app-code/" src="#" alt="#"><img src=""></a><p><a href="https://www.aigei.com/lib/app-code/"">app源码爱给网</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://mp.weixin.qq.com/cgi-bin/home?t=home/index&token=561326373&lang=zh_CN" src="#" alt="#"><img src=""></a><p><a href="https://mp.weixin.qq.com/cgi-bin/home?t=home/index&token=561326373&lang=zh_CN"">公众号</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://activity.huaweicloud.com/domain1.html?utm_source=special&utm_medium=organic&utm_adplace=pro-ecs-free_guanggao2" src="#" alt="#"><img src=""></a><p><a href="https://activity.huaweicloud.com/domain1.html?utm_source=special&utm_medium=organic&utm_adplace=pro-ecs-free_guanggao2"">域名注册华为云</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://activity.huaweicloud.com/free_test/index.html?utm_source=special&utm_medium=organic&utm_adplace=pro-ecs-free_guanggao3" src="#" alt="#"><img src=""></a><p><a href="https://activity.huaweicloud.com/free_test/index.html?utm_source=special&utm_medium=organic&utm_adplace=pro-ecs-free_guanggao3"">免费云服务器华为云</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://free.aliyun.com/" src="#" alt="#"><img src=""></a><p><a href="https://free.aliyun.com/"">阿里云免费试用</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://www.iconfont.cn/" src="#" alt="#"><img src=""></a><p><a href="https://www.iconfont.cn/"">阿里巴巴矢量图标库</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://gitee.com/woniudiancang/bee" src="#" alt="#"><img src=""></a><p><a href="https://gitee.com/woniudiancang/bee"">微信小程序-餐饮点餐外卖</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://mp.weixin.qq.com/wxamp/index/index?lang=zh_CN&token=14893872" src="#" alt="#"><img src=""></a><p><a href="https://mp.weixin.qq.com/wxamp/index/index?lang=zh_CN&token=14893872"">小程序</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://admin.it120.cc/#/user/apiExtConfig/list" src="#" alt="#"><img src=""></a><p><a href="https://admin.it120.cc/#/user/apiExtConfig/list"">晚夜小程序后台管理系统</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://li1023qwq.admin.it120.cc/#/dashboard" src="#" alt="#"><img src=""></a><p><a href="https://li1023qwq.admin.it120.cc/#/dashboard"">首页 - 后台管理系统</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://store.rg-adguard.net/" src="#" alt="#"><img src=""></a><p><a href="https://store.rg-adguard.net/"">windows安卓</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://boardmix.cn/ai-whiteboard/?source=zhihu_ai_website" src="#" alt="#"><img src=""></a><p><a href="https://boardmix.cn/ai-whiteboard/?source=zhihu_ai_website"">ai生成</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://www.wetools.com/html-formatter" src="#" alt="#"><img src=""></a><p><a href="https://www.wetools.com/html-formatter"">在线 HTML 格式化工具</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://yun316.net/host/panel/6965" src="#" alt="#"><img src=""></a><p><a href="https://yun316.net/host/panel/6965"">Yun316-灰狼云空间</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://ifastnet.com/activate_3.php?username=51s_35148193&email=2029249473@qq.com&hash=56f31ef8c87cd8761875777ed5b13776&autoinstall=&script_url=&domain=51server.top&logo=&sql=sql109&script_username=&server_name=li1023.51server.top" src="#" alt="#"><img src=""></a><p><a href="https://ifastnet.com/activate_3.php?username=51s_35148193&email=2029249473@qq.com&hash=56f31ef8c87cd8761875777ed5b13776&autoinstall=&script_url=&domain=51server.top&logo=&sql=sql109&script_username=&server_name=li1023.51server.top"">账户订单确认</a></p>
+    </div>
+    <div class="box">
+      <A HREF="http://cpanel.51server.top/panel/indexpl.php" src="#" alt="#"><img src=""></a><p><a href="http://cpanel.51server.top/panel/indexpl.php"">cpanel.51server.top</a></p>
+    </div>
+    <div class="box">
+      <A HREF="http://li1023.51server.top/?i=1" src="#" alt="#"><img src=""></a><p><a href="http://li1023.51server.top/?i=1"">晚夜深秋-链接</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://www.functorz.com/" src="#" alt="#"><img src=""></a><p><a href="https://www.functorz.com/"">Zion</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://zpwouskozt.fastgpt.me/" src="#" alt="#"><img src=""></a><p><a href="https://zpwouskozt.fastgpt.me/"">EasyChat</a></p>
+    </div>
+    <div class="box">
+      <A HREF="http://www.krpano.tech/" src="#" alt="#"><img src=""></a><p><a href="http://www.krpano.tech/"">KRPano</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://replicate.com/account/api-tokens" src="#" alt="#"><img src=""></a><p><a href="https://replicate.com/account/api-tokens"">复制</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://vercel.com/li1023qwq" src="#" alt="#"><img src=""></a><p><a href="https://vercel.com/li1023qwq"">Vercel</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://github.com/li1023qwq/1023.github.io/blob/main/README.md" src="#" alt="#"><img src=""></a><p><a href="https://github.com/li1023qwq/1023.github.io/blob/main/README.md"">1023.github.io</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://dashboard.ngrok.com/tunnels/agents" src="#" alt="#"><img src=""></a><p><a href="https://dashboard.ngrok.com/tunnels/agents"">ngrok</a></p>
+    </div>
+    <div class="box">
+      <A HREF="https://www.douyin.com/" src="#" alt="#"><img src=""></a><p><a href="https://www.douyin.com/"">抖音</a></p>
+    </div>
+</div>
+
+
+
+	<div class="custom-background">
+	    <input type="file" id="background-input" accept="image/*">
+	    <label for="background-input">更改背景图片</label>
+	  </div>
+		
+		
+		
+		<script>
+		  function search() {
+		    var searchInput = document.getElementById("search-input").value;
+		    var searchEngine = document.getElementById("search-engine").value;
+		    var searchUrl = searchEngine + encodeURIComponent(searchInput);
+		    window.location.href = searchUrl;
+		  }
+		</script>
+		<!-- 用于在点击收藏夹时切换收藏夹列表的显示和隐藏 -->
+		<script>
+			  
+		    // JavaScript code goes here
+		    // Get the favorite list element
+		    const favoriteList = document.querySelector('.favorite ul');
+		    // Hide the favorite list by default
+		    favoriteList.style.display = 'none';
+		
+		    // Add event listener to the favorite list item
+		    const favoriteItem = document.querySelector('.favorite');
+		    favoriteItem.addEventListener('click', function() {
+		      // Toggle the display of the favorite list
+		      if (favoriteList.style.display === 'none') {
+		        favoriteList.style.display = 'block';
+		      } else {
+		        favoriteList.style.display = 'none';
+		      }
+		    });
+		  </script>
+	<script>
+	  /* ...原有脚本... */
+	  /* 添加第二个HTML代码片段的脚本 */
+	  document.getElementById("background-input").addEventListener("change", function(event) {
+	    var file = event.target.files[0];
+	    var reader = new FileReader();
+	    reader.onload = function(e) {
+	      document.body.style.backgroundImage = "url('" + e.target.result + "')";
+	    };
+	    reader.readAsDataURL(file);
+	  });
+	</script>
+  </body>
+</html>
