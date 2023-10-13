@@ -87,7 +87,7 @@ div.content {
 
 <div class="content">
   <?php
-  	$conn = mysqli_connect("localhost", "root", "", "my");
+  	$conn = mysqli_connect("mysql.sqlpub.com:3306", "li1023", "56a1568713d16dba", "li1023");
   	
       // 从数据库中获取链接
       $sql = "SELECT * FROM link3";

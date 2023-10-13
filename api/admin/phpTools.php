@@ -2,7 +2,7 @@
 //封装php代码操作数据库增删改
 function mysqli_excute_zsg($sql){
     //1.连接数据库
-    $link = mysqli_connect('localhost','root','','my');
+    $link = mysqli_connect("mysql.sqlpub.com:3306", "li1023", "56a1568713d16dba", "li1023");
     mysqli_set_charset($link,'utf8');
     //2.准备sql语句(参数传递过来的)执行
     $res = mysqli_query($link,$sql);
@@ -15,7 +15,7 @@ function mysqli_excute_zsg($sql){
 //封装php代码操作数据库 查
 function mysqli_excute_select($sql){
    //1.连接数据库
-   $link = mysqli_connect('localhost','root','','my');
+   $link = mysqli_connect("mysql.sqlpub.com:3306", "li1023", "56a1568713d16dba", "li1023");
    mysqli_set_charset($link,'utf8');
    //2.准备sql语句(参数传递过来的)执行
    $res = mysqli_query($link,$sql);
