@@ -39,7 +39,7 @@
 		}
 		
 		a:hover {
-		  color: red; /* 鼠标悬停时的颜色 */
+		  color: #aaaaff; /* 鼠标悬停时的颜色 */
 		}
 		
 		.head {
@@ -58,7 +58,6 @@
             padding: 0 50px;
         }
 
-
 		nav {
 	        background-color: rgba(255, 255, 255, 0.4);
 	        height: 80px;
@@ -69,12 +68,6 @@
 	        padding: 0 50px;
 			
 		}
-
-		nav .logo {
-	        height: 50px;
-	        margin-right: auto;
-		}
-
 
 		header {
 	        background-color: rgba(255, 255, 255, 0.4);
@@ -100,47 +93,4 @@
 		nav ul li {
 		  display: inline; /* 将列表项显示为行内元素 */
 		  margin-right: 10px; /* 设置列表项之间的右边距 */
-		}
-		
-		.search-container {
-		  text-align: center; /* 将搜索框居中对齐 */
-		  margin-top: 20px; /* 设置顶部外边距 */
-		}
-		
-		.search-container input[type=text] {
-		  padding: 10px; /* 设置内边距 */
-		  width: 300px; /* 设置宽度 */
-		}
-		
-		.search-container select {
-		  padding: 10px; /* 设置内边距 */
-		}
-		
-		.search-container button {
-		  padding: 10px; /* 设置内边距 */
-		  background-color: #4CAF50; /* 设置背景颜色 */
-		  color: white; /* 设置文字颜色 */
-		  border: none; /* 去除边框 */
-		  cursor: pointer; /* 设置鼠标样式为手型 */
-		}
-		
-		.website-grid {
-		  display: grid; /* 使用网格布局 */
-		  grid-template-columns: repeat(4, 1fr); /* 设置网格列的数量和宽度 */
-		  grid-gap: 20px; /* 设置网格间距 */
-		  margin-top: 20px; /* 设置顶部外边距 */
-		  padding: 0 60px; /* 添加左右边距 */
-		}
-		
-		.website-grid-item {
-		  text-align: center; /* 将网格项内的内容居中对齐 */
-		  padding: 10px; /* 设置内边距 */
-		  background-color: rgba(159, 159, 159, 0.4); /* 设置背景颜色 */
-		  border-radius: 10px; /* 设置边框圆角 */
-		}
-		
-		.website-grid-item img {
-		  width: 50px; /* 设置图片宽度 */
-		  height: 50px; /* 设置图片高度 */
-		  margin-bottom: 10px; /* 设置底部外边距 */
 		}

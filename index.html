@@ -1,28 +1,73 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>晚夜深秋-首页</title>
+	<title>晚夜深秋-首页</title>
 	<link rel="stylesheet" href="css/index.css">
+	
+	<style>
+		.search-container {
+		  text-align: center; /* 将搜索框居中对齐 */
+		  margin-top: 20px; /* 设置顶部外边距 */
+		}
+		
+		.search-container input[type=text] {
+		  padding: 10px; /* 设置内边距 */
+		  width: 300px; /* 设置宽度 */
+		}
+		
+		.search-container select {
+		  padding: 10px; /* 设置内边距 */
+		}
+		
+		.search-container button {
+		  padding: 10px; /* 设置内边距 */
+		  background-color: #4CAF50; /* 设置背景颜色 */
+		  color: white; /* 设置文字颜色 */
+		  border: none; /* 去除边框 */
+		  cursor: pointer; /* 设置鼠标样式为手型 */
+		}
+		
+		.website-grid {
+		  display: grid; /* 使用网格布局 */
+		  grid-template-columns: repeat(4, 1fr); /* 设置网格列的数量和宽度 */
+		  grid-gap: 20px; /* 设置网格间距 */
+		  margin-top: 20px; /* 设置顶部外边距 */
+		  padding: 0 60px; /* 添加左右边距 */
+		}
+		
+		.website-grid-item {
+		  text-align: center; /* 将网格项内的内容居中对齐 */
+		  padding: 10px; /* 设置内边距 */
+		  background-color: rgba(159, 159, 159, 0.4); /* 设置背景颜色 */
+		  border-radius: 10px; /* 设置边框圆角 */
+		}
+		
+		.website-grid-item img {
+		  width: 50px; /* 设置图片宽度 */
+		  height: 50px; /* 设置图片高度 */
+		  margin-bottom: 10px; /* 设置底部外边距 */
+		}
+	</style>
 </head>
 <body>
 	<header>
 	    <h1>光是遇见，就已经很美好了</h1>
-	  </header>
+	</header>
 
-	  <nav>
+	<nav>
 	    <ul>
-	      <li><a href="https://www.1023.love">首页</a></li>
-	      <li><a href="https://painting.1023.love">绘画</a></li>
-	      <li><a href="https://blog.1023.love">博客</a></li>
-		  <li><a href="https://test.1023.love">测试</a></li>
-		  
-		  <li><a href="#" >小游戏</a></li>
-		  <li><a href="#" >音乐</a></li>
-		  <li><a href="#" >看电影</a></li>
-		  <li><a href="#" >仓库</a></li>
-		  <li><a href="#" >在线聊天</a></li>
-	    </ul>
-	  </nav>
+			<li><a href="https://www.1023.love">首页</a></li>
+			<li><a href="https://painting.1023.love">绘画</a></li>
+			<li><a href="https://blog.1023.love">博客</a></li>
+			<li><a href="https://test.1023.love">测试</a></li>
+			
+			<li><a href="#" >小游戏</a></li>
+			<li><a href="#" >音乐</a></li>
+			<li><a href="#" >看电影</a></li>
+			<li><a href="#" >仓库</a></li>
+			<li><a href="#" >在线聊天</a></li>
+		</ul>
+	</nav>
 	  
 	  <div class="search-container">
 	    <input type="text" id="search-input" placeholder="搜索">
