@@ -1,8 +1,7 @@
-body {
-    margin: 0;
-    min-height: 100vh;
-    /* height: 100%;
-	width: 100%; */
+	body {
+	font-family: Arial, sans-serif; /* 设置字体 */
+	margin: 0; /* 去除页面的默认边距 */
+	padding: 0; /* 去除页面的默认内边距 */
     /* 能够融合背景图片的颜色 */
     background-color: #ffffff;
     /* 背景图片 */
@@ -32,9 +31,18 @@ body {
 	
 	/* justify-content: center;
 	display: flex; */
-}
-
-.head {
+	}
+		
+		a {
+		  color: inherit; /* 继承父元素的文本颜色 */
+		  text-decoration: none; /* 去除下划线 */
+		}
+		
+		a:hover {
+		  color: red; /* 鼠标悬停时的颜色 */
+		}
+		
+		.head {
             position: fixed;
             
             width: 100%;
@@ -51,7 +59,7 @@ body {
         }
 
 
-nav {
+		nav {
 	        background-color: rgba(255, 255, 255, 0.4);
 	        height: 80px;
 	        display: flex;
@@ -60,80 +68,79 @@ nav {
 	        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 	        padding: 0 50px;
 			
-}
+		}
 
-nav .logo {
+		nav .logo {
 	        height: 50px;
 	        margin-right: auto;
-}
+		}
 
-nav ul.menu {
-	        display: flex;
-}
 
-nav ul.menu li {
-	        list-style: none;
-}
-
-nav ul.menu li a {
-	        display: block;
-	        padding: 0 20px;
-	        color: #474747;
-	        text-decoration: none;
-	        font-weight: bold;
-}
-
-header {
+		header {
 	        background-color: rgba(255, 255, 255, 0.4);
+			padding: 10px; /* 设置内边距 */
 	        /* height: 300px; */
 	        display: flex;
 	        flex-direction: column;
 	        justify-content: center;
 	        align-items: center;
-}
+		}
 
-header h1 {
+		header h1 {
 		  color: #636363; /* 设置文字颜色 */
 		  margin: 0; /* 去除标题的默认外边距 */
 		}
 
-section {
-	        padding: 50px;
-}
-
-section p {
-	        font-size: 24px;
-	        line-height: 1.5;
-}
-
-footer {
-	        background: #000000;
-	        color: #fff;
-	        height: 50px;
-	        display: flex;
-	        align-items: center;
-	        justify-content: center;
-}
-
-
-
-
-
-footer p {
-	        margin: 0;
-	        font-size: 18px;
-}
-
-.logo img{
-	        width: 100%;
-	        height: 100%;
-}
-
-.nav .menu li a:hover{
-	        color: blue;
-}
-
-.mycss:hover{
-	font-weight: bold;
-	color: azure;
-}
+		nav ul {
+		  list-style-type: none; /* 去除列表项的默认样式 */
+		  margin: 0; /* 去除列表的默认外边距 */
+		  padding: 0; /* 去除列表的默认内边距 */
+		}
+		
+		nav ul li {
+		  display: inline; /* 将列表项显示为行内元素 */
+		  margin-right: 10px; /* 设置列表项之间的右边距 */
+		}
+		
+		.search-container {
+		  text-align: center; /* 将搜索框居中对齐 */
+		  margin-top: 20px; /* 设置顶部外边距 */
+		}
+		
+		.search-container input[type=text] {
+		  padding: 10px; /* 设置内边距 */
+		  width: 300px; /* 设置宽度 */
+		}
+		
+		.search-container select {
+		  padding: 10px; /* 设置内边距 */
+		}
+		
+		.search-container button {
+		  padding: 10px; /* 设置内边距 */
+		  background-color: #4CAF50; /* 设置背景颜色 */
+		  color: white; /* 设置文字颜色 */
+		  border: none; /* 去除边框 */
+		  cursor: pointer; /* 设置鼠标样式为手型 */
+		}
+		
+		.website-grid {
+		  display: grid; /* 使用网格布局 */
+		  grid-template-columns: repeat(4, 1fr); /* 设置网格列的数量和宽度 */
+		  grid-gap: 20px; /* 设置网格间距 */
+		  margin-top: 20px; /* 设置顶部外边距 */
+		  padding: 0 60px; /* 添加左右边距 */
+		}
+		
+		.website-grid-item {
+		  text-align: center; /* 将网格项内的内容居中对齐 */
+		  padding: 10px; /* 设置内边距 */
+		  background-color: rgba(159, 159, 159, 0.4); /* 设置背景颜色 */
+		  border-radius: 10px; /* 设置边框圆角 */
+		}
+		
+		.website-grid-item img {
+		  width: 50px; /* 设置图片宽度 */
+		  height: 50px; /* 设置图片高度 */
+		  margin-bottom: 10px; /* 设置底部外边距 */
+		}
