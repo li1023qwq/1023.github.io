@@ -4,7 +4,7 @@ body {
     /* height: 100%;
 	width: 100%; */
     /* 能够融合背景图片的颜色 */
-    background-color: #1064ff;
+    background-color: #ffffff;
     /* 背景图片 */
     background-image:
         radial-gradient(closest-side, rgba(156, 123, 255, 1.0), rgba(235, 105, 78, 0)),
