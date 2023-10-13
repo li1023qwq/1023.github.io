@@ -14,10 +14,7 @@
 		  padding: 10px; /* 设置内边距 */
 		}
 		
-		h1 {
-		  color: #FFF; /* 设置文字颜色 */
-		  margin: 0; /* 去除标题的默认外边距 */
-		}
+		
 		
 		nav {
 		  background-color: #DDD; /* 设置背景颜色 */
@@ -94,23 +91,7 @@
 		}
 		
 		
-		/* 添加收藏夹的样式 */
-		nav ul li.favorite {
-		  position: relative; /* 设置为相对定位 */
-		}
 		
-		nav ul li.favorite:hover ul {
-		  display: block; /* 鼠标悬停时显示下拉菜单 */
-		}
-		
-		nav ul li.favorite ul {
-		  display: none; /* 默认隐藏下拉菜单 */
-		  position: absolute; /* 设置为绝对定位 */
-		  top: 100%; /* 下拉菜单相对于父元素的位置 */
-		  left: 10; /* 下拉菜单相对于父元素的位置 */
-		  background-color: #DDD; /* 设置背景颜色 */
-		  padding: 10px; /* 设置内边距 */
-		}
 	</style>
 	
   <style>
@@ -147,6 +128,9 @@
 	
 	
   </style>
+	
+	
+	<link rel="stylesheet" href="css/index.css">
 </head>
 <body>
 	<header>
@@ -161,13 +145,12 @@
 	      <li><a href="https://painting.1023.love">绘画</a></li>
 	      <li><a href="https://blog.1023.love">博客</a></li>
 		  <li><a href="https://test.1023.love">测试</a></li>
-		  <li class="favorite">云盘
-		    <ul>
-		      <li><a href="https://cloud.189.cn/web/main/file/folder/82368145672960597">奶牛</a></li>
-		      <li><a href="https://pc.woozooo.com/u">蓝奏</a></li>
-		      <li><a href="https://cloud.189.cn/web/main/file/folder/82368145672960597">天翼</a></li>
-		    </ul>
-		  </li>
+		  
+		  <li><a href="#" >小游戏</a></li>
+		  <li><a href="#" >音乐</a></li>
+		  <li><a href="#" >看电影</a></li>
+		  <li><a href="#" >仓库</a></li>
+		  <li><a href="#" >在线聊天</a></li>
 	    </ul>
 	  </nav>
 	  
@@ -176,7 +159,7 @@
 	    <select id="search-engine">
 	      <option value="https://www.bing.com/search?q=">Bing</option>
 		  <option value="https://www.google.com/search?q=">Google</option>
-	      <option value="https://search.yahoo.com/search?p=">Yahoo</option>
+	      <option value="https://www.baidu.com/search?p=">Baidu</option>
 	    </select>
 	    <button onclick="search()">搜索</button>
 	  </div>
