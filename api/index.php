@@ -1,53 +1,69 @@
-<?php
-session_start();
 
-// 连接到数据库
-$mysqli = new mysqli('mysql.sqlpub.com:3306', 'li1023', '56a1568713d16dba', 'li1023');
+<!DOCTYPE html>
+<html>
+<head>
+    <title>在线聊天</title>
+    <meta http-equiv="refresh" content="5"> <!-- 每5秒刷新一次页面 -->
+</head>
+<body>
+    <h1>在线聊天</h1>
 
-// 检查连接是否成功
-if ($mysqli->connect_errno) {
-    die('连接数据库失败：' . $mysqli->connect_error);
-}
-
-// 处理用户发送的消息
-if (isset($_SESSION['username']) && isset($_POST['message'])) {
-    $message = $mysqli->real_escape_string($_POST['message']);
-    $timestamp = time();
-    $stmt = $mysqli->prepare("INSERT INTO messages (username, message, timestamp) VALUES (?, ?, ?)");
-    $stmt->bind_param('ssi', $_SESSION['username'], $message, $timestamp);
-    $stmt->execute();
-}
-
-// 获取最近的50条消息
-$result = $mysqli->query("SELECT * FROM messages ORDER BY timestamp DESC LIMIT 50");
-
-// 输出消息
-while ($row = $result->fetch_assoc()) {
-    echo '<div><strong>' . $row['username'] . '</strong>: ' . $row['message'] . '</div>';
-}
-
-// 关闭数据库连接
-$mysqli->close();
-?>
-
-<!-- 聊天输入框 -->
-<form method="post">
     <?php
-    // 检查用户是否已登录
-    if (isset($_SESSION['username'])) {
-        echo '<input type="text" name="message" placeholder="消息">';
-        echo '<button type="submit">发送</button>';
-        echo '<a href="logout.php">退出</a>';
+    // 连接到MySQL数据库
+    $conn = mysqli_connect('mysql.sqlpub.com:3306', 'li1023', '56a1568713d16dba', 'li1023');
+
+    // 检查数据库连接是否成功
+    if (!$conn) {
+        die("数据库连接失败: " . mysqli_connect_error());
+    }
+
+    // 获取聊天记录
+    $query = "SELECT * FROM chat ORDER BY id DESC";
+    $result = mysqli_query($conn, $query);
+
+    // 显示聊天记录
+    if (mysqli_num_rows($result) > 0) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            echo "<p><strong>" . $row['username'] . ":</strong> " . $row['message'] . "</p>";
+        }
     } else {
-        echo '<input type="text" name="username" placeholder="用户名">';
-        echo '<button type="submit">登录</button>';
+        echo "<p>暂无聊天记录</p>";
+    }
+
+    // 关闭数据库连接
+    mysqli_close($conn);
+    ?>
+
+    <form method="post" action="">
+        <input type="text" name="username" placeholder="用户名" required><br>
+        <textarea name="message" placeholder="请输入消息" required></textarea><br>
+        <input type="submit" value="发送">
+    </form>
+
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // 获取用户输入的用户名和消息
+        $username = $_POST['username'];
+        $message = $_POST['message'];
+
+        // 连接到MySQL数据库
+        $conn = mysqli_connect("localhost", "username", "password", "database_name");
+
+        // 检查数据库连接是否成功
+        if (!$conn) {
+            die("数据库连接失败: " . mysqli_connect_error());
+        }
+
+        // 插入聊天记录
+        $query = "INSERT INTO chat (username, message) VALUES ('$username', '$message')";
+        mysqli_query($conn, $query);
+
+        // 关闭数据库连接
+        mysqli_close($conn);
+
+        // 重定向到当前页面，以便刷新聊天记录
+        header("Location: " . $_SERVER['PHP_SELF']);
     }
     ?>
-</form>
-
-<!-- 自动刷新 -->
-<script>
-    setInterval(function() {
-        location.reload();
-    }, 5000);
-</script>
+</body>
+</html>
