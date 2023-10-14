@@ -18,7 +18,7 @@
     }
 
     // 获取聊天记录
-    $query = "SELECT * FROM chat ORDER BY id DESC";
+    $query = "SELECT * FROM messages ORDER BY id DESC";
     $result = mysqli_query($conn, $query);
 
     // 显示聊天记录
@@ -47,7 +47,7 @@
         $message = $_POST['message'];
 
         // 连接到MySQL数据库
-        $conn = mysqli_connect("localhost", "username", "password", "database_name");
+        $conn = mysqli_connect('mysql.sqlpub.com:3306', 'li1023', '56a1568713d16dba', 'li1023');
 
         // 检查数据库连接是否成功
         if (!$conn) {
