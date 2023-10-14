@@ -1,4 +1,4 @@
-
+// 'mysql.sqlpub.com:3306', 'li1023', '56a1568713d16dba', 'li1023'
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,7 +18,7 @@
     }
 
     // 获取聊天记录
-    $query = "SELECT * FROM messages ORDER BY id DESC";
+    $query = "SELECT * FROM chat ORDER BY id DESC";
     $result = mysqli_query($conn, $query);
 
     // 显示聊天记录
@@ -35,8 +35,8 @@
     ?>
 
     <form method="post" action="">
-        <input type="text" name="username" placeholder="用户名" required><br>
-        <textarea name="message" placeholder="请输入消息" required></textarea><br>
+        <input type="text" name="username" placeholder="用户名" value="<?php echo isset($_POST['username']) ? $_POST['username'] : ''; ?>" required><br>
+        <textarea name="message" placeholder="请输入消息" required><?php echo isset($_POST['message']) ? $_POST['message'] : ''; ?></textarea><br>
         <input type="submit" value="发送">
     </form>
 
