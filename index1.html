@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>晚夜深秋-首页</title>
+	<link rel="stylesheet" href="css/index.css">
+	
+	<style>
+		.search-container {
+		  text-align: center; /* 将搜索框居中对齐 */
+		  margin-top: 20px; /* 设置顶部外边距 */
+		}
+		
+		.search-container input[type=text] {
+		  padding: 10px; /* 设置内边距 */
+		  width: 300px; /* 设置宽度 */
+		}
+		
+		.search-container select {
+		  padding: 10px; /* 设置内边距 */
+		}
+		
+		.search-container button {
+		  padding: 10px; /* 设置内边距 */
+		  background-color: #4CAF50; /* 设置背景颜色 */
+		  color: white; /* 设置文字颜色 */
+		  border: none; /* 去除边框 */
+		  cursor: pointer; /* 设置鼠标样式为手型 */
+		}
+		
+		.website-grid {
+		  display: grid; /* 使用网格布局 */
+		  grid-template-columns: repeat(4, 1fr); /* 设置网格列的数量和宽度 */
+		  grid-gap: 20px; /* 设置网格间距 */
+		  margin-top: 20px; /* 设置顶部外边距 */
+		  padding: 0 60px; /* 添加左右边距 */
+		}
+		
+		.website-grid-item {
+		  text-align: center; /* 将网格项内的内容居中对齐 */
+		  padding: 10px; /* 设置内边距 */
+		  background-color: rgba(159, 159, 159, 0.4); /* 设置背景颜色 */
+		  border-radius: 10px; /* 设置边框圆角 */
+		}
+		
+		.website-grid-item img {
+		  width: 50px; /* 设置图片宽度 */
+		  height: 50px; /* 设置图片高度 */
+		  margin-bottom: 10px; /* 设置底部外边距 */
+		}
+	</style>
+</head>
+<body>
+	<header>
+	    <h1>光是遇见，就已经很美好了</h1>
+	</header>
+
+	<nav>
+	    <ul>
+			<li><a href="https://www.1023.love">首页</a></li>
+			<li><a href="https://painting.1023.love">绘画</a></li>
+			<li><a href="https://blog.1023.love">博客</a></li>
+			<li><a href="https://test.1023.love">测试</a></li>
+			
+			<li><a href="api/index.php">PHP测试</a></li>
+			<li><a href="api/php.php">PHP信息</a></li>
+			<li><a href="http://www.sqlpub.com:8080/#/" >数据库</a></li>
+		</ul>
+	</nav>
+	  
+	  <div class="search-container">
+	    <input type="text" id="search-input" placeholder="搜索">
+	    <select id="search-engine">
+	      <option value="https://www.bing.com/search?q=">Bing</option>
+		  <option value="https://www.google.com/search?q=">Google</option>
+	      <option value="https://www.baidu.com/search?p=">Baidu</option>
+	    </select>
+	    <button onclick="search()">搜索</button>
+	  </div>
+	  
+	<div class="website-grid">
+		
+		<!-- <div class="website-grid-item">
+			<a href="#"><img src="#" alt="QQ邮箱"></a>
+			<p><a href="#">QQ邮箱</a></p>
+		</div> -->
+		
+		<div class="website-grid-item">
+			<a href="https://www.peterx.cn/sites/1112.html"><img src="https://ts4.cn.mm.bing.net/th?id=ODLS.e7451269-3a76-44de-89ea-24a795717cde&w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2" alt="PM-HOME新榜"></a>
+			<p><a href="https://www.peterx.cn/sites/1112.html">PM-HOME新榜</a></p>
+		</div>
+		<div class="website-grid-item">
+			<a href="https://www.apple.com"><img src="https://tse3-mm.cn.bing.net/th/id/OIP-C.wodz-LeG2gf9YLPaZ9ApvgAAAA?w=194&h=194&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Apple"></a>
+			<p><a href="https://www.apple.com">Apple</a></p>
+		</div>
+		<div class="website-grid-item">
+			<a href="https://www.amazon.com"><img src="https://tse2-mm.cn.bing.net/th/id/OIP-C.uApaXrK1aGtFQNF87dk-NwHaFj?w=200&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Amazon"></a>
+			<p><a href="https://www.amazon.com">Amazon</a></p>
+		</div>
+		<div class="website-grid-item">
+			<a href="https://mail.qq.com/"><img src="https://tse4-mm.cn.bing.net/th/id/OIP-C.X-JG_KocR1n0MA7X30o8pwHaHa?w=180&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="QQ邮箱"></a>
+			<p><a href="https://mail.qq.com/">QQ邮箱</a></p>
+		</div>
+		<div class="website-grid-item">
+			<a href="https://zhtj.youth.cn/zhtj/mine/"><img src="https://ts4.cn.mm.bing.net/th?id=ODLS.db1fc6ed-a19c-4724-91e3-ddd5dcf06c40&w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2" alt="智慧团建"></a>
+			<p><a href="https://zhtj.youth.cn/zhtj/mine/">智慧团建</a></p>
+		</div>
+		<div class="website-grid-item">
+			<a href="https://cet-kw.neea.edu.cn/"><img src="https://ts4.cn.mm.bing.net/th?id=ODLS.b0102c93-6ac9-4e21-b455-b5364bb9720d&w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2" alt="NCRE英语"></a>
+			<p><a href="https://cet-kw.neea.edu.cn/">NCRE英语</a></p>
+		</div>
+		<div class="website-grid-item">
+			<a href="https://ncre.neea.edu.cn/"><img src="https://ts4.cn.mm.bing.net/th?id=ODLS.b0102c93-6ac9-4e21-b455-b5364bb9720d&w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2" alt="NCRE计算机"></a>
+			<p><a href="https://ncre.neea.edu.cn/">NCRE计算机</a></p>
+		</div>
+		<div class="website-grid-item">
+			<a href="https://passport2.chaoxing.com/login?fid=12&refer=http%3A%2F%2Fi.chaoxing.com%2Fbase%3Ft%3D1666962206542"><img src="https://ts1.cn.mm.bing.net/th/id/R-C.f3fef9691a2f4dd17465cdd6d381a951?rik=9SbpR%2ffugQtW3Q&riu=http%3a%2f%2fwww.kuaipng.com%2fUploads%2fpic%2fw%2f2021%2f11-15%2f112969%2fwater_112969_698_698_.png&ehk=xJVCpbJZs5V7axdgYR3eY6ezRFmtDq7Op1pLWOIvmMA%3d&risl=&pid=ImgRaw&r=0" alt="学习通"></a>
+			<p><a href="https://passport2.chaoxing.com/login?fid=12&refer=http%3A%2F%2Fi.chaoxing.com%2Fbase%3Ft%3D1666962206542">学习通</a></p>
+		</div>
+		
+		<div class="website-grid-item">
+		  <a href="https://yiyan.baidu.com/"><img src="https://ts1.cn.mm.bing.net/th?id=ODLS.109ce37a-9c4b-4b1b-8b28-696152e135c6&w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2" alt="文心一言"></a>
+		  <p><a href="https://yiyan.baidu.com/">文心一言</a></p>
+		</div>
+		<div class="website-grid-item">
+		  <a href="https://github.com/"><img src="https://ts4.cn.mm.bing.net/th?id=ODLS.fe916855-7a5a-4f44-b52e-1c5c31f0329d&w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2" alt="GitHub"></a>
+		  <p><a href="https://github.com/">GitHub</a></p>
+		</div>
+		<div class="website-grid-item">
+			<a href="https://www.douyin.com/discover"><img src="https://ts3.cn.mm.bing.net/th?id=ODLS.9ac2eadf-4675-4260-8bb4-a1a2ba9c8537&w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2" alt="抖音"></a>
+			<p><a href="https://www.douyin.com/discover">抖音</a></p>
+		</div>
+		<div class="website-grid-item">
+			<a href="https://mp.weixin.qq.com/cgi-bin/loginpage?url=%2Fcgi-bin%2Fhome%3Ft%3Dhome%2Findex%26token%3D561326373%26lang%3Dzh_CN"><img src="https://ts2.cn.mm.bing.net/th?id=ODLS.7cb29528-0353-4c9f-8a7b-595b55bd964b&w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2" alt="微信公众平台"></a>
+			<p><a href="https://mp.weixin.qq.com/cgi-bin/loginpage?url=%2Fcgi-bin%2Fhome%3Ft%3Dhome%2Findex%26token%3D561326373%26lang%3Dzh_CN">微信公众平台</a></p>
+		</div>
+		<div class="website-grid-item">
+			<a href="https://cloud.tencent.com/login?s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Fdomain%2Fall-domain"><img src="https://ts4.cn.mm.bing.net/th?id=ODLS.630ccce4-f7e5-4ff9-96a7-3168d9680493&w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2" alt="腾讯云"></a>
+			<p><a href="https://cloud.tencent.com/login?s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Fdomain%2Fall-domain">腾讯云</a></p>
+		</div>
+		<div class="website-grid-item">
+			<a href="https://www.runoob.com/"><img src="https://ts1.cn.mm.bing.net/th?id=ODLS.cc1244f4-c576-40dc-8423-06895c0f5444&w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2" alt="菜鸟教程"></a>
+			<p><a href="https://www.runoob.com/">菜鸟教程</a></p>
+		</div>
+		<div class="website-grid-item">
+		  <a href="https://vercel.com/"><img src="https://ts2.cn.mm.bing.net/th?id=ODLS.00158dc5-0efb-4f0b-95b5-203d46dd3b23&w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2" alt="Vercel"></a>
+		  <p><a href="https://vercel.com/">Vercel</a></p>
+		</div>
+		<div class="website-grid-item">
+		  <a href="gd.html"><img src="https://ts1.cn.mm.bing.net/th/id/R-C.3efe7f715a0cb1b9345ee90a650794bb?rik=Tr2JhultqEuNbQ&riu=http%3a%2f%2ficon.chrafz.com%2fuploads%2f151023%2f1-151023212224428.png&ehk=fZ7RaQ8tQw3vUAjewiZLMXdYxpnaGzM%2fg5ddhx2hEoM%3d&risl=&pid=ImgRaw&r=0" alt="更多"></a>
+		  <p><a href="gd.html">更多</a></p>
+		</div>
+	</div>
+	<script>
+	  function search() {
+	    var searchInput = document.getElementById("search-input").value;
+	    var searchEngine = document.getElementById("search-engine").value;
+	    var searchUrl = searchEngine + encodeURIComponent(searchInput);
+	    window.location.href = searchUrl;
+	  }
+	</script>
+</body>
+</html>
