@@ -1,32 +1,27 @@
-// login.php - 登录页面
+<?php
+// 连接MySQL数据库
+$servername = "mysql.sqlpub.com:3306";
+$username = "li1023";
+$password = "56a1568713d16dba";
+$dbname = "li1023";
 
-session_start();   // 启动会话
-
-include "dbconfig.php";   // 引入数据库配置文件
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST["username"];
-    $password = $_POST["password"];
-
-    // 验证用户名和密码是否正确
-    $query = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
-    $result = mysqli_query($conn, $query);
-    if (mysqli_num_rows($result) > 0) {
-        $_SESSION["username"] = $username;   // 设置会话变量
-        header("Location: index.php");       // 跳转到主页
-        exit();
-    } else {
-        echo "用户名或密码错误";
-    }
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn->connect_error) {
+    die("连接失败: " . $conn->connect_error);
 }
 
-mysqli_close($conn);   // 关闭数据库连接
-?>
+// 获取表单数据
+$username = $_POST['username'];
+$password = $_POST['password'];
 
-<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-    <label for="username">用户名：</label>
-    <input type="text" name="username" required><br>
-    <label for="password">密码：</label>
-    <input type="password" name="password" required><br>
-    <input type="submit" value="登录">
-</form>
+// 检查用户名和密码是否匹配
+$sql = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+    echo "登录成功";
+} else {
+    echo "登录失败";
+}
+
+$conn->close();
+?>
