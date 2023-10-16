@@ -1,9 +1,9 @@
 <?php
-// 连接数据库
-$servername = "localhost";
-$username = "root";
-$password = "password";
-$dbname = "mydb";
+// 连接MySQL数据库
+$servername = "mysql.sqlpub.com:3306";
+$username = "li1023";
+$password = "56a1568713d16dba";
+$dbname = "li1023";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
