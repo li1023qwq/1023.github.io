@@ -1,27 +1,51 @@
-<?php
-// 连接MySQL数据库
-$servername = "mysql.sqlpub.com:3306";
-$username = "li1023";
-$password = "56a1568713d16dba";
-$dbname = "li1023";
+<!DOCTYPE html>
+<html>
+<head>
+    <title>登录</title>
+    <link rel="stylesheet" href="login.css">
+    <meta name="content-type"; charset="UTF-8">
+</head>
+<body>
+<div id="bigBox">
+        <h1>登录页面</h1>
 
-$conn = new mysqli($servername, $username, $password, $dbname);
-if ($conn->connect_error) {
-    die("连接失败: " . $conn->connect_error);
-}
+        <form id="loginform" action="loginaction.php" method="post">
+            <div class="inputBox">
 
-// 获取表单数据
-$username = $_POST['username'];
-$password = $_POST['password'];
+                    <div class="inputText">
+                        <input type="text" id="name" name="username" placeholder="Username" value="">
+                    </div>
+                <div class="inputText">
+                   <input type="password" id="password" name="password" placeholder="Password">
+                </div>
+                <br >
+                <div style="color: white;font-size: 12px" >
+                    <?php
+                    $err = isset($_GET["err"]) ? $_GET["err"] : "";
+                    switch ($err) {
+                        case 1:
+                            echo "用户名或密码错误！";
+                            break;
 
-// 检查用户名和密码是否匹配
-$sql = "SELECT * FROM users WHERE username='$username' AND password='$password'";
-$result = $conn->query($sql);
-if ($result->num_rows > 0) {
-    echo "登录成功";
-} else {
-    echo "登录失败";
-}
+                        case 2:
+                            echo "用户名或密码不能为空！";
+                            break;
+                    } ?>
+                </div>
+                <div class="register">
+                    <a href="register.php" style="color: white">注册账号</a>
+                </div>
+                <div class="fgtpwd">
+                    <a href="#" style="color: white">忘记密码</a>
+                </div>
+            </div>
+           <div>
+               <input type="submit" id="login" name="login" value="登录" class="loginButton m-left">
+               <input type="reset" id="reset" name="reset" value="重置" class="loginButton">
+           </div>
+</div>
+</div>
+</form>
+</body>
+</html>
 
-$conn->close();
-?>

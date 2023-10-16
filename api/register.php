@@ -1,34 +1,74 @@
-<?php
-// 连接MySQL数据库
-$servername = "mysql.sqlpub.com:3306";
-$username = "li1023";
-$password = "56a1568713d16dba";
-$dbname = "li1023";
+<!DOCTYPE html>
+<html>
+<head>
+    <title>注册</title>
+    <link rel="stylesheet" href="register.css">
+    <meta name="content-type"; charset="UTF-8">
+</head>
+<body>
+<div id="bigBox">
+        <h1>注册页面</h1>
 
-$conn = new mysqli($servername, $username, $password, $dbname);
-if ($conn->connect_error) {
-    die("连接失败: " . $conn->connect_error);
-}
 
-// 获取表单数据
-$username = $_POST['username'];
-$password = $_POST['password'];
+        <form action="registeraction.php" method="post">
+            <div class="inputBox">
 
-// 检查用户名是否已存在
-$sql = "SELECT * FROM users WHERE username='$username'";
-$result = $conn->query($sql);
-if ($result->num_rows > 0) {
-    echo "用户名已存在";
-    exit;
-}
+                <div class="inputText">
+                <input type="text" id="id_name" name="username" required="required" placeholder="Username">
+                </div>
+                <div class="inputText">
+                <input type="password" id="password" name="password" required="required" placeholder="Password">
+                </div>
+                <div class="inputText">
+                <input type="password" id="re_password" name="re_password" required="required" placeholder="PasswordAgain">
+                </div>
+                <div class="inputText m-plc" style="color: white;opacity: 70%">
+                    Sex：
+                <input type="radio" id="sex" name="sex" value="mam" style="color: white">男
+                <input type="radio" id="sex" name="sex" value="woman" style="color: white">女
+                </div>
+                <div class="inputText">
+                <input type="text" id="qq" name="qq" required="required" placeholder="QQ">
+                </div>
+                <div class="inputText">
+                <input type="email" id="email" name="email" required="required" placeholder="Email">
+                </div>
+                <div class="inputText">
+                <input type="text" id="phone" name="phone" required="required" placeholder="Phone">
+                </div>
+                <div class="inputText">
+                <input type="text" id="address" name="address" required="required" placeholder="Address">
+                </div>
+                <br>
+                <div style="color: white;font-size: 12px" >
+                <!--提示信息-->
+                <?php
+                $err = isset($_GET["err"]) ? $_GET["err"] : "";
+                switch ($err) {
+                    case 1:
+                        echo "用户名已存在！";
+                        break;
 
-// 注册用户
-$sql = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
-if ($conn->query($sql) === TRUE) {
-    echo "注册成功";
-} else {
-    echo "注册失败: " . $conn->error;
-}
+                    case 2:
+                        echo "密码与重复密码不一致！";
+                        break;
 
-$conn->close();
-?>
+                    case 3:
+                        echo "注册成功！";
+                        break;
+                }
+                ?>
+                </div>
+            </div>
+            <div>
+                <input type="submit" id="register" name="register" value="注册" class="loginButton m-left">
+                <input type="reset" id="reset" name="reset" value="重置" class="loginButton">
+            </div>
+
+            <div class="register">
+            <a href="login.php" style="color: white">已有账号，去登录</a>
+            </div>
+        </form>
+</div>
+</body>
+</html>
