@@ -1,5 +1,5 @@
 <?php
-// 连接MySQL数据库
+// 建立数据库连接
 $servername = "mysql.sqlpub.com:3306";
 $username = "li1023qwq";
 $password = "81fbc8ed084fb42f";
