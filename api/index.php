@@ -9,8 +9,6 @@
     <div id="lineChartContainer" style="width: 800px; height: 600px;"></div>
     <div id="dataContainer"></div>
 
-    <button onclick="getData()">获取数据</button>
-
     <script>
         // 使用JavaScript代码来创建和配置图表
         var chartContainer = document.getElementById('chartContainer');
@@ -18,6 +16,11 @@
 
         var lineChartContainer = document.getElementById('lineChartContainer');
         var lineChart = echarts.init(lineChartContainer);
+
+        // 页面加载完成后自动获取数据
+        window.onload = function() {
+            getData();
+        };
 
         // 获取数据的函数
         function getData() {
@@ -81,7 +84,7 @@
 
                     // 在数据容器中展示数据
                     var dataContainer = document.getElementById('dataContainer');
-                    dataContainer.innerHTML = JSON.stringify(data);
+                    dataContainer.innerHTML = JSON.stringify(data, null, 4);
                 }
             };
             xhr.open("GET", "get_data.php", true);
