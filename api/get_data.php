@@ -13,7 +13,9 @@ if ($conn->connect_error) {
 }
 
 // 查询数据
-$sql = "SELECT * FROM game_online";
+$sql = "SELECT game_online.date, game_online.online_players, game_duration.average_duration
+        FROM game_online
+        JOIN game_duration ON game_online.date = game_duration.date";
 $result = $conn->query($sql);
 
 // 处理查询结果并将数据转换为JSON格式
