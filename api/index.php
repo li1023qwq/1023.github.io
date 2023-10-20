@@ -2,12 +2,66 @@
 <html>
 <head>
     <title>数据可视化大屏</title>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            height: 100vh;
+            width: 100vw;
+        }
+        .grid-item {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
     <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
 </head>
 <body>
-    <div id="chartContainer" style="width: 800px; height: 600px;"></div>
-    <div id="lineChartContainer" style="width: 800px; height: 600px;"></div>
-    <div id="dataContainer"></div>
+    <div class="grid-container">
+        <div id="chart1" class="grid-item"></div>
+        <div id="chart2" class="grid-item"></div>
+        <div id="chart3" class="grid-item"></div>
+        <div id="chart4" class="grid-item"></div>
+        <div id="globe" class="grid-item" style="grid-column: span 2; grid-row: span 2;"></div>
+    </div>
+
+    <script>
+        // 初始化所有的图表和地球仪
+        var chart1 = echarts.init(document.getElementById('chart1'));
+        var chart2 = echarts.init(document.getElementById('chart2'));
+        var chart3 = echarts.init(document.getElementById('chart3'));
+        var chart4 = echarts.init(document.getElementById('chart4'));
+        var globe = echarts.init(document.getElementById('globe'));
+
+        // 配置地球仪
+        globe.setOption({
+            globe: {
+                baseTexture: 'path/to/your/texture.jpg',
+                heightTexture: 'path/to/your/height_texture.jpg',
+                displacementScale: 0.04,
+                shading: 'realistic',
+                environment: 'path/to/your/environment_texture.jpg',
+                realisticMaterial: {
+                    roughness: 0.9
+                },
+                postEffect: {
+                    enable: true
+                },
+                light: {
+                    main: {
+                        intensity: 1,
+                        shadow: true
+                    },
+                    ambientCubemap: {
+                        texture: 'path/to/your/cubemap_texture.jpg',
+                        diffuseIntensity: 0.2
+                    }
+                }
+            }
+        });
+
+        // 在这里添加您的其他图表配置和数据获取代码
 
     <script>
         // 使用JavaScript代码来创建和配置图表
