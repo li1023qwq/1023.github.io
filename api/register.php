@@ -16,3 +16,20 @@ mysqli_close($connection);
 // 跳转到登录页面
 header('Location: login.html');
 ?>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+  <title>注册</title>
+</head>
+<body>
+  <h2>注册</h2>
+  <form action="register.php" method="POST">
+    <label for="username">用户名：</label>
+    <input type="text" name="username" required><br><br>
+    <label for="password">密码：</label>
+    <input type="password" name="password" required><br><br>
+    <input type="submit" value="注册">
+  </form>
+</body>
+</html>
