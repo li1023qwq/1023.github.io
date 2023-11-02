@@ -2,76 +2,18 @@
 <html lang="zh-CN">
 	<head>
 		<meta charset="utf-8">
-		<title>晚夜深秋-导航</title>
-
+		<title>晚夜深秋-个人任务</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="author" content="Lapus" />
-
-		<link rel="stylesheet" href="css/plugins.css" />
-		<link rel="stylesheet" href="css/style.css" />
-		<link rel="stylesheet" href="css/purple.css" />
-		<link rel="preload" href="css/urbanist.css" as="style" />
+		<link rel="stylesheet" href="../css/plugins.css" />
+		<link rel="stylesheet" href="../css/style.css" />
+		<link rel="stylesheet" href="../css/purple.css" />
+		<link rel="preload" href="../css/urbanist.css" as="style" />
 		<link rel="shortcut icon" href="https://www.logosc.cn/oss/icons/2022/06/02/e0UJFu2OHsecjv1.png">
-		<style>
-			.gd {
-			    /* 相对定位 */
-			    position: relative;
-			    width: 400px;
-			    height: 100px;
-			    line-height: 100px;
-			    text-align: center;
-			    text-decoration: none;
-			    text-transform: uppercase;
-			    font-size: 30px;
-			    color: #fff;
-			    /* 圆角属性 */
-			    border-radius: 10px;
-			    /* 背景渐变色 */
-			    background-image: linear-gradient(to right, #03a9f4, #f441a5, #ffeb3b, #09a8f4);
-			    /* 背景渐变色大小 */
-			    background-size: 400%;
-			    z-index: 1;
-			}
-			
-			/* 下面设计 发光效果 */
-			.gd::before {
-			    content: '';
-			    position: absolute;
-			    top: -5px;
-			    bottom: -5px;
-			    left: -5px;
-			    right: -5px;
-			    border-radius: 50px;
-			    /* 背景渐变色 */
-			    background-image: linear-gradient(to right, #03a9f4, #f441a5, #ffeb3b, #09a8f4);
-			    /* 背景渐变色大小 */
-			    background-size: 400%;
-			    /* 元素的位置 底层或者顶层  -值表示底层 + 值表示顶层 */
-			    z-index: -1;
-			    /* 设置模糊度 显示发光效果 */
-			    filter: blur(20px);
-			}
-			
-			.gd:hover {
-			    /* 动画 名称 时间 infinite 是无限次播放 */
-			    animation: sun 8s infinite;
-			}
-			
-			.gd:hover::before {
-			    animation: sun 8s infinite;
-			}
-			
-			@keyframes sun {
-			    100% {
-			        /* 背景位置 */
-			        background-position: -400% 0;
-			    }
-			}
-		 </style>
 		<style>
 			@font-face {
         font-family: Unicons;
-        src: url(fonts/Unicons.woff2) format("woff2"), url(fonts/Unicons.woff) format("woff");
+        src: url(../fonts/Unicons.woff2) format("woff2"), url(../fonts/Unicons.woff) format("woff");
         font-weight: 400;
         font-style: normal;
         font-display: block
@@ -79,31 +21,31 @@
 
       @font-face {
         font-family: Custom;
-        src: url(fonts/Custom.woff2) format("woff2"), url(fonts/Custom.woff) format("woff");
+        src: url(../fonts/Custom.woff2) format("woff2"), url(../fonts/Custom.woff) format("woff");
       }
 
       .img-mask.mask-1 img {
-        -webkit-mask-image: url(img/blob.svg) !important;
-        mask-image: url(img/blob.svg) !important;
+        -webkit-mask-image: url(../img/blob.svg) !important;
+        mask-image: url(../img/blob.svg) !important;
       }
 
       .img-mask.mask-2 img {
-        -webkit-mask-image: url(img/hex.svg) !important;
-        mask-image: url(img/hex.svg) !important;
+        -webkit-mask-image: url(../img/hex.svg) !important;
+        mask-image: url(../img/hex.svg) !important;
       }
 
       .img-mask.mask-3 img {
-        -webkit-mask-image: url(img/blob2.svg) !important;
-        mask-image: url(img/blob2.svg) !important;
+        -webkit-mask-image: url(../img/blob2.svg) !important;
+        mask-image: url(../img/blob2.svg) !important;
       }
 	
 
     </style>
-		<link rel="stylesheet" href="./css/user-style.css">
+		<link rel="stylesheet" href="../css/user-style.css">
 	</head>
 	<body>
 		<body>
-
+			
 			<nav id="sticky-navbar" class="navbar navbar-expand-lg center-nav transparent navbar-light navbar-clone fixed">
 				<div class="container flex-lg-row flex-nowrap align-items-center">
 					<div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
@@ -117,7 +59,7 @@
 									<a href="https://www.1023.love" class="nav-link">首页</a>
 								</li>
 								<li class="nav-item">
-									<a href="./about.html" class="nav-link">导航</a>
+									<a href="../about.html" class="nav-link">导航</a>
 								</li>
 								<li class="nav-item">
 									<a href="http://li1023.51server.top/" class="nav-link">博客</a>
@@ -134,20 +76,21 @@
 										</li>
 									</ul>
 								</li>
+								
 								<li class="nav-item dropdown">
 									<a href="#" data-bs-toggle="dropdown" class="nav-link dropdown-toggle">报告</a>
 									<ul class="dropdown-menu">
 										<li class="nav-item">
-											<a href="./lw/kj.html" class="dropdown-item">内容框架</a>
+											<a href="./kj.html" class="dropdown-item">内容框架</a>
 										</li>
 										<li class="nav-item">
-											<a href="./lw/rw.html" class="dropdown-item">个人任务</a>
+											<a href="./rw.html" class="dropdown-item">个人任务</a>
 										</li>
 										<li class="nav-item">
-											<a href="./lw/sj.html" class="dropdown-item">任务时间</a>
+											<a href="./sj.html" class="dropdown-item">任务时间</a>
 										</li>
 										<li class="nav-item">
-											<a href="./lw/zh.html" class="dropdown-item">内容整合</a>
+											<a href="./zh.html" class="dropdown-item">内容整合</a>
 										</li>
 									</ul>
 								</li>
@@ -322,7 +265,7 @@
 								</ul>
 							</li>
 							<li class="nav-item d-none d-md-block">
-								<a href="./contact.html" class="btn btn-sm btn-primary rounded-pill">联系我们</a>
+								<a href="mailto:li@1023.love" class="btn btn-sm btn-primary rounded-pill">联系我们</a>
 							</li>
 							<li class="nav-item d-lg-none">
 								<button class="hamburger offcanvas-nav-btn">
@@ -372,16 +315,16 @@
 												<a href="#" data-bs-toggle="dropdown" class="nav-link dropdown-toggle">报告</a>
 												<ul class="dropdown-menu">
 													<li class="nav-item">
-														<a href="./lw/kj.html" class="dropdown-item">内容框架</a>
+														<a href="./kj.html" class="dropdown-item">内容框架</a>
 													</li>
 													<li class="nav-item">
-														<a href="./lw/rw.html" class="dropdown-item">个人任务</a>
+														<a href="./rw.html" class="dropdown-item">个人任务</a>
 													</li>
 													<li class="nav-item">
-														<a href="./lw/sj.html" class="dropdown-item">任务时间</a>
+														<a href="./sj.html" class="dropdown-item">任务时间</a>
 													</li>
 													<li class="nav-item">
-														<a href="./lw/zh.html" class="dropdown-item">内容整合</a>
+														<a href="./zh.html" class="dropdown-item">内容整合</a>
 													</li>
 												</ul>
 											</li>
@@ -534,7 +477,7 @@
 									<h4 class="widget-title text-white mb-3">联系我们</h4>
 									<address> 
 										<br />  </address>
-									<a href="mailto:li@1023.love">li@1023.love</a>
+									<a href="mailto:li@1023.love" class="link-inverse">li@1023.love</a>
 									<br /> li1023qwq
 								</div>
 								<div class="widget mb-8">
@@ -612,249 +555,143 @@
 					</header>
 					<section class="section-frame br-fix overflow-hidden">
 						<div data-image-src="https://www.toopic.cn/public/uploads/small/1691397909588169139790980.jpg" class="wrapper image-wrapper bg-cover bg-image bg-overlay bg-overlay-500">
-							<!-- <div class="container pt-18 pt-lg-21 pb-17 pb-lg-19 text-center">
+							<div class="container pt-18 pt-lg-21 pb-17 pb-lg-19 text-center">
 								<div class="row">
 									<div data-cues="zoomIn" data-group="page-title" data-interval="-200" data-delay="500" class="col-md-9 col-lg-8 col-xl-7 col-xxl-6 mx-auto">
-										<h2 class="h6 text-uppercase ls-xl text-white mb-5">欢迎使用1023.love</h2>
-										<h3 class="display-1 fs-54 text-white mb-7">光是遇见</h3>
-										<h3 class="display-1 fs-54 text-white mb-7">就已经很美好了</h3>
+										
 									</div>
 								</div>
-							</div> -->
-							<link rel="stylesheet" href="https://template-1253409072.cos.ap-guangzhou.myqcloud.com/vip-tpl/assets/css/plugins.css" />
-							<link rel="stylesheet" href="https://template-1253409072.cos.ap-guangzhou.myqcloud.com/vip-tpl/assets/css/style.css" />
-							<section class="wrapper">
-								<div class="container py-14 py-md-16">
-									<div class="row text-center">
-										<div class="col-xl-10 mx-auto">
-											<h2 class="fs-15 text-uppercase text-primary mb-3">快捷导航</h2>
-											<h6 class="mb-10 px-xxl-15">没有图片就是不想加</h6>
-											<a href="./gd.html" class="gd">所有导航</a>
-											<h3 class="mb-10 px-xxl-15">---</h3>
-										</div>
-									</div>
-									<div id="category1" class="category">
-									<div class="row gy-6">
-										<!-- 学习通 -->
-										<div class="col-md-6 col-lg-4">
-										    <a href="https://passport2.chaoxing.com/login?fid=12&refer=http%3A%2F%2Fi.chaoxing.com%2Fbase%3Ft%3D1666962206542" class="card shadow-lg lift h-100">
-										        <div class="card-body p-5 d-flex flex-row">
-										            <div>
-										                <img src="https://ts1.cn.mm.bing.net/th/id/R-C.f3fef9691a2f4dd17465cdd6d381a951?rik=9SbpR%2ffugQtW3Q&riu=http%3a%2f%2fwww.kuaipng.com%2fUploads%2fpic%2fw%2f2021%2f11-15%2f112969%2fwater_112969_698_698_.png&ehk=xJVCpbJZs5V7axdgYR3eY6ezRFmtDq7Op1pLWOIvmMA%3d&risl=&pid=ImgRaw&r=0" alt="SD" class="avatar w-11 h-11 me-4">
-										            </div>
-										            <div>
-										                <span class="badge bg-pale-red text-red rounded py-1 mb-2">学习</span>
-										                <h4 class="mb-1">学习通</h4>
-										                <p class="mb-0 text-body">光是遇见，就已经很美好了</p>
-										            </div>
-										        </div>
-										    </a>
-										</div>
-										<!-- CET -->
-										<div class="col-md-6 col-lg-4">
-										    <a href="https://cet.neea.edu.cn/" class="card shadow-lg lift h-100">
-										        <div class="card-body p-5 d-flex flex-row">
-										            <div>
-										                <img src="https://ts3.cn.mm.bing.net/th?id=ODLS.83f1976f-eaec-4e21-b61b-7c4b3a365ef4&w=32&h=32&qlt=90&pcl=fffffa&o=6&cb=1015&pid=1.2" alt="SD" class="avatar w-11 h-11 me-4">
-										            </div>
-										            <div>
-										                <span class="badge bg-pale-red text-red rounded py-1 mb-2">学习</span>
-										                <h4 class="mb-1">CET英语</h4>
-										                <p class="mb-0 text-body">光是遇见，就已经很美好了</p>
-										            </div>
-										        </div>
-										    </a>
-										</div>
-										<!-- NCRE -->
-										<div class="col-md-6 col-lg-4">
-										    <a href="https://ncre.neea.edu.cn/" class="card shadow-lg lift h-100">
-										        <div class="card-body p-5 d-flex flex-row">
-										            <div>
-										                <img src="https://ts4.cn.mm.bing.net/th?id=ODLS.b0102c93-6ac9-4e21-b455-b5364bb9720d&w=32&h=32&qlt=90&pcl=fffffa&o=6&cb=1016&pid=1.2" alt="SD" class="avatar w-11 h-11 me-4">
-										            </div>
-										            <div>
-										                <span class="badge bg-pale-red text-red rounded py-1 mb-2">学习</span>
-										                <h4 class="mb-1">NCRE计算机</h4>
-										                <p class="mb-0 text-body">光是遇见，就已经很美好了</p>
-										            </div>
-										        </div>
-										    </a>
-										</div>
-										
-										<div class="col-md-6 col-lg-4">
-										    <a href="https://mail.qq.com/" class="card shadow-lg lift h-100">
-										        <div class="card-body p-5 d-flex flex-row">
-										            <div>
-										                <img src="https://tse4-mm.cn.bing.net/th/id/OIP-C.X-JG_KocR1n0MA7X30o8pwHaHa?w=180&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="SD" class="avatar w-11 h-11 me-4">
-										            </div>
-										            <div>
-										                <span class="badge bg-pale-blue text-blue rounded py-1 mb-2">测试</span>
-										                <h4 class="mb-1">QQ邮箱</h4>
-										                <p class="mb-0 text-body">光是遇见，就已经很美好了</p>
-										            </div>
-										        </div>
-										    </a>
-										</div>
-										<div class="col-md-6 col-lg-4">
-										    <a href="https://yiyan.baidu.com/" class="card shadow-lg lift h-100">
-										        <div class="card-body p-5 d-flex flex-row">
-										            <div>
-										                <img src="https://ts1.cn.mm.bing.net/th?id=ODLS.109ce37a-9c4b-4b1b-8b28-696152e135c6&w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2" alt="SD" class="avatar w-11 h-11 me-4">
-										            </div>
-										            <div>
-										                <span class="badge bg-pale-blue text-blue rounded py-1 mb-2">测试</span>
-										                <h4 class="mb-1">文心一言</h4>
-										                <p class="mb-0 text-body">光是遇见，就已经很美好了</p>
-										            </div>
-										        </div>
-										    </a>
-										</div>
-										<div class="col-md-6 col-lg-4">
-										    <a href="https://github.com/" class="card shadow-lg lift h-100">
-										        <div class="card-body p-5 d-flex flex-row">
-										            <div>
-										                <img src="https://ts4.cn.mm.bing.net/th?id=ODLS.fe916855-7a5a-4f44-b52e-1c5c31f0329d&w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2" alt="SD" class="avatar w-11 h-11 me-4">
-										            </div>
-										            <div>
-										                <span class="badge bg-pale-blue text-blue rounded py-1 mb-2">测试</span>
-										                <h4 class="mb-1">GitHub</h4>
-										                <p class="mb-0 text-body">光是遇见，就已经很美好了</p>
-										            </div>
-										        </div>
-										    </a>
-										</div>
-										<div class="col-md-6 col-lg-4">
-										    <a href="https://cloud.tencent.com/login?s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Fdomain%2Fall-domain" class="card shadow-lg lift h-100">
-										        <div class="card-body p-5 d-flex flex-row">
-										            <div>
-										                <img src="https://ts4.cn.mm.bing.net/th?id=ODLS.630ccce4-f7e5-4ff9-96a7-3168d9680493&w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2" alt="SD" class="avatar w-11 h-11 me-4">
-										            </div>
-										            <div>
-										                <span class="badge bg-pale-blue text-blue rounded py-1 mb-2">测试</span>
-										                <h4 class="mb-1">腾讯云</h4>
-										                <p class="mb-0 text-body">光是遇见，就已经很美好了</p>
-										            </div>
-										        </div>
-										    </a>
-										</div>
-										<div class="col-md-6 col-lg-4">
-										    <a href="https://mp.weixin.qq.com/cgi-bin/loginpage?url=%2Fcgi-bin%2Fhome%3Ft%3Dhome%2Findex%26token%3D561326373%26lang%3Dzh_CN" class="card shadow-lg lift h-100">
-										        <div class="card-body p-5 d-flex flex-row">
-										            <div>
-										                <img src="https://ts2.cn.mm.bing.net/th?id=ODLS.7cb29528-0353-4c9f-8a7b-595b55bd964b&w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2" alt="SD" class="avatar w-11 h-11 me-4">
-										            </div>
-										            <div>
-										                <span class="badge bg-pale-blue text-blue rounded py-1 mb-2">测试</span>
-										                <h4 class="mb-1">微信公众平台</h4>
-										                <p class="mb-0 text-body">光是遇见，就已经很美好了</p>
-										            </div>
-										        </div>
-										    </a>
-										</div>
-										<div class="col-md-6 col-lg-4">
-										    <a href="https://vercel.com/dashboard" class="card shadow-lg lift h-100">
-										        <div class="card-body p-5 d-flex flex-row">
-										            <div>
-										                <img src="https://ts2.cn.mm.bing.net/th?id=ODLS.00158dc5-0efb-4f0b-95b5-203d46dd3b23&w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2" alt="SD" class="avatar w-11 h-11 me-4">
-										            </div>
-										            <div>
-										                <span class="badge bg-pale-blue text-blue rounded py-1 mb-2">测试</span>
-										                <h4 class="mb-1">vercel</h4>
-										                <p class="mb-0 text-body">光是遇见，就已经很美好了</p>
-										            </div>
-										        </div>
-										    </a>
-										</div>
-										
-										<div class="col-md-6 col-lg-4">
-										    <a href="https://www.peterx.cn/sites/1112.html" class="card shadow-lg lift h-100">
-										        <div class="card-body p-5 d-flex flex-row">
-										            <div>
-										                <img src="https://ts4.cn.mm.bing.net/th?id=ODLS.e7451269-3a76-44de-89ea-24a795717cde&w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2" alt="SD" class="avatar w-11 h-11 me-4">
-										            </div>
-										            <div>
-										                <span class="badge bg-pale-blue text-blue rounded py-1 mb-2">测试</span>
-										                <h4 class="mb-1">PM-HOME</h4>
-										                <p class="mb-0 text-body">光是遇见，就已经很美好了</p>
-										            </div>
-										        </div>
-										    </a>
-										</div>
-										<div class="col-md-6 col-lg-4">
-										    <a href="https://zhtj.youth.cn/zhtj/signin" class="card shadow-lg lift h-100">
-										        <div class="card-body p-5 d-flex flex-row">
-										            <div>
-										                <img src="https://ts4.cn.mm.bing.net/th?id=ODLS.db1fc6ed-a19c-4724-91e3-ddd5dcf06c40&w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2" alt="SD" class="avatar w-11 h-11 me-4">
-										            </div>
-										            <div>
-										                <span class="badge bg-pale-blue text-blue rounded py-1 mb-2">测试</span>
-										                <h4 class="mb-1">智慧团建</h4>
-										                <p class="mb-0 text-body">光是遇见，就已经很美好了</p>
-										            </div>
-										        </div>
-										    </a>
-										</div>
-										<div class="col-md-6 col-lg-4">
-										    <a href="./gd.html" class="card shadow-lg lift h-100">
-										        <div class="card-body p-5 d-flex flex-row">
-										            <div>
-										                <span class="avatar bg-blue text-white w-11 h-11 fs-20 me-4">更多</span>
-										            </div>
-										            <div>
-										                <span class="badge bg-pale-blue text-blue rounded py-1 mb-2">测试</span>
-										                <h4 class="mb-1">更多</h4>
-										                <p class="mb-0 text-body">更多网页链接</p>
-										            </div>
-										        </div>
-										    </a>
-										</div>
-										<!-- <div class="col-md-6 col-lg-4">
-										    <a href="#" class="card shadow-lg lift h-100">
-										        <div class="card-body p-5 d-flex flex-row">
-										            <div>
-										                <img src="path/to/image.jpg" alt="SD" class="avatar w-11 h-11 me-4">
-										            </div>
-										            <div>
-										                <span class="badge bg-pale-blue text-blue rounded py-1 mb-2">示例</span>
-										                <h4 class="mb-1">示例</h4>
-										                <p class="mb-0 text-body">示例</p>
-										            </div>
-										        </div>
-										    </a>
-										</div> -->
-									</div></div>
-									
-								</div>
-							</section>
-							<script src="js/plugins.js"></script>
-							<script src="js/theme.js"></script>
-							<script>
-							    var selectedButton = null;
-							
-							    function showCategory(category) {
-							      // 隐藏所有代码块
-							      var categories = document.getElementsByClassName("category");
-							      for (var i = 0; i < categories.length; i++) {
-							        categories[i].style.display = "none";
-							      }
-							
-							      // 显示对应的代码块
-							      document.getElementById("category" + category).style.display = "block";
-							
-							      // 切换按钮的选中状态
-							      var button = document.getElementById("button" + category);
-							      if (selectedButton) {
-							        selectedButton.classList.remove("selected");
-							      }
-							      button.classList.add("selected");
-							      selectedButton = button;
-							    }
-							
-							    // 默认显示第一个分类的内容
-							    showCategory(1);
-							  </script>
-						</div>
-
-		</body>
-	</body>
-	<html>
+							</div>
+              <div class="overflow-hidden">
+                <div class="divider text-white mx-n2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 60" id="iheyfc">
+                    <path fill="currentColor" d="M0,0V60H1440V0A5771,5771,0,0,1,0,0Z"></path>
+                  </svg></div>
+              </div><!-- /.overflow-hidden -->
+            </div><!-- /.wrapper -->
+          </section>
+          <!--/section -->
+          <section class="wrapper bg-light">
+            <div class="container pt-14 pt-md-16 pb-15 pb-md-17">
+              <div class="row text-center">
+                <div class="col-lg-9 col-xl-8 mx-auto">
+                  <h2 class="fs-16 text-uppercase text-muted mb-3">其他内容</h2>
+                  <h3 class="display-4 mb-10 px-xxl-10">这是一个标题</h3>
+                </div><!-- /column -->
+              </div><!-- /.row -->
+              <div class="row">
+                <div class="col-xxl-11 mx-auto">
+                  <!--/.row -->
+                </div><!-- /column -->
+              </div><!-- /.row -->
+              <link rel="stylesheet" href="https://template-1253409072.cos.ap-guangzhou.myqcloud.com/vip-tpl/assets/css/plugins.css" />
+              <link rel="stylesheet" href="https://template-1253409072.cos.ap-guangzhou.myqcloud.com/vip-tpl/assets/css/style.css" />
+              <section class="wrapper">
+                <div class="row gx-md-5 gy-5 text-center">
+                  <div class="col-md-6 col-xl-3">
+                    <div class="card shadow-lg">
+                      <div class="card-body"><img src="https://template-1253409072.cos.ap-guangzhou.myqcloud.com/vip-tpl/assets/img/icons/lineal/search-2.svg" alt="" class="icon-svg icon-svg-md text-yellow mb-3" />
+                        <h4>论文框架</h4>
+                        <p class="mb-2">文章的框架</p><a href="../lw/kj.html" class="more hover link-yellow">了解更多</a>
+                      </div>
+                      <!--/.card-body -->
+                    </div>
+                    <!--/.card -->
+                  </div>
+                  <!--/column -->
+                  <div class="col-md-6 col-xl-3">
+                    <div class="card shadow-lg">
+                      <div class="card-body"><img src="https://template-1253409072.cos.ap-guangzhou.myqcloud.com/vip-tpl/assets/img/icons/lineal/browser.svg" alt="" class="icon-svg icon-svg-md text-red mb-3" />
+                        <h4>个人任务表</h4>
+                        <p class="mb-2">小组个人分配任务</p><a href="../lw/rw.html" class="more hover link-red">了解更多</a>
+                      </div>
+                      <!--/.card-body -->
+                    </div>
+                    <!--/.card -->
+                  </div>
+                  <!--/column -->
+                  <div class="col-md-6 col-xl-3">
+                    <div class="card shadow-lg">
+                      <div class="card-body"><img src="https://template-1253409072.cos.ap-guangzhou.myqcloud.com/vip-tpl/assets/img/icons/lineal/chat-2.svg" alt="" class="icon-svg icon-svg-md text-green mb-3" />
+                        <h4>时间节点表</h4>
+                        <p class="mb-2">各个时间完成的任务</p><a href="../lw/sj.html" class="more hover link-green">了解更多</a>
+                      </div>
+                      <!--/.card-body -->
+                    </div>
+                    <!--/.card -->
+                  </div>
+                  <!--/column -->
+                  <div class="col-md-6 col-xl-3">
+                    <div class="card shadow-lg">
+                      <div class="card-body"><img src="https://template-1253409072.cos.ap-guangzhou.myqcloud.com/vip-tpl/assets/img/icons/lineal/megaphone.svg" alt="" class="icon-svg icon-svg-md text-blue mb-3" />
+                        <h4>整合报告</h4>
+                        <p class="mb-2">整合起来的数据报告</p><a href="../lw/zh.html" class="more hover link-blue">了解更多</a>
+                      </div>
+                      <!--/.card-body -->
+                    </div>
+                    <!--/.card -->
+                  </div>
+                  <!--/column -->
+                </div>
+                <div class="container py-14 py-md-16 text-center">
+                  <!-- /.row -->
+                  <div class="position-relative">
+                    <div data-rellax-speed="1" id="ikf5nb" class="shape rounded-circle bg-soft-blue rellax w-16 h-16 c18301"></div>
+                    <div data-rellax-speed="1" id="iat8r9" class="shape bg-dot yellow rellax w-16 h-17 c18316"></div>
+                    <!--/.row -->
+                  </div>
+                  <link rel="stylesheet" href="https://template-1253409072.cos.ap-guangzhou.myqcloud.com/bootstrap/css/bootstrap.min.css" />
+                  <section data-block-type="contents" data-id="1" class="fdb-block fp-active">
+                    <div class="container">
+                      <div class="row justify-content-center">
+                        <div class="col col-md-8 text-center">
+							<p class="text-h3">
+								<span><h1>论文：游戏对大学生的影响</h1></span>
+								<br />
+								<br /><h3>来早了，现在还没有</h3>
+								<br />
+								<br />
+								<span></span>
+							</p>
+                        </div>
+                      </div>
+                    </div>
+                  </section><!-- /.position-relative -->
+                </div><!-- /.container -->
+              </section><!-- /section -->
+              <script src="../js/plugins.js"></script>
+              <script src="../js/theme.js"></script>
+              <hr class="dark my-14 my-md-17" />
+              <link rel="stylesheet" href="https://template-1253409072.cos.ap-guangzhou.myqcloud.com/vip-tpl/assets/css/plugins.css" />
+              <link rel="stylesheet" href="https://template-1253409072.cos.ap-guangzhou.myqcloud.com/vip-tpl/assets/css/style.css" />
+              <section class="wrapper">
+                <!-- /.container -->
+              </section><!-- /section -->
+              <link rel="stylesheet" href="https://template-1253409072.cos.ap-guangzhou.myqcloud.com/vip-tpl/assets/css/plugins.css" />
+              <link rel="stylesheet" href="https://template-1253409072.cos.ap-guangzhou.myqcloud.com/vip-tpl/assets/css/style.css" />
+              <script src="../js/plugins.js"></script>
+              <script src="../js/theme.js"></script>
+              <!--/.row -->
+              <!--/.row -->
+            </div><!-- /.container -->
+          </section><!-- /section -->
+          <section class="section-frame overflow-hidden">
+            <div id="irfr3h" class="wrapper bg-soft-primary c6645">
+              <!-- /.container -->
+            </div><!-- /.wrapper -->
+          </section>
+          <!--/section -->
+          <section class="wrapper bg-light">
+            <!-- /.container -->
+          </section><!-- /section -->
+        </div><!-- /.content-wrapper -->
+        <footer class="bg-dark section-frame">
+          <!-- /.container -->
+        </footer>
+      </div>
+      <link rel="stylesheet" href="https://template-1253409072.cos.ap-guangzhou.myqcloud.com/vip-tpl/assets/css/plugins.css" />
+      <link rel="stylesheet" href="https://template-1253409072.cos.ap-guangzhou.myqcloud.com/vip-tpl/assets/css/style.css" />
+      <script src="../js/plugins.js"></script>
+      <script src="../js/theme.js"></script>
+    </body>
+  </body>
+  <html>
