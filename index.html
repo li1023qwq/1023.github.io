@@ -42,643 +42,1511 @@
 
     </style>
 		<link rel="stylesheet" href="./css/user-style.css">
+		
+		
+		
+		
+		
+		
+		
+		<link rel="shortcut icon"
+		          href="https://oss-v1-sq1.fuukir.cn/WEB/idc.fuukir.cn/logo.ico"/>
+		    <script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.6.0/jquery.min.js"></script>
+		
+		    <script src="./js/heo.js?v=1.4.2"></script>
+		
+		    <link rel="stylesheet" href="./zhheo/zhheoblog.css?v=1.4.2">
+		
+		    <link rel="stylesheet" href="./zhheo/custom.css?v=1.4.2">
+		
+		    <link rel="stylesheet" href="./zhheo/commentBarrage.css">
+		
+		    
+		
+		    <!-- swiper 在瞬间滚动时会使用 -->
+		    <link rel="stylesheet" href="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/Swiper/8.0.6/swiper-bundle.min.css"/>
+		
+		    <!-- 右下角通知 -->
+		    <link href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/node-snackbar/0.1.16/snackbar.min.css"
+		          media="print"
+		          onload='this.media="all"'
+		          rel="stylesheet"
+		    />
+		
+		    <!-- 代码块自动识别语言 -->
+		    
+		    <!-- 解决 pjax问题  自动识别语言-->
+		    
+		
+		    <!-- 自动识别语言 -->
+		    
+		        <script src="./libs/prism/highlight.min.js"></script>
+		
+		
+		        <script>
+		            document.addEventListener("pjax:complete", function () {
+		                hljs.highlightAll()
+		            })
+		            document.addEventListener("DOMContentLoaded", function () {
+		                hljs.highlightAll()
+		            })
+		        </script>
+		
+		    
+		
+		
+		    <!--  代码块-->
+		    
+		    
+		        <link rel="preload" as="style" onload="this.rel='stylesheet'"
+		              href="./libs/prism/prism.min.css">
+		        <link rel="preload" as="style" onload="this.rel='stylesheet'"
+		              href="./libs/prism/code.css">
+		        <link rel="preload" as="style" onload="this.rel='stylesheet'" data-code-theme="light"
+		              href="./libs/prism/themes/prism-one-light.css">
+		        <link rel="preload" as="style" onload="this.rel='stylesheet'" data-code-theme="dark"
+		              href="./libs/prism/themes/prism-one-dark.css">
+		        <script data-pjax type="text/javascript" src="./libs/prism/prism.min.js"></script>
+		
+		        <style>
+		
+		            #article-container .code-toolbar pre.close{
+		                overflow: hidden;
+		                height: 300px;
+		            }
+		        </style>
+		
+		    
+		
+		
+		    <!-- 页脚内容-样式一 -->
+		    
+		
+		    
+		
+		
+		
+		    <script>
+		        (win => {
+		            win.saveToLocal = {
+		                set: function setWithExpiry(key, value, ttl) {
+		                    if (ttl === 0) return
+		                    const now = new Date()
+		                    const expiryDay = ttl * 86400000
+		                    const item = {
+		                        value: value,
+		                        expiry: now.getTime() + expiryDay,
+		                    }
+		                    localStorage.setItem(key, JSON.stringify(item))
+		                },
+		
+		                get: function getWithExpiry(key) {
+		                    const itemStr = localStorage.getItem(key)
+		
+		                    if (!itemStr) {
+		                        return undefined
+		                    }
+		                    const item = JSON.parse(itemStr)
+		                    const now = new Date()
+		
+		                    if (now.getTime() > item.expiry) {
+		                        localStorage.removeItem(key)
+		                        return undefined
+		                    }
+		                    return item.value
+		                }
+		            }
+		
+		            win.getScript = url => new Promise((resolve, reject) => {
+		                const script = document.createElement('script')
+		                script.src = url
+		                script.async = true
+		                script.onerror = reject
+		                script.onload = script.onreadystatechange = function () {
+		                    const loadState = this.readyState
+		                    if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+		                    script.onload = script.onreadystatechange = null
+		                    resolve()
+		                }
+		                document.head.appendChild(script)
+		            })
+		
+		            win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+		                const link = document.createElement('link')
+		                link.rel = 'stylesheet'
+		                link.href = url
+		                if (id) link.id = id
+		                link.onerror = reject
+		                link.onload = link.onreadystatechange = function() {
+		                    const loadState = this.readyState
+		                    if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+		                    link.onload = link.onreadystatechange = null
+		                    resolve()
+		                }
+		                document.head.appendChild(link)
+		            })
+		
+		            win.activateDarkMode = function () {
+		                document.documentElement.setAttribute('data-theme', 'dark')
+		                document.documentElement.classList.add('color-scheme-dark')
+		                heo.initThemeColor()
+		            }
+		            win.activateLightMode = function () {
+		                document.documentElement.setAttribute('data-theme', 'light')
+		                document.documentElement.classList.remove('color-scheme-dark')
+		                heo.initThemeColor()
+		            }
+		            const t = saveToLocal.get('theme')
+		
+		            const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+		            const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+		            const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+		            const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+		
+		            if (t === undefined) {
+		                if (isLightMode) activateLightMode()
+		                else if (isDarkMode) activateDarkMode()
+		                else if (isNotSpecified || hasNoSupport) {
+		                    const now = new Date()
+		                    const hour = now.getHours()
+		                    const isNight = hour <= 6 || hour >= 18
+		                    isNight ? activateDarkMode() : activateLightMode()
+		                }
+		                window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+		                    if (saveToLocal.get('theme') === undefined) {
+		                        e.matches ? activateDarkMode() : activateLightMode()
+		                    }
+		                })
+		            } else if (t === 'light') activateLightMode()
+		            else activateDarkMode()
+		
+		            if("system" === 'dark')
+		                activateDarkMode()
+		            if("system" === 'light')
+		                activateLightMode()
+		
+		            const asideStatus = saveToLocal.get('aside-status')
+		            if (asideStatus !== undefined) {
+		                if (asideStatus === 'hide') {
+		                    document.documentElement.classList.add('hide-aside')
+		                } else {
+		                    document.documentElement.classList.remove('hide-aside')
+		                }
+		            }
+		        })(window)
+		    </script>
+		
+		    <!-- 动态加载条 -->
+		    <script data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"
+		            src="./libs/pace/pace.min.js">
+		    </script>
+		
+		    <!-- 复制 https://githubfast.com/zenorocha/clipboard.js -->
+		    <script src="./libs/clipboard/clipboard.min.js"></script>
+		
+		    <!-- 关于统计-->
+		    <script src="./libs/countup/countup.js"></script>
+		
+		    <!-- 小板报 -->
+		    
+		        <script defer src="./libs/welcome/welcome.js"></script>
+		    
+		
+		    <!-- icon图标 -->
+		    <link rel="stylesheet" href="./icon/iconfont.css?v=1.4.2">
+		
+		    
+		    <!-- 声明一些公共信息 -->
+		    <script id="site-config">
+		        var GLOBAL_CONFIG = {
+		            // 页面类型 index,page,post,tag,category
+		            htmlType: "index",
+		            postTitle: "",
+		            isPost: false,
+		            isHome: true,
+		            copyright: undefined,
+		            lightbox: 'fancybox',
+		            lazyload: {enable: true, error: "https:\/\/oss-v1-sq1.fuukir.cn\/WEB\/fuukir.cn\/bg\/404.png" },
+		            isFriendLinksInFooter: true,
+		            loadingBox: false,
+		            loadProgressBar: true,
+		            navMusicEnable:false,
+		            isMusic: false,
+		            helloText: ["Hello"],
+		            profileStyle: "default",
+		            rightMenuEnable: true,
+		            date_suffix: {
+		                just: '刚刚',
+		                    min: '分钟前',
+		                    hour: '小时前',
+		                    day: '天前',
+		                    month: '个月前'
+		            },
+		            Snackbar: {
+		                chs_to_cht: "你已切换为繁体",
+		                    cht_to_chs: "你已切换为简体",
+		                    day_to_night: "你已切换为深色模式",
+		                    night_to_day: "你已切换为浅色模式",
+		                    bgLight: "#425AEF",
+		                    bgDark: "#f2b94b",
+		                    position: "top-center",
+		            },
+		            translate: {
+		                defaultEncoding:2,
+		                    translateDelay:0,
+		                    msgToTraditionalChinese:"繁",
+		                    msgToSimplifiedChinese:"简",
+		                    rightMenuMsgToTraditionalChinese:"轉為繁體",
+		                    rightMenuMsgToSimplifiedChinese:"转为简体"
+		            },
+		            prism: {
+		                enable: true,
+		                    enable_title: true,
+		                    enable_hr: true,
+		                    enable_line: true,
+		                    enable_copy: true,
+		                    enable_expander: true,
+		                    prism_limit: Number(300)+30,
+		                    enable_height_limit: false
+		            },
+		            source: {
+		                power:{
+		                    list:[]
+		                },
+		                links: {
+		                    linksUrl: "\/links",
+		                    linksNum: 3,
+		                },
+		                jQuery: 'https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.6.0/jquery.min.js',
+		                justifiedGallery: {
+		                    js: 'https://npm.elemecdn.com/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+		                    css: 'https://npm.elemecdn.com/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+		                },
+		                fancybox: {
+		                    js: 'https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/fancybox/3.5.7/jquery.fancybox.min.js',
+		                    css: 'https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/fancybox/3.5.7/jquery.fancybox.min.css'
+		                },
+		                comments:{
+		                    use: "commentWidget",
+		                    maxBarrage: 1,
+		                    barrageTime: 4000,
+		                    mailMd5: "",
+		                    lazyload: false,
+		                    textarea: "appearance-none"
+		                },
+		                welcome:{
+		                    key:"ROUBZ-3LLW3-77V37-OUPSJ-26SQ5-4WFPL",
+		                        locationLng: "39.907893",
+		                        locationLat: "116.396947"
+		                },
+		                post:{
+		                    dynamicBackground: true
+		                },
+		                tool:{
+		                    switch: false
+		                },
+		                postAi:{
+		                    ai : "",
+		                        randomNum : 3,
+		                        basicWordCount : 1000,
+		                        btnLink : "https://afdian.net/item/f18c2e08db4411eda2f25254001e7c00",
+		                        gptName : "KunKunYu",
+		                        modeName : "local",
+		                        switchBtn : false,
+		                        keys : "xxxx",
+		                        Referers : "https://xx.xx/",
+		                },
+		                img:{
+		                    src: "data-lazy-src"
+		                },
+		                twikoo:{
+		                    js:"\/themes\/theme-hao\/assets\/libs\/twikoo\/twikoo.all.min.js",
+		                    twikooUrl: "",
+		                    accessToken: "",
+		
+		                },
+		                artalk:{
+		                    js:"\/themes\/theme-hao\/assets\/libs\/artalk\/Artalk.js",
+		                    css:"\/themes\/theme-hao\/assets\/libs\/artalk\/Artalk.css",
+		                    artalkUrl: "",
+		                    siteName: "",
+		                },
+		                waline:{
+		                    js:"https:\/\/cdn.cbd.int\/@waline\/client@2.15.7\/dist\/waline.js",
+		                    serverURL: "",
+		                    locale: {'placeholder': '欢迎评论', 'sofa': '来发评论吧~1'}
+		                },
+		            },
+		
+		        };
+		
+		    </script>
+		
+		
+		
+		
+		    
+		    <!--  解决 katex pjax问题 -->
+		    
+		    <script src="./js/custom.js?v=1.4.2"></script>
+		    
+		        
+		    
+		    <!-- Open Graph Start -->
+		    <meta property="og:site_name" content="晚夜深秋" />
+		    <meta property="og:type" content="website" />
+		    <meta property="og:title" content="晚夜深秋" />
+		    <meta property="og:url" content="https://fuukir.cn/" />
+		    
+		        <meta property="og:description" content="晚夜深秋" />
+		        <meta property="og:image" content="https://oss-v1-sq1.fuukir.cn/WEB/idc.fuukir.cn/logo.ico" />
+		    
+		    <meta name="twitter:card" content="summary_large_image" />
+		    <meta name="twitter:title" content="晚夜深秋" />
+		    <meta name="twitter:url" content="https://fuukir.cn/" />
+		    
+		        <meta name="twitter:description" content="晚夜深秋" />
+		        <meta name="twitter:image" content="https://oss-v1-sq1.fuukir.cn/WEB/idc.fuukir.cn/logo.ico" />
+		    
+		
+		    <!-- Open Graph End -->
+		
+		
+		    
+		<meta name="keywords" content="HCRT，fuukir，博客" />
+		<meta name="baidu-site-verification" content="codeva-SA2SXcO9Ok" />
+		<script src="/plugins/PluginLive2d/assets/static/js/live2d-autoload.min.js" defer></script>
+		<script type="text/javascript">
+		    document.addEventListener('DOMContentLoaded', () => {
+		    live2d.init("/plugins/PluginLive2d/assets/static/", {
+		  "loadTime" : "defer",
+		  "consoleShowStatu" : false,
+		  "live2dLocation" : "left",
+		  "photoName" : "live2d",
+		  "slots" : { },
+		  "apiPath" : "https://api.zsq.im/live2d/",
+		  "hitokotoApi" : "https://v1.hitokoto.cn",
+		  "showHitokoto" : true,
+		  "modelTexturesId" : 53,
+		  "modelId" : 1,
+		  "tools" : [ "hitokoto", "asteroids", "switch-model", "switch-texture", "photo", "quit" ],
+		  "isTools" : true,
+		  "isAnonymous" : true,
+		  "isOpenai" : false,
+		  "showChatMessageTimeout" : 10,
+		  "chunkTimeout" : 10,
+		  "timeout" : 10,
+		  "copyContent" : true,
+		  "backSite" : true,
+		  "backSiteTip" : "哇，你终于回来了～",
+		  "selectorTips" : [ ],
+		  "openConsole" : true,
+		  "copyContentTip" : "你都复制了些什么呀，转载要记得加上出处哦！",
+		  "openConsoleTip" : "你是想要看看我的小秘密吗？",
+		  "firstOpenSite" : true,
+		  "tips" : "./live2d/tips.json"
+		})
+		
+		})
+		
+		</script>
+		<!-- PluginSearchWidget start -->
+		<script src="/plugins/PluginSearchWidget/assets/static/search-widget.iife.js?version=1.3.1" async></script>
+		<link rel="stylesheet" href="/plugins/PluginSearchWidget/assets/static/style.css?version=1.3.1" />
+		<!-- PluginSearchWidget end -->
+		<link rel="icon" href="https://oss-v1-sq1.fuukir.cn/WEB/idc.fuukir.cn/logo.ico" />
 	</head>
 	<body>
-		<body>
-			
-			<nav id="sticky-navbar" class="navbar navbar-expand-lg center-nav transparent navbar-light navbar-clone fixed">
-				<div class="container flex-lg-row flex-nowrap align-items-center">
-					<div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
-						<div class="offcanvas-header d-lg-none">
-							<h3 class="text-white fs-30 mb-0">1023.love</h3>
-							<button type="button" data-bs-dismiss="offcanvas" aria-label="Close" class="btn-close btn-close-white"></button>
-						</div>
-						<div class="offcanvas-body ms-lg-auto d-flex flex-column h-100">
-							<ul class="navbar-nav">
-								<li class="nav-item">
-									<a href="https://www.1023.love" class="nav-link">首页</a>
-								</li>
-								<li class="nav-item">
-									<a href="./about.html" class="nav-link">导航</a>
-								</li>
-								<li class="nav-item">
-									<a href="http://li1023.51server.top/" class="nav-link">博客</a>
-								</li>
-								<li class="nav-item dropdown">
-									<a href="#" data-bs-toggle="dropdown" class="nav-link dropdown-toggle">AI</a>
-									<ul class="dropdown-menu">
+		<!-- loading 页面 -->
+		
+		
+		<!-- 网站背景 -->
+		<div id="web_bg"></div>
+		
+		<!-- 网站背景 -->
+		<div id="an_music_bg"></div>
+		
+		<!-- 控制台 -->
+		<div id="console">
+		  <div class="close-btn" onclick="heo.hideConsole()" href="javascript:void(0);">
+		    <i class="haofont hao-icon-circle-xmark"></i>
+		  </div>
+		  <div class="console-card-group">
+		    <!-- 评论，需要使用评论插件，获取最近评论 -->
+		    <div class="console-card-group-left">
+		      <div class="console-card" id="card-newest-comments" onclick="heo.hideConsole()">
+		        <div class="card-content">
+		          <div class="author-content-item-tips">互动</div>
+		          <span class="author-content-item-title">最近评论</span>
+		        </div>
+		        <div class="aside-list">
+		          
+		            <!-- BUG：由于当前的列出所有评论API无过滤功能，非文章页的评论无法查询到页面信息，所以非文章评论跳转至首页-->
+		            
+		            <script data-pjax>
+		              window.addEventListener('load', () => {
+		                $(".aside-list time").each(function () {
+		                  var timeVal = $(this).attr("datetime");
+		                  $(this).text(btf.diffDateExact(timeVal,true));
+		                })
+		              });
+		            </script>
+		          
+		          </div>
+		      </div>
+		    </div>
+		    <!-- 右侧展示 tag -->
+		    <div class="console-card-group-right">
+		      <div class="console-card tags" onclick="heo.hideConsole()">
+		        <div class="card-content">
+		          <div class="author-content-item-tips">标签</div>
+		          <span class="author-content-item-title">寻找感兴趣的领域</span>
+		        </div>
+		        <div class="card-tag-cloud">
+		          <a style="font-size:1em;color:#d3d3d3"
+		             href="/tags/linux">
+		            Linux<sup>1</sup>
+		          </a><a style="font-size:1em;color:#d3d3d3"
+		             href="/tags/genshin">
+		            Genshin<sup>1</sup>
+		          </a>
+		        </div>
+		      </div>
+		      <!-- 底部展示时间归档 -->
+		      <div class="console-card history" onclick="heo.hideConsole()">
+		        <div class="item-headline"><i class="fas fa-archive"></i><span>文章</span></div>
+		        <ul class="card-archive-list">
+		          
+		            <li class="card-archive-list-item">
+		              <a class="card-archive-list-link" href="/archives/2023/11"
+		                 data-pjax-state="load"><span
+		                      class="card-archive-list-date">
+		                  十一月 2023
+		                </span>
+		                <div class="card-archive-list-count-group"><span
+		                        class="card-archive-list-count">2</span>
+		                  <span class="card-archive-list-count-unit">篇</span>
+		                </div>
+		              </a>
+		            </li>
+		          
+		        </ul>
+		      </div>
+		    </div>
+		  </div>
+		
+		  
+		  <div class="button-group">
+		    <div class="console-btn-item">
+		      <a class="darkmode_switchbutton" href="javascript:void(0);" onclick="navFn.switchDarkMode();" rel="external nofollow"
+		         title="显示模式切换"><i class="haofont hao-icon-moon" style="font-size:1rem"></i>
+		      </a>
+		    </div>
+		    <div class="console-btn-item" id="consoleHideAside" onclick="heo.hideAsideBtn()" title="边栏显示控制"><a
+		            class="asideSwitch" data-pjax-state=""><i class="haofont hao-icon-arrows-left-right"></i></a></div>
+		    <div class="console-btn-item on" id="consoleCommentBarrage" onclick="heo.switchCommentBarrage()" title="热评开关"><a
+		            class="commentBarrage" data-pjax-state=""><i class="haofont hao-icon-message"></i></a></div>
+		
+		    <!--<div class="console-btn-item" id="consoleKeyboard" onclick="heo.keyboardToggle()" title="快捷键开关"><a-->
+		    <!--        class="keyboard-switch"><i class="fa-duotone fa-keyboard"></i></a>-->
+		    <!--</div>-->
+		    <!--<div class="console-btn-item" id="assist-open" onclick="heo.hideConsole()" title="无障碍工具栏"><a-->
+		    <!--        class="assist-btn"><i class="fa-duotone fa-wheelchair"></i></a>-->
+		    <!--</div>-->
+		    
+		  </div>
+		  <div class="console-mask" href="javascript:void(0);" onclick="heo.hideConsole()" rel="external nofollow">
+		  </div>
+		</div>
+		
+		<div id="sidebar">
+		
+		    <div id="menu-mask"></div>
+		    <div id="sidebar-menus">
+		        <span class="sidebar-menu-item-title">功能</span>
+		        <div class="sidebar-menu-item">
+		            <a class="darkmode_switchbutton menu-child" href="javascript:void(0);" onclick="rm.switchDarkMode()"
+		               rel="external nofollow" title="显示模式切换">
+		                <i class="haofont hao-icon-moon" style="font-size: 0.9rem;"></i>
+		                <span>显示模式</span>
+		            </a>
+		        </div>
+		        
+		        
+		            
+		        
+		        <span class="sidebar-menu-item-title">标签</span>
+		        <div class="card-widget card-tags card-archives card-webinfo card-allinfo">
+		            <div class="item-headline"></div>
+		            <div class="card-tag-cloud">
+		                <a style="font-size:14.3px;color:#d3d3d3" href="/tags/linux"
+		                   title="Linux">
+		                    <!-- 角标 -->
+		                    Linux<sup>1</sup>
+		                </a><a style="font-size:14.3px;color:#d3d3d3" href="/tags/genshin"
+		                   title="Genshin">
+		                    <!-- 角标 -->
+		                    Genshin<sup>1</sup>
+		                </a>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+		<!-- 内容 -->
+		
+		
+		    <div class="page" id="body-wrap">
+		        <!-- 头部导航栏 -->
+		        <header class="full_page" id="page-header">
+		            <nav class="show" id="nav">
+		    <div id="nav-group">
+		
+		        <!-- 导航栏左侧 -->
+		        
+		
+		        <!-- 导航栏中间 -->
+		        <header class="wrapper">
+		        	<nav class="navbar navbar-expand-lg center-nav transparent position-absolute navbar-dark px-md-10 px-xxl-0">
+		        		<div class="container flex-lg-row flex-nowrap align-items-center">
+		        			<div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
+		        				<div class="offcanvas-header d-lg-none">
+		        					<h3 class="text-white fs-30 mb-0">1023.love
+		        						<br />
+		        					</h3>
+		        					<button type="button" data-bs-dismiss="offcanvas" aria-label="Close" class="btn-close btn-close-white"></button>
+		        				</div>
+		        				<div class="offcanvas-body ms-lg-auto d-flex flex-column h-100">
+		        					<ul class="navbar-nav">
+		        						<li class="nav-item">
+		        							<a href="https://www.1023.love" class="nav-link">首页</a>
+		        						</li>
+		        						<li class="nav-item">
+		        							<a href="about.html" class="nav-link">导航</a>
+		        						</li>
+		        						<li class="nav-item">
+		        							<a href="http://li1023.51server.top/" class="nav-link">博客</a>
+		        						</li>
 										<li class="nav-item">
-											<a href="https://painting.1023.love" class="dropdown-item">AI绘画</a>
-										</li>
-										
-										<li class="nav-item">
-											<a href="https://chatbot.weixin.qq.com/webapp/1cvFPYylGZUzvnzbyeQO7YzpwxcgeP?robotName=%E6%99%9A%E5%A4%9C%E6%B7%B1%E7%A7%8B" class="dropdown-item">AI对话</a>
-										</li>
-									</ul>
-								</li>
-								<li class="nav-item dropdown">
-									<a href="#" data-bs-toggle="dropdown" class="nav-link dropdown-toggle">报告</a>
-									<ul class="dropdown-menu">
-										<li class="nav-item">
-											<a href="https://docs.qq.com/sheet/DVVBaeUZ1V1ZKTWZG" class="dropdown-item">游戏数据收集</a>
+											<a href="https://www.1023.love" class="nav-link">AI对话(智障)</a>
 										</li>
 										<li class="nav-item">
-											<a href="https://docs.qq.com/doc/DVXZWUWpNZ2NYckxk" class="dropdown-item">内容框架</a>
+											<a href="https://docs.qq.com/aio/DVWRxSU9nd0hZTGVW" class="nav-link">报告内容整合</a>
 										</li>
-										<li class="nav-item">
-											<a href="https://docs.qq.com/sheet/DVUhIcHF0VkRIWXdi" class="dropdown-item">个人任务</a>
-										</li>
-										<li class="nav-item">
-											<a href="https://docs.qq.com/sheet/DVVZ5VEZBQlpFYkRS" class="dropdown-item">任务时间</a>
-										</li>
-										<li class="nav-item">
-											<a href="https://docs.qq.com/aio/DVWRxSU9nd0hZTGVW" class="dropdown-item">内容整合</a>
-										</li>
-									</ul>
-								</li>
-								
-								<li class="nav-item">
-									<a href="https://admin.1023.love" class="nav-link">管理</a>
-								</li>
-								<li class="nav-item dropdown">
-									<a href="#" data-bs-toggle="dropdown" class="nav-link dropdown-toggle">测试</a>
-									<ul class="dropdown-menu">
-										<li class="dropdown dropdown-submenu dropend">
-											<a href="#" data-bs-toggle="dropdown" class="dropdown-item dropdown-toggle">PHP</a>
-											<ul class="dropdown-menu">
-												<li class="nav-item">
-													<a href="https://www.1023.love/api/php.php" class="dropdown-item">PHP版本</a>
-												</li>
-												<li class="nav-item">
-													<a href="https://www.1023.love/api/index.php" class="dropdown-item">PHP-demo</a>
-												</li>
-												<li class="nav-item">
-													<a href="https://www.1023.love/api/login.php" class="dropdown-item">PHP-登录</a>
-												</li>
-											</ul>
-										</li>
-										<li class="dropdown dropdown-submenu dropend">
-											<a href="#" data-bs-toggle="dropdown" class="dropdown-item dropdown-toggle">数据库</a>
-											<ul class="dropdown-menu">
-												<li class="nav-item">
-													<a href="http://www.sqlpub.com:8080/#/" class="dropdown-item">链接数据库</a>
-												</li>
-												<li class="nav-item">
-													<a href="https://sqlpub.com/#/" class="dropdown-item">数据库注册</a>
-												</li>
-											</ul>
-										</li>
-										<li class="nav-item">
-											<a href="https://test.1023.love" class="dropdown-item">测试页面</a>
-										</li>
-										<li class="nav-item">
-											<a href="http://53ba086f.hk.cpolar.io" class="dropdown-item">聊天测试</a>
-										</li>
-									</ul>
-								</li>
-								
-								
-								
-								<li class="nav-item dropdown">
-									<a href="#" data-bs-toggle="dropdown" class="nav-link dropdown-toggle">云端仓库</a>
-									<ul class="dropdown-menu">
-										<li class="nav-item">
-											<a href="https://cowtransfer.com/s/cc3b757f7adf43" class="dropdown-item">奶牛网盘</a>
-										</li>
-										
-										<li class="nav-item">
-											<a href="https://li1023.lanzoue.com/b04epo5le" class="dropdown-item">蓝奏云盘</a>
-										</li>
-										
-										<li class="nav-item">
-											<a href="https://www.123pan.com/s/QrVrVv-M0q53.html" class="dropdown-item">123网盘</a>
-										</li>
-										
-									</ul>
-								</li>
-								<li class="nav-item dropdown">
-									<a href="#" data-bs-toggle="dropdown" class="nav-link dropdown-toggle">免费体验</a>
-									<div class="dropdown-menu dropdown-lg">
-										<div class="dropdown-lg-content">
-											<div>
-												<h6 class="dropdown-header">腾讯云</h6>
-												<ul class="list-unstyled">
-													<li>
-														<a href="https://cloud.tencent.com/lab" class="dropdown-item">腾讯云-实验室</a>
-													</li>
-													<li>
-														<a href="https://cloud.tencent.com/act/campus" class="dropdown-item">低价-服务器</a>
-													</li>
-													<li>
-														<a href="https://cloud.tencent.com/act/pro/domain-sales?fromSource=gwzcw.1293314.1293314.1293314&cps_key=6bc5384dcb0ce52527005b2dbe2dc321" class="dropdown-item">低价-域名</a>
-													</li>
-												</ul>
-											</div>
-											<div>
-												<h6 class="dropdown-header">华为云</h6>
-												<ul class="list-unstyled">
-													<li>
-														<a href="https://activity.huaweicloud.com/domain1.html?utm_source=special&utm_medium=organic&utm_adplace=pro-ecs-free_guanggao2" class="dropdown-item">低价-域名</a>
-													</li>
-													<li>
-														<a href="https://activity.huaweicloud.com/free_test/index.html?utm_source=special&utm_medium=organic&utm_adplace=pro-ecs-free_guanggao3" class="dropdown-item">服务器</a>
-													</li>
-												</ul>
-											</div>
-											<div>
-												<h6 class="dropdown-header">阿里云</h6>
-												<ul class="list-unstyled">
-													<li>
-														<a href="https://free.aliyun.com/" class="dropdown-item">免费试用</a>
-													</li>
-													
-												</ul>
-											</div>
-											<!-- <div>
-												<h6 class="dropdown-header">华为云</h6>
-												<ul class="list-unstyled">
-													<li>
-														<a href="./single-project.html" class="dropdown-item">域名</a>
-													</li>
-													<li>
-														<a href="./single-project2.html" class="dropdown-item">服务器</a>
-													</li>
-												</ul>
-											</div> -->
-										</div>
-									</div>
-								</li>
-								
-							</ul>
-							<div class="offcanvas-footer d-lg-none">
-								<div>
-									<a href="mailto:li@1023.love" class="link-inverse">li@1023.love</a>
-									<br /> li1023qwq
-									<br />
-									<nav class="nav social social-white mt-4">
-										<a href="#">
-											<i class="uil uil-twitter"></i>
-										</a>
-										<a href="#">
-											<i class="uil uil-facebook-f"></i>
-										</a>
-										<a href="#">
-											<i class="uil uil-dribbble"></i>
-										</a>
-										<a href="#">
-											<i class="uil uil-instagram"></i>
-										</a>
-										<a href="#">
-											<i class="uil uil-youtube"></i>
-										</a>
-									</nav>
-								</div>
-							</div>
-						</div>
+		        						
+		        						<li class="nav-item">
+		        							<a href="https://admin.1023.love" class="nav-link">管理</a>
+		        						</li>
+		        						
+		        					</ul>
+		        				</div>
+		        			</div>
+		        			
+		        		</div>
+		        	</nav>
+		        	<div id="offcanvas-info" data-bs-scroll="true" class="offcanvas offcanvas-end text-inverse">
+		        		<div class="offcanvas-header">
+		        			<h3 class="text-white fs-30 mb-0">1023.love</h3>
+		        			<button type="button" data-bs-dismiss="offcanvas" aria-label="Close" class="btn-close btn-close-white"></button>
+		        		</div>
+		        		<div class="offcanvas-body pb-6">
+		        			<div class="widget mb-8">
+		        				<p>光是遇见，就已经很美好了</p>
+		        			</div>
+		        			<div class="widget mb-8">
+		        				<h4 class="widget-title text-white mb-3">联系我们</h4>
+		        				<address> 
+		        					<br />  </address>
+		        				<a href="mailto:li@1023.love" class="link-inverse">li@1023.love</a>
+		        				<br /> li1023qwq
+		        			</div>
+		        			<div class="widget mb-8">
+		        				<h4 class="widget-title text-white mb-3">了解更多</h4>
+		        				<ul class="list-unstyled">
+		        					<li>
+		        						<a href="#">关于我们</a>
+		        					</li>
+		        					<li>
+		        						<a href="#">隐私保护</a>
+		        					</li>
+		        					<li>
+		        						<a href="#">法律法规</a>
+		        					</li>
+		        					<li>
+		        						<a href="#">联系我们</a>
+		        					</li>
+		        				</ul>
+		        			</div>
+		        			<div class="widget">
+		        				<h4 class="widget-title text-white mb-3">关注我们</h4>
+		        				<nav class="nav social social-white">
+		        					<a href="#">
+		        						<i class="uil uil-twitter"></i>
+		        					</a>
+		        					<a href="#">
+		        						<i class="uil uil-facebook-f"></i>
+		        					</a>
+		        					<a href="#">
+		        						<i class="uil uil-dribbble"></i>
+		        					</a>
+		        					<a href="#">
+		        						<i class="uil uil-instagram"></i>
+		        					</a>
+		        					<a href="#">
+		        						<i class="uil uil-youtube"></i>
+		        					</a>
+		        				</nav>
+		        			</div>
+		        		</div>
+		        	</div>
+		        	
+		        </header>
+		
+		        <!-- 导航栏右侧 -->
+		        <div id="nav-right">
+				
+		    
+		</div>
+		
+		    </div>
+		</nav>
+<!-- 视频首页 -->
+		        <div class="pl-container">
+		            
+		            
+		                <video class="index-video" id="index-video" autoplay=""
+		                       src="https://fastcdn.mihoyo.com/static-resource-v2/2023/11/03/239301475344bda8e7e0fefe714ac86e_6010389899008299497.mp4" loop="" muted="" playsinline=""
+		                       webkit-playsinline=""
+		                       style="display:block;object-fit:cover;width:100%;height:100%;pointer-events:none;">
+		                </video>
+		            
+		        </div>
+		
+		        <div id="site-info">
+		            <h1 id="site-title">晚夜深秋</h1>
+		            <div id="site-subtitle">
+		                <span id="subtitle"></span>
+		                <span class="typed-cursor" aria-hidden="true"></span>
+		            </div>
+		        </div>
+		        <div id="scroll-down"><i class="haofont hao-icon-angle-down scroll-down-effects"></i></div>
+		
+		        <link rel="stylesheet" href="./css/fullPage.css?v=1.4.2">
+		
+		        <style>
+		            #site-title {
+		                width: max-content;
+		                max-width: 100%;
+		                position: relative;
+		                color: rgba(255, 255, 255, 0);
+		                animation: 1.5s linear 1s 1 normal both running show;
+		                margin: 0px auto !important;
+		            }
+		
+		            #site-title::after {
+		                content: "";
+		                position: absolute;
+		                left: 0px;
+		                margin: auto;
+		                border-radius: 12px;
+		                top: 11px;
+		                height: 55px;
+		                width: 110%;
+		                animation: 2s cubic-bezier(0.62, 0.21, 0.25, 1) 1.5s 1 normal both running color_change, 2s cubic-bezier(0.62, 0.21, 0.25, 1) 1.5s 1 normal both running swipe_box;
+		            }
+		
+		            @media screen and (max-width: 768px) {
+		                #site-title::after {
+		                    background: rgb(255, 255, 255) !important;
+		                }
+		            }
+		
+		            @media screen and (max-width: 768px) {
+		                #site-subtitle::after {
+		                    background: rgb(255, 255, 255) !important;
+		                }
+		            }
+		
+		            #site-subtitle {
+		                width: 100%;
+		                max-width: 100%;
+		                position: relative;
+		                animation: 1.5s linear 1s 1 normal both running show;
+		                margin: 0px auto !important;
+		            }
+		
+		            #site-subtitle::after {
+		                content: "";
+		                position: absolute;
+		                left: 0px;
+		                right: 0px;
+		                margin: auto;
+		                border-radius: 12px;
+		                height: 100%;
+		                width: 0%;
+		                animation: 2s cubic-bezier(0.62, 0.21, 0.25, 1) 1.5s 1 normal both running color_change, 2s cubic-bezier(0.62, 0.21, 0.25, 1) 1.5s 1 normal both running swipe_box2;
+		            }
+		
+		            @keyframes color_change {
+		                0% {
+		                    background: rgb(255, 255, 255);
+		                }
+		
+		                100% {
+		                    background: var(--xlfd-main);
+		                }
+		            }
+		
+		            @-webkit-keyframes color_change {
+		                0% {
+		                    background: rgb(255, 255, 255);
+		                }
+		
+		                100% {
+		                    background: var(--xlfd-main);
+		                }
+		            }
+		
+		            @-webkit-keyframes swipe_box {
+		                0% {
+		                    left: 0px;
+		                    width: 0%;
+		                }
+		
+		                50% {
+		                    left: 0px;
+		                    width: 100%;
+		                }
+		
+		                100% {
+		                    left: 100%;
+		                    width: 0%;
+		                }
+		            }
+		
+		            @keyframes swipe_box {
+		                0% {
+		                    left: 0px;
+		                    width: 0%;
+		                }
+		
+		                50% {
+		                    left: 0px;
+		                    width: 100%;
+		                }
+		
+		                100% {
+		                    left: 100%;
+		                    width: 0%;
+		                }
+		            }
+		
+		            @-webkit-keyframes swipe_box2 {
+		                0% {
+		                    left: 0px;
+		                    width: 0%;
+		                }
+		
+		                50% {
+		                    left: 0px;
+		                    width: 80%;
+		                }
+		
+		                100% {
+		                    left: 0px;
+		                    width: 0%;
+		                }
+		            }
+		
+		            @keyframes swipe_box2 {
+		                0% {
+		                    left: 0px;
+		                    width: 0%;
+		                }
+		
+		                50% {
+		                    left: 0px;
+		                    width: 80%;
+		                }
+		
+		                100% {
+		                    left: 0px;
+		                    width: 0%;
+		                }
+		            }
+		
+		            @-webkit-keyframes show {
+		                0% {
+		                    color: rgba(255, 255, 255, 0);
+		                    text-shadow: transparent 2px 3px 10px;
+		                }
+		
+		                81% {
+		                    color: rgba(255, 255, 255, 0);
+		                }
+		
+		                100% {
+		                    color: rgb(255, 255, 255);
+		                }
+		            }
+		
+		            @keyframes show {
+		                0% {
+		                    color: rgba(255, 255, 255, 0);
+		                    text-shadow: transparent 2px 3px 10px;
+		                }
+		
+		                81% {
+		                    color: rgba(255, 255, 255, 0);
+		                }
+		
+		                100% {
+		                    color: rgb(255, 255, 255);
+		                }
+		            }
+		
+		            .pl-img {
+		                background-image: url(https://myhkw.cn/open/img/acg);
+		
+		            }
+		
+		            @media screen and (max-width: 768px) {
+		                .pl-img {
+		                    background-image: url(https://imgapi.kouseki.cn/random?sort=mp);
+		                }
+		            }
+		
+		            .typed-cursor {
+		                opacity: 1;
+		            }
+		
+		            .typed-cursor.typed-cursor--blink {
+		                animation: typedjsBlink 0.7s infinite;
+		                -webkit-animation: typedjsBlink 0.7s infinite;
+		                animation: typedjsBlink 0.7s infinite;
+		            }
+		
+		            @keyframes typedjsBlink {
+		                50% {
+		                    opacity: 0.0;
+		                }
+		            }
+		
+		            @-webkit-keyframes typedjsBlink {
+		                0% {
+		                    opacity: 1;
+		                }
+		                50% {
+		                    opacity: 0.0;
+		                }
+		                100% {
+		                    opacity: 1;
+		                }
+		            }
+		        </style>
+		        <script>
+		            function subtitleType() {
+		                if(true){
+		                    fetch("https://v1.hitokoto.cn").then((t => t.json())).then((t => {
+		                        {
+		                            const e = "出自 " + t.from;
+		                            const n = [].map((item) => {
+		                                return item.realNode.text;
+		                            });
+		                            n.push(t.hitokoto, e), window.typed = new Typed("#subtitle", {
+		                                strings: n,
+		                                startDelay: 300,
+		                                typeSpeed: 100,
+		                                loop: !0,
+		                                backSpeed: 50
+		                            })
+		                        }
+		                    }))
+		                }else{
+		                    const n = [].map((item) => {
+		                        return item.realNode.text;
+		                    });
+		                    window.typed = new Typed("#subtitle", {
+		                        strings: n,
+		                        startDelay: 300,
+		                        typeSpeed: 100,
+		                        loop: !0,
+		                        backSpeed: 50
+		                    })
+		                }
+		            }
+		            // 防止加载文字太短时第一个自定义文字显示不出来
+		            setTimeout(()=>{
+		                "function" == typeof Typed ? subtitleType() : getScript("https://npm.elemecdn.com/typed.js@2.0.12/lib/typed.min.js").then(subtitleType)
+		            },1800)
+		        </script>
+		    
+		
+		        </header>
+		        <div id="home_top">
+		            <!-- 每日说说 -->
+		            <div class="bbTimeList container" id="bbTimeList">
+		
+		    <i class="haofont hao-icon-logo-moment" onclick="" style="font-size: 1.3rem;" title="瞬间"></i>
+		
+		    <!--   未安装插件   -->
+		    
+		
+		    <!--   瞬间插件   -->
+		    
+		        <div class="swiper-container swiper-no-swiping" id="bbtalk" tabindex="-1">
+		            <div class="swiper-wrapper" id="bber-talk" onclick="pjax.loadUrl('/moments')">
+		                
+		                    <div class="li-style swiper-slide">哭也不会改变什么，这个世界从来不会对任何人温柔。</div>
+		                
+		                    <div class="li-style swiper-slide">蒹葭苍苍，白露为霜。所谓伊人，在水一方。</div>
+		                
+		            </div>
+		        </div>
+		        <i class="bber-gotobb haofont hao-icon-circle-arrow-right" onclick="location.href='/moments'" title="查看全文"></i>
+		    
+		    
+		
+		</div>
+		<section class="wrapper">
+			<div class="container py-14 py-md-16">
+				
+				<div class="row gy-6">
+					
+					<div class="col-md-6 col-lg-4">
+					    <a href="https://www.1023.love/" class="card shadow-lg lift h-100">
+					        <div class="card-body p-5 d-flex flex-row">
+					            <div>
+									<img src="https://www.logosc.cn/oss/icons/2023/06/08/4385ad20a7325e4bb18481c0ebc538a7.png" class="avatar w-11 h-11 me-4">
+					                <!-- <span class="avatar bg-blue text-white w-11 h-11 fs-20 me-4">主页</span> -->
+					            </div>
+					            <div>
+					                <span class="badge bg-pale-red text-blue rounded py-1 mb-2">测试</span>
+					                <h4 class="mb-1">主页</h4>
+					                <p class="mb-0 text-body">晚夜深秋qwq</p>
+					            </div>
+					        </div>
+					    </a>
 					</div>
-					<div class="navbar-other w-100 d-flex ms-auto">
-						<ul class="navbar-nav flex-row align-items-center ms-auto">
-							<li class="nav-item dropdown language-select text-uppercase">
-								<a href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-item dropdown-toggle">中文</a>
-								<ul class="dropdown-menu">
-									<li class="nav-item">
-										<!-- 没有 -->
-										<a href="#" class="dropdown-item">看不懂汉语？</a>
-									</li>
-									<li class="nav-item">
-										<!-- 英语 -->
-										<a href="#" class="dropdown-item">English</a>
-									</li>
-									<li class="nav-item">
-										<!-- 法语 -->
-										<a href="#" class="dropdown-item">Français</a>
-									</li>
-									<li class="nav-item">
-										<!-- 俄语 -->
-										<a href="#" class="dropdown-item">Русский</a>
-									</li>
-									<li class="nav-item">
-										<!-- 德语 -->
-										<a href="#" class="dropdown-item">Deutsch</a>
-									</li>
-									<li class="nav-item">
-										<!-- 韩语 -->
-										<a href="#" class="dropdown-item">한국어</a>
-									</li>
-								</ul>
-							</li>
-							<li class="nav-item d-none d-md-block">
-								<a href="mailto:li@1023.love" class="btn btn-sm btn-primary rounded-pill">联系我们</a>
-							</li>
-							<li class="nav-item d-lg-none">
-								<button class="hamburger offcanvas-nav-btn">
-									<span></span>
-								</button>
-							</li>
-						</ul>
+					<div class="col-md-6 col-lg-4">
+					    <a href="https://www.1023.love/about.html" class="card shadow-lg lift h-100">
+					        <div class="card-body p-5 d-flex flex-row">
+					            <div>
+									<img src="https://www.logosc.cn/oss/icons/2023/05/30/ec50bad618c5659eebefc6ce7be0d5fc.png" class="avatar w-11 h-11 me-4">
+					                <!-- <span class="avatar bg-blue text-white w-11 h-11 fs-20 me-4">导航</span> -->
+					            </div>
+					            <div>
+					                <span class="badge bg-pale-orange text-blue rounded py-1 mb-2">测试</span>
+					                <h4 class="mb-1">导航</h4>
+					                <p class="mb-0 text-body">晚夜深秋qwq</p>
+					            </div>
+					        </div>
+					    </a>
+					</div>
+					<div class="col-md-6 col-lg-4">
+					    <a href="http://li1023.51server.top/" class="card shadow-lg lift h-100">
+					        <div class="card-body p-5 d-flex flex-row">
+					            <div>
+									<img src="https://www.logosc.cn/oss/icons/2022/12/13/cc7e5d185f5a27705b3fb30faf02bb9c.png" class="avatar w-11 h-11 me-4">
+					                <!-- <span class="avatar bg-blue text-white w-11 h-11 fs-20 me-4">博客</span> -->
+					            </div>
+					            <div>
+					                <span class="badge bg-pale-yellow text-blue rounded py-1 mb-2">测试</span>
+					                <h4 class="mb-1">博客</h4>
+					                <p class="mb-0 text-body">晚夜深秋qwq</p>
+					            </div>
+					        </div>
+					    </a>
+					</div>
+					<div class="col-md-6 col-lg-4">
+					    <a href="https://painting.1023.love/" class="card shadow-lg lift h-100">
+					        <div class="card-body p-5 d-flex flex-row">
+					            <div>
+					                <img src="https://www.logosc.cn/oss/icons/2022/12/03/b0a5da51e5389a554c465c6c89b003cb.png" class="avatar w-11 h-11 me-4">
+					            
+					                <!-- <span class="avatar bg-blue text-white w-11 h-11 fs-20 me-4">绘画</span> -->
+					            </div>
+					            <div>
+					                <span class="badge bg-pale-green text-blue rounded py-1 mb-2">测试</span>
+					                <h4 class="mb-1">绘画</h4>
+					                <p class="mb-0 text-body">晚夜深秋qwq</p>
+					            </div>
+					        </div>
+					    </a>
+					</div>
+					<div class="col-md-6 col-lg-4">
+					    <a href="https://admin.1023.love/" class="card shadow-lg lift h-100">
+					        <div class="card-body p-5 d-flex flex-row">
+					            <div>
+									<img src="https://www.logosc.cn/oss/icons/2023/03/06/b85f3880155c1547531b6ce06de48fff.png" class="avatar w-11 h-11 me-4">
+					                <!-- <span class="avatar bg-blue text-white w-11 h-11 fs-20 me-4">管理</span> -->
+					            </div>
+					            <div>
+					                <span class="badge bg-pale-blue text-blue rounded py-1 mb-2">测试</span>
+					                <h4 class="mb-1">管理</h4>
+					                <p class="mb-0 text-body">晚夜深秋qwq</p>
+					            </div>
+					        </div>
+					    </a>
+					</div>
+					<div class="col-md-6 col-lg-4">
+					    <a href="https://test.1023.love/" class="card shadow-lg lift h-100">
+					        <div class="card-body p-5 d-flex flex-row">
+					            <div>
+									<img src="https://www.logosc.cn/oss/icons/2023/06/08/7708dc75338f18518be93ba9584ba364.png" class="avatar w-11 h-11 me-4">
+					                <!-- <span class="avatar bg-blue text-white w-11 h-11 fs-20 me-4">测试</span> -->
+					            </div>
+					            <div>
+					                <span class="badge bg-pale-purple text-blue rounded py-1 mb-2">测试</span>
+					                <h4 class="mb-1">测试</h4>
+					                <p class="mb-0 text-body">晚夜深秋qwq</p>
+					            </div>
+					        </div>
+					    </a>
 					</div>
 				</div>
-			</nav>
-			<div class="py-md-6">
-				<div class="content-wrapper">
-					<header class="wrapper">
-						<nav class="navbar navbar-expand-lg center-nav transparent position-absolute navbar-dark px-md-10 px-xxl-0">
-							<div class="container flex-lg-row flex-nowrap align-items-center">
-								<div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
-									<div class="offcanvas-header d-lg-none">
-										<h3 class="text-white fs-30 mb-0">1023.love
-											<br />
-										</h3>
-										<button type="button" data-bs-dismiss="offcanvas" aria-label="Close" class="btn-close btn-close-white"></button>
-									</div>
-									<div class="offcanvas-body ms-lg-auto d-flex flex-column h-100">
-										<ul class="navbar-nav">
-											<li class="nav-item">
-												<a href="https://www.1023.love" class="nav-link">首页</a>
-											</li>
-											<li class="nav-item">
-												<a href="./about.html" class="nav-link">导航</a>
-											</li>
-											<li class="nav-item">
-												<a href="http://li1023.51server.top/" class="nav-link">博客</a>
-											</li>
-											<li class="nav-item dropdown">
-												<a href="#" data-bs-toggle="dropdown" class="nav-link dropdown-toggle">AI</a>
-												<ul class="dropdown-menu">
-													<li class="nav-item">
-														<a href="https://painting.1023.love" class="dropdown-item">AI绘画</a>
-													</li>
-													
-													<li class="nav-item">
-														<a href="https://chatbot.weixin.qq.com/webapp/1cvFPYylGZUzvnzbyeQO7YzpwxcgeP?robotName=%E6%99%9A%E5%A4%9C%E6%B7%B1%E7%A7%8B" class="dropdown-item">AI对话</a>
-													</li>
-												</ul>
-											</li>
-											<li class="nav-item dropdown">
-												<a href="#" data-bs-toggle="dropdown" class="nav-link dropdown-toggle">报告</a>
-												<ul class="dropdown-menu">
-													<li class="nav-item">
-														<a href="https://docs.qq.com/sheet/DVVBaeUZ1V1ZKTWZG" class="dropdown-item">游戏数据收集</a>
-													</li>
-													<li class="nav-item">
-														<a href="https://docs.qq.com/doc/DVXZWUWpNZ2NYckxk" class="dropdown-item">内容框架</a>
-													</li>
-													<li class="nav-item">
-														<a href="https://docs.qq.com/sheet/DVUhIcHF0VkRIWXdi" class="dropdown-item">个人任务</a>
-													</li>
-													<li class="nav-item">
-														<a href="https://docs.qq.com/sheet/DVVZ5VEZBQlpFYkRS" class="dropdown-item">任务时间</a>
-													</li>
-													<li class="nav-item">
-														<a href="https://docs.qq.com/aio/DVWRxSU9nd0hZTGVW" class="dropdown-item">内容整合</a>
-													</li>
-												</ul>
-											</li>
-											<li class="nav-item">
-												<a href="https://admin.1023.love" class="nav-link">管理</a>
-											</li>
-											<li class="nav-item dropdown">
-												<a href="#" data-bs-toggle="dropdown" class="nav-link dropdown-toggle">测试</a>
-												<ul class="dropdown-menu">
-													<li class="dropdown dropdown-submenu dropend">
-														<a href="#" data-bs-toggle="dropdown" class="dropdown-item dropdown-toggle">PHP</a>
-														<ul class="dropdown-menu">
-															<li class="nav-item">
-																<a href="https://www.1023.love/api/php.php" class="dropdown-item">PHP版本</a>
-															</li>
-															<li class="nav-item">
-																<a href="https://www.1023.love/api/index.php" class="dropdown-item">PHP-demo</a>
-															</li>
-															<li class="nav-item">
-																<a href="https://www.1023.love/api/login.php" class="dropdown-item">PHP-登录</a>
-															</li>
-														</ul>
-													</li>
-													<li class="dropdown dropdown-submenu dropend">
-														<a href="#" data-bs-toggle="dropdown" class="dropdown-item dropdown-toggle">数据库</a>
-														<ul class="dropdown-menu">
-															<li class="nav-item">
-																<a href="http://www.sqlpub.com:8080/#/" class="dropdown-item">链接数据库</a>
-															</li>
-															<li class="nav-item">
-																<a href="https://sqlpub.com/#/" class="dropdown-item">数据库注册</a>
-															</li>
-														</ul>
-													</li>
-													<li class="nav-item">
-														<a href="https://test.1023.love" class="dropdown-item">测试页面</a>
-													</li>
-													<li class="nav-item">
-														<a href="http://53ba086f.hk.cpolar.io" class="dropdown-item">聊天测试</a>
-													</li>
-												</ul>
-											</li>
-											
-											
-											
-											<li class="nav-item dropdown">
-												<a href="#" data-bs-toggle="dropdown" class="nav-link dropdown-toggle">云端仓库</a>
-												<ul class="dropdown-menu">
-													<li class="nav-item">
-														<a href="https://cowtransfer.com/s/cc3b757f7adf43" class="dropdown-item">奶牛网盘</a>
-													</li>
-													
-													<li class="nav-item">
-														<a href="https://li1023.lanzoue.com/b04epo5le" class="dropdown-item">蓝奏云盘</a>
-													</li>
-													
-													<li class="nav-item">
-														<a href="https://www.123pan.com/s/QrVrVv-M0q53.html" class="dropdown-item">123网盘</a>
-													</li>
-													
-												</ul>
-											</li>
-											<li class="nav-item dropdown">
-												<a href="#" data-bs-toggle="dropdown" class="nav-link dropdown-toggle">免费体验</a>
-												<div class="dropdown-menu dropdown-lg">
-													<div class="dropdown-lg-content">
-														<div>
-															<h6 class="dropdown-header">腾讯云</h6>
-															<ul class="list-unstyled">
-																<li>
-																	<a href="https://cloud.tencent.com/lab" class="dropdown-item">腾讯云-实验室</a>
-																</li>
-																<li>
-																	<a href="https://cloud.tencent.com/act/campus" class="dropdown-item">低价-服务器</a>
-																</li>
-																<li>
-																	<a href="https://cloud.tencent.com/act/pro/domain-sales?fromSource=gwzcw.1293314.1293314.1293314&cps_key=6bc5384dcb0ce52527005b2dbe2dc321" class="dropdown-item">低价-域名</a>
-																</li>
-															</ul>
-														</div>
-														<div>
-															<h6 class="dropdown-header">华为云</h6>
-															<ul class="list-unstyled">
-																<li>
-																	<a href="https://activity.huaweicloud.com/domain1.html?utm_source=special&utm_medium=organic&utm_adplace=pro-ecs-free_guanggao2" class="dropdown-item">低价-域名</a>
-																</li>
-																<li>
-																	<a href="https://activity.huaweicloud.com/free_test/index.html?utm_source=special&utm_medium=organic&utm_adplace=pro-ecs-free_guanggao3" class="dropdown-item">服务器</a>
-																</li>
-															</ul>
-														</div>
-														<div>
-															<h6 class="dropdown-header">阿里云</h6>
-															<ul class="list-unstyled">
-																<li>
-																	<a href="https://free.aliyun.com/" class="dropdown-item">免费试用</a>
-																</li>
-																
-															</ul>
-														</div>
-														<!-- <div>
-															<h6 class="dropdown-header">华为云</h6>
-															<ul class="list-unstyled">
-																<li>
-																	<a href="./single-project.html" class="dropdown-item">域名</a>
-																</li>
-																<li>
-																	<a href="./single-project2.html" class="dropdown-item">服务器</a>
-																</li>
-															</ul>
-														</div> -->
-													</div>
-												</div>
-											</li>
-											
-										</ul>
-									</div>
-								</div>
-								<div class="navbar-other w-100 d-flex ms-auto">
-									<ul class="navbar-nav flex-row align-items-center ms-auto">
-										<li class="nav-item">
-											<a data-bs-toggle="offcanvas" data-bs-target="#offcanvas-info" class="nav-link">
-												<i class="uil uil-info-circle"></i>
-											</a>
-										</li>
-										<li class="nav-item">
-											<a data-bs-toggle="offcanvas" data-bs-target="#offcanvas-search" class="nav-link">
-												<i class="uil uil-search"></i>
-											</a>
-										</li>
-										<li class="nav-item d-lg-none">
-											<button class="hamburger offcanvas-nav-btn">
-												<span></span>
-											</button>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</nav>
-						<div id="offcanvas-info" data-bs-scroll="true" class="offcanvas offcanvas-end text-inverse">
-							<div class="offcanvas-header">
-								<h3 class="text-white fs-30 mb-0">1023.love</h3>
-								<button type="button" data-bs-dismiss="offcanvas" aria-label="Close" class="btn-close btn-close-white"></button>
-							</div>
-							<div class="offcanvas-body pb-6">
-								<div class="widget mb-8">
-									<p>光是遇见，就已经很美好了</p>
-								</div>
-								<div class="widget mb-8">
-									<h4 class="widget-title text-white mb-3">联系我们</h4>
-									<address> 
-										<br />  </address>
-									<a href="mailto:li@1023.love" class="link-inverse">li@1023.love</a>
-									<br /> li1023qwq
-								</div>
-								<div class="widget mb-8">
-									<h4 class="widget-title text-white mb-3">了解更多</h4>
-									<ul class="list-unstyled">
-										<li>
-											<a href="#">关于我们</a>
-										</li>
-										<li>
-											<a href="#">隐私保护</a>
-										</li>
-										<li>
-											<a href="#">法律法规</a>
-										</li>
-										<li>
-											<a href="#">联系我们</a>
-										</li>
-									</ul>
-								</div>
-								<div class="widget">
-									<h4 class="widget-title text-white mb-3">关注我们</h4>
-									<nav class="nav social social-white">
-										<a href="#">
-											<i class="uil uil-twitter"></i>
-										</a>
-										<a href="#">
-											<i class="uil uil-facebook-f"></i>
-										</a>
-										<a href="#">
-											<i class="uil uil-dribbble"></i>
-										</a>
-										<a href="#">
-											<i class="uil uil-instagram"></i>
-										</a>
-										<a href="#">
-											<i class="uil uil-youtube"></i>
-										</a>
-									</nav>
-								</div>
-							</div>
-						</div>
-						<div id="offcanvas-search" data-bs-scroll="true" class="offcanvas offcanvas-top bg-light">
-						  <div class="container d-flex flex-row py-6">
-						    <form class="search-form w-100" onsubmit="search()">
-						      <input id="search-form" type="text" placeholder="请输入搜索关键字" class="form-control" />
-						      <div class="form-check form-check-inline">
-						        <input class="form-check-input" type="radio" name="search-option" id="bing-search" value="https://www.bing.com/search?q=">
-						        <label class="form-check-label" for="bing-search">Bing搜索</label>
-						      </div>
-						      <div class="form-check form-check-inline">
-						        <input class="form-check-input" type="radio" name="search-option" id="baidu-search" value="https://www.baidu.com/s?wd=">
-						        <label class="form-check-label" for="baidu-search">百度搜索</label>
-						      </div>
-						      <button type="submit" class="btn btn-primary">搜索</button>
-						    </form>
-						    <button type="button" data-bs-dismiss="offcanvas" aria-label="Close" class="btn-close"></button>
-						  </div>
-						</div>
-						
-						<script>
-						  function search() {
-						    event.preventDefault(); // 阻止表单默认提交行为
-						
-						    // 获取搜索关键字和选中的搜索引擎
-						    var keyword = document.getElementById("search-form").value;
-						    var searchOption = document.querySelector('input[name="search-option"]:checked').value;
-						
-						    // 构建搜索URL
-						    var searchUrl = searchOption + encodeURIComponent(keyword);
-						
-						    // 在新标签页中打开搜索结果
-						    window.open(searchUrl, "_blank");
-						  }
-						</script>
-					</header>
-					<section class="section-frame br-fix overflow-hidden">
-						<div data-image-src="https://www.toopic.cn/public/uploads/small/1691397909588169139790980.jpg" class="wrapper image-wrapper bg-cover bg-image bg-overlay bg-overlay-500">
-							<div class="container pt-18 pt-lg-21 pb-17 pb-lg-19 text-center">
-								<div class="row">
-									<div data-cues="zoomIn" data-group="page-title" data-interval="-200" data-delay="500" class="col-md-9 col-lg-8 col-xl-7 col-xxl-6 mx-auto">
-										
-										<h6 class="h6 text-uppercase ls-xl text-white mb-5">欢迎使用1023.love</h6>
-										
-										
-										<h3 class="display-1 fs-54 text-white mb-7">光是遇见</h3>
-										<h3 class="display-1 fs-54 text-white mb-7">就已经很美好了</h3>
-									</div>
-								</div>
-							</div>
-							<link rel="stylesheet" href="https://template-1253409072.cos.ap-guangzhou.myqcloud.com/vip-tpl/assets/css/plugins.css" />
-							<link rel="stylesheet" href="https://template-1253409072.cos.ap-guangzhou.myqcloud.com/vip-tpl/assets/css/style.css" />
-							<section class="wrapper">
-								<div class="container py-14 py-md-16">
-									
-									<div class="row gy-6">
-										
-										<div class="col-md-6 col-lg-4">
-										    <a href="https://www.1023.love/" class="card shadow-lg lift h-100">
-										        <div class="card-body p-5 d-flex flex-row">
-										            <div>
-														<img src="https://www.logosc.cn/oss/icons/2023/06/08/4385ad20a7325e4bb18481c0ebc538a7.png" class="avatar w-11 h-11 me-4">
-										                <!-- <span class="avatar bg-blue text-white w-11 h-11 fs-20 me-4">主页</span> -->
-										            </div>
-										            <div>
-										                <span class="badge bg-pale-red text-blue rounded py-1 mb-2">测试</span>
-										                <h4 class="mb-1">主页</h4>
-										                <p class="mb-0 text-body">晚夜深秋qwq</p>
-										            </div>
-										        </div>
-										    </a>
-										</div>
-										<div class="col-md-6 col-lg-4">
-										    <a href="https://www.1023.love/about.html" class="card shadow-lg lift h-100">
-										        <div class="card-body p-5 d-flex flex-row">
-										            <div>
-														<img src="https://www.logosc.cn/oss/icons/2023/05/30/ec50bad618c5659eebefc6ce7be0d5fc.png" class="avatar w-11 h-11 me-4">
-										                <!-- <span class="avatar bg-blue text-white w-11 h-11 fs-20 me-4">导航</span> -->
-										            </div>
-										            <div>
-										                <span class="badge bg-pale-orange text-blue rounded py-1 mb-2">测试</span>
-										                <h4 class="mb-1">导航</h4>
-										                <p class="mb-0 text-body">晚夜深秋qwq</p>
-										            </div>
-										        </div>
-										    </a>
-										</div>
-										<div class="col-md-6 col-lg-4">
-										    <a href="http://li1023.51server.top/" class="card shadow-lg lift h-100">
-										        <div class="card-body p-5 d-flex flex-row">
-										            <div>
-														<img src="https://www.logosc.cn/oss/icons/2022/12/13/cc7e5d185f5a27705b3fb30faf02bb9c.png" class="avatar w-11 h-11 me-4">
-										                <!-- <span class="avatar bg-blue text-white w-11 h-11 fs-20 me-4">博客</span> -->
-										            </div>
-										            <div>
-										                <span class="badge bg-pale-yellow text-blue rounded py-1 mb-2">测试</span>
-										                <h4 class="mb-1">博客</h4>
-										                <p class="mb-0 text-body">晚夜深秋qwq</p>
-										            </div>
-										        </div>
-										    </a>
-										</div>
-										<div class="col-md-6 col-lg-4">
-										    <a href="https://painting.1023.love/" class="card shadow-lg lift h-100">
-										        <div class="card-body p-5 d-flex flex-row">
-										            <div>
-										                <img src="https://www.logosc.cn/oss/icons/2022/12/03/b0a5da51e5389a554c465c6c89b003cb.png" class="avatar w-11 h-11 me-4">
-										            
-										                <!-- <span class="avatar bg-blue text-white w-11 h-11 fs-20 me-4">绘画</span> -->
-										            </div>
-										            <div>
-										                <span class="badge bg-pale-green text-blue rounded py-1 mb-2">测试</span>
-										                <h4 class="mb-1">绘画</h4>
-										                <p class="mb-0 text-body">晚夜深秋qwq</p>
-										            </div>
-										        </div>
-										    </a>
-										</div>
-										<div class="col-md-6 col-lg-4">
-										    <a href="https://admin.1023.love/" class="card shadow-lg lift h-100">
-										        <div class="card-body p-5 d-flex flex-row">
-										            <div>
-														<img src="https://www.logosc.cn/oss/icons/2023/03/06/b85f3880155c1547531b6ce06de48fff.png" class="avatar w-11 h-11 me-4">
-										                <!-- <span class="avatar bg-blue text-white w-11 h-11 fs-20 me-4">管理</span> -->
-										            </div>
-										            <div>
-										                <span class="badge bg-pale-blue text-blue rounded py-1 mb-2">测试</span>
-										                <h4 class="mb-1">管理</h4>
-										                <p class="mb-0 text-body">晚夜深秋qwq</p>
-										            </div>
-										        </div>
-										    </a>
-										</div>
-										<div class="col-md-6 col-lg-4">
-										    <a href="https://test.1023.love/" class="card shadow-lg lift h-100">
-										        <div class="card-body p-5 d-flex flex-row">
-										            <div>
-														<img src="https://www.logosc.cn/oss/icons/2023/06/08/7708dc75338f18518be93ba9584ba364.png" class="avatar w-11 h-11 me-4">
-										                <!-- <span class="avatar bg-blue text-white w-11 h-11 fs-20 me-4">测试</span> -->
-										            </div>
-										            <div>
-										                <span class="badge bg-pale-purple text-blue rounded py-1 mb-2">测试</span>
-										                <h4 class="mb-1">测试</h4>
-										                <p class="mb-0 text-body">晚夜深秋qwq</p>
-										            </div>
-										        </div>
-										    </a>
-										</div>
-									</div>
-									
-								</div>
-							</section>
-							<script src="js/plugins.js"></script>
-							<script src="js/theme.js"></script>
-						</div>
+				
+			</div>
+		</section>
+		<script src="js/plugins.js"></script>
+		<script src="js/theme.js"></script>
+		
 
-		</body>
+        <!-- 底部 -->
+        <footer id="footer">
+
+    
+
+    <!-- 社交链接，需要填入 href class title -->
+    <div id="footer_deal">
+        
+            
+        
+
+        <img class="footer_mini_logo"
+             src=""
+             data-lazy-src="https://oss-v1-sq1.fuukir.cn/WEB/idc.fuukir.cn/logo.ico" title="返回顶部" onclick="btf.scrollToDest(0, 500)">
+
+        
+            
+        
+    </div>
+
+    <!-- 相关地址  -->
+    
+    <!-- 底部 banner -->
+    
+    
+    
+    
+    
+    <span style="padding: 20px 20px;">
+
+    </span>
+
+    <style>
+        .copyright,
+        #ghbdages,
+        #workboard {
+            text-align: center;
+        }
+    </style>
+
+    
+
+    
+
+
+    <!-- 右下角 snackbar 弹窗 -->
+    
+    <div id="quit-box" onclick="RemoveRewardMask()"></div>
+
+    <!--评论弹幕弹窗 -->
+    <div class="comment-barrage needEndHide" style="display: none;"></div>
+
+</footer>
+    </div>
+
+
+
+
+<!-- todo 右下角悬浮操作按钮 -->
+
+    <div id="rightside">
+        <div id="rightside-config-hide">
+            
+            <button id="translateLink" type="button" title="简繁转换">繁</button>
+            <button id="darkmode" type="button" title="浅色和深色模式转换"><i class="haofont hao-icon-circle-half-stroke"></i></button>
+            <button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="haofont hao-icon-arrows-left-right"></i></button>
+        </div>
+        <div id="rightside-config-show">
+            <button id="rightside-config" type="button" title="设置"><i class="haofont hao-icon-gear"></i></button>
+            
+            <a id="to_comment" href="#post-comment" title="直达评论" ><i class="haofont hao-icon-comments"></i></a>
+            <a id="switch-commentBarrage" href="javascript:heo.switchCommentBarrage();" rel="external nofollow noreferrer" title="开关弹幕" draggable="false" data-pjax-state="external"><i class="haofont hao-icon-danmu"></i></a>
+            <button id="go-up" type="button" title="回到顶部"><i class="haofont hao-icon-arrow-up"></i></button>
+            
+        </div>
+    </div>
+    
+
+    <link rel="stylesheet" href="./css/read-mode.css?v=1.4.2">
+
+
+
+<div class="js-pjax">
+    <div id="rightMenu">
+        <div class="rightMenu-group rightMenu-small">
+            <div class="rightMenu-item" id="menu-backward"><i class="haofont hao-icon-arrow-left"></i></div>
+            <div class="rightMenu-item" id="menu-forward"><i class="haofont hao-icon-arrow-right"></i></div>
+            <div class="rightMenu-item" id="menu-refresh"><i class="haofont hao-icon-arrow-rotate-right"></i></div>
+            <div class="rightMenu-item" id="menu-top"><i class="haofont hao-icon-arrow-up"></i></div>
+        </div>
+        <div class="rightMenu-group rightMenu-line rightMenuPlugin">
+            <div class="rightMenu-item" id="menu-copytext">
+                <i class="haofont hao-icon-copy"></i>
+                <span>复制选中文本</span>
+            </div>
+            <div class="rightMenu-item" id="menu-pastetext">
+                <i class="haofont hao-icon-paste"></i>
+                <span>粘贴文本</span>
+            </div>
+            <a class="rightMenu-item" id="menu-commenttext">
+                <i class="haofont hao-icon-comment-medical"></i>
+                <span>引用到评论</span>
+            </a>
+            <div class="rightMenu-item" id="menu-newwindow">
+                <i class="haofont hao-icon-window-restore"></i>
+                <span>新窗口打开</span>
+            </div>
+            <div class="rightMenu-item" id="menu-copylink">
+                <i class="haofont hao-icon-link"></i>
+                <span>复制链接地址</span>
+            </div>
+            <div class="rightMenu-item" id="menu-copyimg">
+                <i class="haofont hao-icon-images"></i>
+                <span>复制此图片</span>
+            </div>
+            <div class="rightMenu-item" id="menu-downloadimg">
+                <i class="haofont hao-icon-download"></i>
+                <span>下载此图片</span>
+            </div>
+            <div class="rightMenu-item" id="menu-newwindowimg" >
+                <i class="haofont hao-icon-window-restore"></i>
+                <span>新窗口打开图片</span>
+            </div>
+            <div class="rightMenu-item" id="menu-search">
+                <i class="haofont hao-icon-magnifying-glass"></i>
+                <span>站内搜索</span>
+            </div>
+            <div class="rightMenu-item" id="menu-searchBaidu">
+                <i class="haofont hao-icon-baidu"></i>
+                <span>百度搜索</span>
+            </div>
+            <div class="rightMenu-item" id="menu-music-toggle" style="">
+                <i class="haofont hao-icon-play"></i>
+                <span>播放音乐</span>
+            </div>
+            <div class="rightMenu-item" id="menu-music-back" style="">
+                <i class="haofont hao-icon-backward"></i>
+                <span>切换到上一首</span>
+            </div>
+            <div class="rightMenu-item" id="menu-music-forward" style="">
+                <i class="haofont hao-icon-forward"></i>
+                <span>切换到下一首</span>
+            </div>
+            <div class="rightMenu-item" id="menu-music-playlist"
+                 style="" onclick="javascript:window.open(&#39;https://y.qq.com/n/ryqq/playlist/9041781007&#39;)">
+                <i class="haofont hao-icon-radio"></i>
+                <span>查看所有歌曲</span>
+            </div>
+            <div class="rightMenu-item" id="menu-music-copyMusicName" style="">
+                <i class="haofont hao-icon-copy"></i>
+                <span>复制歌名</span>
+            </div>
+        </div>
+        <div class="rightMenu-group rightMenu-line rightMenuOther">
+            <a class="rightMenu-item menu-link" id="menu-randomPost" onclick="toRandomPost()">
+                <i class="haofont hao-icon-shuffle"></i>
+                <span>随便逛逛</span>
+            </a>
+            <a class="rightMenu-item menu-link" href="../categories">
+                <i class="haofont hao-icon-cube"></i>
+                <span>博客分类</span>
+            </a>
+            <a class="rightMenu-item menu-link" href="../tags">
+                <i class="haofont hao-icon-tags"></i>
+                <span>文章标签</span>
+            </a>
+        </div>
+        <!-- <div class="rightMenu-group rightMenu-line">
+            <a class="rightMenu-item menu-link" href="cc/index.html">
+                <i class="haofont icon-hand-holding"></i>
+                <span>隐私协议</span>
+            </a>
+            <a class="rightMenu-item menu-link" href="cc/index.html">
+                <i class="haofont icon-closed-captioning"></i>
+                <span>版权协议</span>
+            </a>
+        </div> -->
+        <div class="rightMenu-group rightMenu-line rightMenuOther">
+            <div class="rightMenu-item" id="menu-copy">
+                <i class="haofont hao-icon-copy"></i>
+                <span>复制地址</span>
+            </div>
+            <div class="rightMenu-item" id="menu-commentBarrage"
+                 rel="external nofollow noreferrer" draggable="false" style="display: flex;">
+                <i class="haofont hao-icon-message"></i>
+                <span class="menu-commentBarrage-text">关闭热评</span>
+            </div>
+            <div class="rightMenu-item" id="menu-darkmode">
+                <i class="haofont hao-icon-circle-half-stroke"></i>
+                <span class="menu-darkmode-text">深色模式</span>
+            </div>
+            <div class="rightMenu-item" id="menu-translate">
+                <i class="haofont hao-icon-language"></i>
+                <span>轉為繁體</span>
+            </div>
+        </div>
+    </div>
+    <div id="rightmenu-mask"></div>
+</div>
+
+<div>
+    <script src="./js/utils.js?v=1.4.2"></script>
+    <script src="./js/halo.js?v=1.4.2"></script>
+    <script src="./js/main.js?v=1.4.2"></script>
+    <script charset="utf-8" data-pjax src="./zhheo/blogex.js?v=1.4.2"></script>
+    <script src="./js/tw_cn.js?v=1.4.2"></script>
+    <!-- https://instant.page/ 网站预加载， 放在 </body> 之前 -->
+    <script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/instant.page/5.1.0/instantpage.min.js" type="module"></script>
+
+    <script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/vanilla-lazyload/17.3.1/lazyload.iife.min.js"></script>
+
+    <!-- 右下角通知 https://www.polonel.com/snackbar/ -->
+    <!-- todo head 中有它的 css，应该可以写一块，并改成后台可配置的功能，代码中应该还有他的 js -->
+    <script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/node-snackbar/0.1.16/snackbar.min.js"></script>
+
+    <div class="js-pjax">
+        <!-- 动态标题 -->
+        <script>
+    var leaveTitle = 'w(ﾟДﾟ)w 不要走！再看看嘛！';
+    var backTitle = '♪(^∇^*)欢迎肥来！';
+    var OriginTitile = "晚夜深秋"
+    var titleTime
+    document.addEventListener('visibilitychange', function () {
+        if (document.hidden) {
+            //离开当前页面时标签显示内容
+            document.title = leaveTitle
+            clearTimeout(titleTime)
+        } else {
+            //返回当前页面时标签显示内容
+            document.title = backTitle + OriginTitile
+            //两秒后变回正常标题
+            titleTime = setTimeout(function () {
+                document.title = OriginTitile
+            }, 2000)
+        }
+    })
+</script>
+    </div>
+
+    <!-- 评论 -->
+    
+
+    <!--音乐-->
+    <script>var meting_api = "https://api.i-meto.com/meting/api"; </script>
+
+    <!-- 深色模式下添加粒子效果canvas -->
+    <canvas id="universe" width="1312" height="880"></canvas>
+    <script async="" src="./libs/canvas/dark.js"></script>
+
+    <!-- https://davidshimjs.github.io/qrcodejs/ 生成二维码 -->
+    <!-- 应该是文章页分享使用 -->
+    <script data-pjax src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+    <!--  https://raphamorim.io/waterfall.js/  应该是这个 还有相关的 js 代码 是否可以调整-->
+    <script src="./libs/waterfall/waterfall.min.js"></script>
+
+    <!-- 获取主色 https://lokeshdhakar.com/projects/color-thief/ -->
+    <!--<script th:src="@{/assets/libs/color-thief/color-thief.umd.js}"></script>-->
+    <script src="./libs/fast-average-color/index.browser.min.js"></script>
+
+    <script src="./libs/view-image/view-image.min.js"></script>
+
+    <link rel="stylesheet" href="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/aplayer/1.10.1/APlayer.min.css" media="all" onload="this.media='all'">
+
+    <script src="./libs/aplayer/APlayer.min.js"></script>
+
+    <script src="./libs/aplayer/Meting2.min.js"></script>
+
+    <script src="./libs/pjax/pjax.min.js"></script>
+
+    <!-- swiper 在瞬间滚动时会使用 -->
+    <script data-pjax  src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/Swiper/6.6.2/swiper-bundle.min.js"></script>
+
+    <!-- 右键菜单 -->
+    <script src="./zhheo/rightmenu.js"></script>
+
+    <!-- 评论弹幕 -->
+    
+
+    <!-- Tocbot 目录生成 start -->
+    
+    <script src="./libs/tocbot/4.18.2/tocbot.min.js"></script>
+    <link href="./libs/tocbot/4.18.2/tocbot.css" rel="stylesheet">
+
+
+    <!-- 51统计 -->
+    
+    
+
+
+    <!--官方评论插件js-->
+    <script src="/plugins/PluginCommentWidget/assets/static/comment-widget.iife.js"></script>
+
+    <script src="./libs/twikoo/easy-Danmaku.min.js" id="Danmaku"></script>
+
+    <script>
+        let pjaxSelectors = ['title', '#config-diff', '#body-wrap', '#rightside-config-hide', '#rightside-config-show', '.js-pjax','#site-config']
+
+        pjaxSelectors.unshift('meta[property="og:type"]','meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]', 'meta[property="og:description"]'
+                , 'meta[name="twitter:title"]', 'meta[name="twitter:url"]', 'meta[name="twitter:description"]', 'meta[name="twitter:image"]')
+
+        var pjax = new Pjax({
+            elements: 'a:not([target="_blank"])',
+            selectors: pjaxSelectors,
+            cacheBust: false,
+            analytics: false,
+            scrollRestoration: false
+        })
+
+        document.addEventListener('pjax:send', function () {
+
+            // removeEventListener toc scroll
+            window.removeEventListener('scroll', window.tocScrollFn)
+
+            typeof preloader === 'object' && preloader.initLoading()
+
+            if (window.aplayers) {
+                for (let i = 0; i < window.aplayers.length; i++) {
+                    if (!window.aplayers[i].options.fixed) {
+                        window.aplayers[i].destroy()
+                    }
+                }
+            }
+
+            typeof typed === 'object' && typed.destroy()
+
+            //reset readmode
+            const $bodyClassList = document.body.classList
+            $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+        })
+
+        document.addEventListener('pjax:complete', function () {
+            window.refreshFn()
+
+            document.querySelectorAll('script[data-pjax]').forEach(item => {
+                    const newScript = document.createElement('script')
+                    const content = item.text || item.textContent || item.innerHTML || ""
+                    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+                    newScript.appendChild(document.createTextNode(content))
+                    item.parentNode.replaceChild(newScript, item)
+                }
+            )
+
+            GLOBAL_CONFIG.lazyload.enable && window.lazyLoadInstance.update()
+
+            typeof chatBtnFn === 'function' && chatBtnFn()
+            typeof panguInit === 'function' && panguInit()
+
+            // google analytics
+            typeof gtag === 'function' && gtag('config', '', {
+                'page_path': window.location.pathname
+            });
+
+            // baidu analytics
+            typeof _hmt === 'object' && _hmt.push(['_trackPageview', window.location.pathname]);
+
+            typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+            // Analytics
+            if (false) {
+                MtaH5.pgv()
+            }
+
+            // prismjs
+            typeof Prism === 'object' && Prism.highlightAll()
+
+            typeof preloader === 'object' && preloader.endLoading()
+        })
+
+        document.addEventListener('pjax:error', (e) => {
+                if (e.request.status === 404 || e.request.status === 500) {
+                    window.location.href = e.request.responseURL;
+                }
+            }
+        )
+    </script>
+
+
+</div>
+
+<!-- 根据配置设置 css 变量值，全局 css 通过变量值进行处理 -->
+<style type="text/css">
+    [data-theme=light] {
+        --heo-theme: #425AEF !important;
+        --heo-theme-op: #425AEF23 !important;
+        --heo-theme-op-deep: #425AEFdd !important;
+        --heo-theme-none: #425AEF00 !important;
+    }
+
+    [data-theme=dark] {
+        --heo-theme: #f2b94b !important;
+        --heo-theme-op: #f2b94b23 !important;
+        --heo-theme-op-deep: #f2b94bdd !important;
+        --heo-theme-none: #f2b94b00 !important;
+    }
+
+    .color-scheme-dark,.dark,[data-color-scheme=dark] {
+        --halo-search-widget-color-modal-layer: var(--heo-maskbgdeep);
+        --halo-search-widget-color-modal-content-bg: var(--heo-card-bg);
+        --halo-search-widget-color-form-input: rgb(255 255 255 / 79.9%);
+        --halo-search-widget-color-form-input-placeholder: #6b7280d9;
+        --halo-search-widget-color-form-input-bg: var(--heo-card-bg);
+        --halo-search-widget-color-form-divider: #bbbbbb0f;
+        --halo-search-widget-color-result-item-bg: var(--heo-card-bg);
+        --halo-search-widget-color-result-item-hover-bg: #90939914;
+        --halo-search-widget-color-result-item-title: rgb(255 255 255 / 79.9%);
+        --halo-search-widget-color-result-item-content: #ffffff82;
+        --halo-search-widget-color-command-kbd-item: #c0c4ccb3;
+        --halo-search-widget-color-command-kbd-border: #bbbbbb0f;
+        --halo-search-widget-color-result-empty: #6b7280d9
+    }
+
+    [data-theme=light] {
+        --halo-search-widget-color-result-item-title : #4B5563
+    }
+</style>
+
+<!-- <script data-pjax="">
+
+    //页脚友联
+    GLOBAL_CONFIG.isFriendLinksInFooter && heo.addFriendLinksInFooter()
+    //音乐页面切换歌曲调用
+    if(GLOBAL_CONFIG.isMusic){
+        heo.changeMusicBg(false);
+    }
+    //代码块
+    if(GLOBAL_CONFIG.prism.enable){
+        halo.addPrismTool()
+        halo.dataCodeTheme()
+    }
+    if(document.querySelector('#danmu') &&
+        document.body.clientWidth > 768 &&
+        true){
+        halo.addScript("Danmaku", "./libs/twikoo/easy-Danmaku.min.js", halo.danmu())
+    }
+
+</script> -->
 	</body>
 	<html>
