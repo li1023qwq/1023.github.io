@@ -1,0 +1,11 @@
+/* 白天模式样式 */
+body.light-mode {
+    background-color: #fff;
+    color: #000;
+}
+
+/* 夜间模式样式 */
+body.dark-mode {
+    background-color: #333;
+    color: #fff;
+}

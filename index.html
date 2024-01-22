@@ -10,30 +10,93 @@
     <meta name="renderer" content="webkit"/>
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="shortcut icon" href="./asset/logo.png">
     <link rel="stylesheet" href="./asset/style.css?v=1.0.0">
-    <style>
-        body {
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center center;
-            transition: background-image 1s ease-in-out;
-        }
-    </style>
+	<link rel="stylesheet" href="./asset/zt.css">
+   
 </head>
 
 <body class="article" onload="getD1()">
 <main id="main" class="wrapper">
     <div class="content">
         <div class="page-title" title="晚夜深秋引导页网"><img src="./asset/logo.png"></div>
+		 <!-- 1. 主题切换按钮 -->
+		            <button id="themeToggleBtn" onclick="toggleTheme()">切换主题</button>
+		            <span id="currentThemeText"></span>
+		
+		            <script>
+		                // JavaScript中的主题切换逻辑
+		                function toggleTheme() {
+		                    // 获取当前body元素的类
+		                    var currentClass = document.body.className;
+		
+		                    // 切换到另一个主题
+		                    if (currentClass === 'light-mode') {
+		                        document.body.className = 'dark-mode';
+		                    } else {
+		                        document.body.className = 'light-mode';
+		                    }
+		
+		                    // 保存用户选择到本地存储
+		                    localStorage.setItem('theme', document.body.className);
+		
+		                    // 更新按钮文本和样式
+		                    updateThemeToggleBtn();
+		
+		                    // 处理.box区域的背景颜色
+		                    updateBoxBackground();
+		                }
+		
+		                // 更新按钮文本和样式
+		                function updateThemeToggleBtn() {
+		                    var themeToggleBtn = document.getElementById('themeToggleBtn');
+		                    var currentThemeText = document.getElementById('currentThemeText');
+		
+		                    // 获取当前主题
+		                    var currentTheme = document.body.className;
+		
+		                    // 设置按钮文本
+		                    themeToggleBtn.textContent = currentTheme === 'light-mode' ? '切换暗黑模式' : '切换明亮模式';
+		
+		                    // 设置显示当前主题的文本
+		                    currentThemeText.textContent = '当前主题：' + (currentTheme === 'light-mode' ? '明亮模式' : '暗黑模式');
+		                }
+		
+		                // 处理.box区域的背景颜色
+		                function updateBoxBackground() {
+		                    var box = document.querySelector('.box');
+		
+		                    // 获取当前主题
+		                    var currentTheme = document.body.className;
+		
+		                    // 设置.box区域的背景颜色
+		                    box.style.background = currentTheme === 'light-mode' ? '#fff' : '#000';
+		                }
+		
+		                // 页面加载时恢复用户的主题选择
+		                document.addEventListener('DOMContentLoaded', function () {
+		                    var savedTheme = localStorage.getItem('theme');
+		                    if (savedTheme) {
+		                        // 恢复用户选择的主题
+		                        document.body.className = savedTheme;
+		                    }
+		
+		                    // 更新按钮文本和样式
+		                    updateThemeToggleBtn();
+		
+		                    // 处理.box区域的背景颜色
+		                    updateBoxBackground();
+		                });
+		            </script>
+		
+		
         <div class="box">
             <div class="article-content" style="margin-bottom: -50px;">
                 <h2 style="margin-bottom: 60px;"><a href="#intro" id="datetime"></a></h2>
                 <iframe width="350px" height="30px" frameborder="0" scrolling="no" hspace="0" src="https://muzihuaner.github.io/getlocationandip/"></iframe>
-                
-				
-				
-				</a></h2>
+                </a></h2>
                 <h2 id="siteurl" style="margin-bottom: 60px;"><a href="#siteurl">晚夜深秋发布页</a></h2>
 		<ul class="speedlist">
 			<p class="popup-domain">
@@ -122,39 +185,30 @@
 </main>
 <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
 <script src="./asset/main.js?v=1.0.0"></script>
+
 <script>
-    function getD1() {
-        var date = new Date();
-        var d1 = date.toLocaleString();
-        document.getElementById("datetime").innerHTML = d1;
-
-        // 设置背景图片
-        setBackgroundImage();
-    }
-
-    setInterval(getD1, 1000);
-
-    function setBackgroundImage() {
-        // 获取当前日期的毫秒数
-        var currentDate = new Date().toLocaleDateString();
-        var timestamp = new Date(currentDate).getTime();
-
-        // 构建获取壁纸的API地址，这里以必应壁纸为例
-        var wallpaperAPI = "https://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=zh-CN";
-
-        // 发送请求获取壁纸信息
-        $.ajax({
-            url: wallpaperAPI,
-            method: "GET",
-            dataType: "json",
-            success: function (data) {
-                if (data && data.images && data.images[0] && data.images[0].url) {
-                    // 设置背景图片
-                    document.body.style.backgroundImage = "url('https://www.bing.com" + data.images[0].url + "')";
-                }
-            }
-        });
-    }
+	function getD1() {
+	    var now = new Date();
+	    var year = now.getFullYear();
+	    var month = now.getMonth() + 1;
+	    var day = now.getDate();
+	    var hours = now.getHours();
+	    var minutes = now.getMinutes();
+	    var seconds = now.getSeconds();
+	
+	    var timeString = year + "-" + addZero(month) + "-" + addZero(day) + " " + addZero(hours) + ":" + addZero(minutes) + ":" + addZero(seconds);
+	
+	    document.getElementById("datetime").innerHTML = timeString;
+	
+	    setTimeout("getD1()", 1000);
+	}
+	
+	function addZero(num) {
+	    return num < 10 ? "0" + num : num;
+	}
+	
+	// 调用getD1()函数
+	getD1();
 </script>
 </body>
 </html>
