@@ -23,74 +23,74 @@
     <div class="content">
         <div class="page-title" title="晚夜深秋引导页网"><img src="./asset/logo.png"></div>
 		 <!-- 1. 主题切换按钮 -->
-		            <button id="themeToggleBtn" onclick="toggleTheme()">切换主题</button>
-		            <span id="currentThemeText"></span>
+		    <button id="themeToggleBtn" onclick="toggleTheme()">切换主题</button>
+		    <span id="currentThemeText"></span>
 		
-		            <script>
-		                // JavaScript中的主题切换逻辑
-		                function toggleTheme() {
-		                    // 获取当前body元素的类
-		                    var currentClass = document.body.className;
-		
-		                    // 切换到另一个主题
-		                    if (currentClass === 'light-mode') {
-		                        document.body.className = 'dark-mode';
-		                    } else {
-		                        document.body.className = 'light-mode';
-		                    }
-		
-		                    // 保存用户选择到本地存储
-		                    localStorage.setItem('theme', document.body.className);
-		
-		                    // 更新按钮文本和样式
-		                    updateThemeToggleBtn();
-		
-		                    // 处理.box区域的背景颜色
-		                    updateBoxBackground();
-		                }
-		
-		                // 更新按钮文本和样式
-		                function updateThemeToggleBtn() {
-		                    var themeToggleBtn = document.getElementById('themeToggleBtn');
-		                    var currentThemeText = document.getElementById('currentThemeText');
-		
-		                    // 获取当前主题
-		                    var currentTheme = document.body.className;
-		
-		                    // 设置按钮文本
-		                    themeToggleBtn.textContent = currentTheme === 'light-mode' ? '切换暗黑模式' : '切换明亮模式';
-		
-		                    // 设置显示当前主题的文本
-		                    currentThemeText.textContent = '当前主题：' + (currentTheme === 'light-mode' ? '明亮模式' : '暗黑模式');
-		                }
-		
-		                // 处理.box区域的背景颜色
-		                function updateBoxBackground() {
-		                    var box = document.querySelector('.box');
-		
-		                    // 获取当前主题
-		                    var currentTheme = document.body.className;
-		
-		                    // 设置.box区域的背景颜色
-		                    box.style.background = currentTheme === 'light-mode' ? '#fff' : '#000';
-		                }
-		
-		                // 页面加载时恢复用户的主题选择
-		                document.addEventListener('DOMContentLoaded', function () {
-		                    var savedTheme = localStorage.getItem('theme');
-		                    if (savedTheme) {
-		                        // 恢复用户选择的主题
-		                        document.body.className = savedTheme;
-		                    }
-		
-		                    // 更新按钮文本和样式
-		                    updateThemeToggleBtn();
-		
-		                    // 处理.box区域的背景颜色
-		                    updateBoxBackground();
-		                });
-		            </script>
-		
+		    <script>
+		        // JavaScript中的主题切换逻辑
+		        function toggleTheme() {
+		            // 获取当前body元素的类
+		            var currentClass = document.body.className;
+
+		            // 切换到另一个主题
+		            if (currentClass === 'light-mode') {
+		                document.body.className = 'dark-mode';
+		            } else {
+		                document.body.className = 'light-mode';
+		            }
+
+		            // 保存用户选择到本地存储
+		            localStorage.setItem('theme', document.body.className);
+
+		            // 更新按钮文本和样式
+		            updateThemeToggleBtn();
+
+		            // 处理.box区域的背景颜色
+		            updateBoxBackground();
+		        }
+
+		        // 更新按钮文本和样式
+		        function updateThemeToggleBtn() {
+		            var themeToggleBtn = document.getElementById('themeToggleBtn');
+		            var currentThemeText = document.getElementById('currentThemeText');
+
+		            // 获取当前主题
+		            var currentTheme = document.body.className;
+
+		            // 设置按钮文本
+		            themeToggleBtn.textContent = currentTheme === 'light-mode' ? '切换暗黑模式' : '切换明亮模式';
+
+		            // 设置显示当前主题的文本
+		            currentThemeText.textContent = '当前主题：' + (currentTheme === 'light-mode' ? '明亮模式' : '暗黑模式');
+		        }
+
+		        // 处理.box区域的背景颜色
+		        function updateBoxBackground() {
+		            var box = document.querySelector('.box');
+
+		            // 获取当前主题
+		            var currentTheme = document.body.className;
+
+		            // 设置.box区域的背景颜色
+		            box.style.background = currentTheme === 'light-mode' ? '#fff' : '#000';
+		        }
+
+		        // 页面加载时恢复用户的主题选择
+		        document.addEventListener('DOMContentLoaded', function () {
+		            var savedTheme = localStorage.getItem('theme');
+		            if (savedTheme) {
+		                // 恢复用户选择的主题
+		                document.body.className = savedTheme;
+		            }
+
+		            // 更新按钮文本和样式
+		            updateThemeToggleBtn();
+
+		            // 处理.box区域的背景颜色
+		            updateBoxBackground();
+		        });
+		    </script>
+			
 		
         <div class="box">
             <div class="article-content" style="margin-bottom: -50px;">
@@ -225,8 +225,11 @@
 				    </div>
 				</div>
 				
+				
                 <p style="margin-top: 10px;font-size: 16px;">
 					<br><b>如果您喜欢晚夜深秋，请分享给您的好友！</b>
+					
+					
                 </p>
                 <br>
             </div>
@@ -237,7 +240,154 @@
 </main>
 <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
 <script src="./asset/main.js?v=1.0.0"></script>
-
+	
+	<!-- 社交分享按钮 -->
+	    <div id="socialShare">
+	        <a href="https://www.facebook.com" target="_blank">
+	            <img src="facebook-icon.png" alt="Facebook">
+	        </a>
+	        <a href="https://www.twitter.com" target="_blank">
+	            <img src="twitter-icon.png" alt="Twitter">
+	        </a>
+	        <a href="https://www.instagram.com" target="_blank">
+	            <img src="instagram-icon.png" alt="Instagram">
+	        </a>
+	        <a href="https://www.weixin.com" target="_blank">
+	            <img src="wechat-icon.png" alt="WeChat">
+	        </a>
+	        <a href="https://www.qq.com" target="_blank">
+	            <img src="qq-icon.png" alt="QQ">
+	        </a>
+	        <!-- 添加更多社交分享按钮 -->
+	    </div>
+		<style>
+		        #socialShare {
+		            text-align: center;
+		        }
+		
+		        #socialShare a {
+		            display: inline-block;
+		            margin: 10px;
+		            text-decoration: none;
+		        }
+		
+		        #socialShare img {
+		            width: 40px;
+		            height: 40px;
+		        }
+		    </style>
+	<!-- 留言板 -->
+	<div id="comments">
+	    <h2>留言板</h2>
+	    <div id="commentList"></div>
+	    <textarea id="commentInput" placeholder="在这里留下您的评论"></textarea>
+	    <button onclick="postComment()">发布评论</button>
+	</div>
+	<style>
+	        /* body {
+	            font-family: Arial, sans-serif;
+	        } */
+	
+	        #comments {
+	            max-width: 400px;
+	            margin: 0 auto;
+	            padding: 20px;
+	            border: 1px solid #ccc;
+	            border-radius: 5px;
+	            background-color: #f9f9f9;
+	        }
+	
+	       /* h2 {
+	            font-size: 24px;
+	            margin-bottom: 10px;
+	        } */
+	
+	        #commentList {
+	            margin-top: 10px;
+	            padding: 10px;
+	            border: 1px solid #ddd;
+	            background-color: #fff;
+	            border-radius: 5px;
+	            max-height: 200px;
+	            overflow-y: auto;
+	        }
+	
+	        #commentInput {
+	            width: 100%;
+	            padding: 10px;
+	            margin-top: 10px;
+	            border: 1px solid #ddd;
+	            border-radius: 5px;
+	            resize: none;
+	        }
+	
+	        button {
+	            display: block;
+	            margin-top: 10px;
+	            padding: 10px;
+	            background-color: #007bff;
+	            color: #fff;
+	            border: none;
+	            border-radius: 5px;
+	            cursor: pointer;
+	        }
+	
+	        button:hover {
+	            background-color: #0056b3;
+	        }
+	
+	        /* div div {
+	            margin: 5px 0;
+	            padding: 5px;
+	            border: 1px solid #ddd;
+	            border-radius: 5px;
+	        } */
+	    </style>
+	<script>
+	    // 获取留言列表
+	    function getComments() {
+	        var comments = localStorage.getItem('comments');
+	        return comments ? JSON.parse(comments) : [];
+	    }
+	
+	    // 显示留言列表
+	    function displayComments(commentList) {
+	        var commentListDiv = document.getElementById('commentList');
+	        commentListDiv.innerHTML = '';
+	
+	        for (var i = 0; i < commentList.length; i++) {
+	            var commentDiv = document.createElement('div');
+	            commentDiv.textContent = commentList[i];
+	            commentListDiv.appendChild(commentDiv);
+	        }
+	    }
+	
+	    // 发布评论
+	    function postComment() {
+	        var commentInput = document.getElementById('commentInput');
+	        var commentText = commentInput.value.trim();
+	
+	        if (commentText !== '') {
+	            var comments = getComments();
+	            comments.push(commentText);
+	
+	            // 将留言保存到本地存储
+	            localStorage.setItem('comments', JSON.stringify(comments));
+	
+	            // 刷新留言列表
+	            displayComments(comments);
+	
+	            // 清空输入框
+	            commentInput.value = '';
+	        }
+	    }
+	
+	    // 初始化页面时获取留言列表
+	    document.addEventListener('DOMContentLoaded', function () {
+	        var comments = getComments();
+	        displayComments(comments);
+	    });
+	</script>
 <script>
 	function getD1() {
 	    var now = new Date();
