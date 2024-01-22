@@ -12,6 +12,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <link rel="shortcut icon" href="./asset/logo.png">
     <link rel="stylesheet" href="./asset/style.css?v=1.0.0">
+    <style>
+        body {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            transition: background-image 1s ease-in-out;
+        }
+    </style>
 </head>
 
 <body class="article" onload="getD1()">
@@ -111,17 +119,42 @@
                             <div class="article-bg01"></div>
                         </div>
                     </div>
-                </main>
-                <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
-                <script src="./asset/main.js?v=1.0.0"></script>
-                <script>
-                    function getD1() {
-                        var date = new Date();
-                        var d1 = date.toLocaleString();
-                        document.getElementById("datetime").innerHTML = d1;
-                    }
-                
-                    setInterval(getD1, 1000);
-                </script>
-                </body>
-                </html>
+</main>
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+<script src="./asset/main.js?v=1.0.0"></script>
+<script>
+    function getD1() {
+        var date = new Date();
+        var d1 = date.toLocaleString();
+        document.getElementById("datetime").innerHTML = d1;
+
+        // 设置背景图片
+        setBackgroundImage();
+    }
+
+    setInterval(getD1, 1000);
+
+    function setBackgroundImage() {
+        // 获取当前日期的毫秒数
+        var currentDate = new Date().toLocaleDateString();
+        var timestamp = new Date(currentDate).getTime();
+
+        // 构建获取壁纸的API地址，这里以必应壁纸为例
+        var wallpaperAPI = "https://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=zh-CN";
+
+        // 发送请求获取壁纸信息
+        $.ajax({
+            url: wallpaperAPI,
+            method: "GET",
+            dataType: "json",
+            success: function (data) {
+                if (data && data.images && data.images[0] && data.images[0].url) {
+                    // 设置背景图片
+                    document.body.style.backgroundImage = "url('https://www.bing.com" + data.images[0].url + "')";
+                }
+            }
+        });
+    }
+</script>
+</body>
+</html>
