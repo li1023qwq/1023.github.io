@@ -1,16 +1,28 @@
 {
     "addresses": [
         {
-            "name": "百度",
-            "url": "https://www.baidu.com"
+            "name": "微信开放平台-对话机器人",
+            "url": "https://chatbot.weixin.qq.com/webapp/1cvFPYylGZUzvnzbyeQO7YzpwxcgeP?robotName=%E6%99%9A%E5%A4%9C%E6%B7%B1%E7%A7%8B"
         },
         {
-            "name": "淘宝",
-            "url": "https://www.taobao.com"
+            "name": "晚夜深秋-官网",
+            "url": "https://about.li1023.cn/"
         },
         {
-            "name": "腾讯",
-            "url": "https://www.qq.com"
+            "name": "晚夜深秋-blog",
+            "url": "http://wan.li1023.cn/"
+        },
+        {
+            "name": "晚夜深秋-知识库",
+            "url": "http://wan.free.idcfengye.com/"
+        },
+        {
+            "name": "晚夜深秋-GitHub",
+            "url": "https://github.com/li1023"
+        },
+        {
+            "name": "经文网",
+            "url": "http://suka.free.idcfengye.com/"
         }
     ]
 }
