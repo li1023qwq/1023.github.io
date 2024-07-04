@@ -649,3 +649,251 @@ a:hover {
 /* end */
 /*底部导航*/
 @media (max-width: 800px){.footwaveline{display: none;}}
+/* 白天模式样式 */
+body.light-mode {
+    background-color: #fff;
+    color: #000;
+}
+
+/* 夜间模式样式 */
+body.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+            /* 悬浮导航栏 */
+            .fixed-nav {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 50px;
+                /* background-color: #fff; */
+                background-color: rgba(247, 210, 210, 0.527);
+                z-index: 9999;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+
+           .fixed-nav-container {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                height: 100%;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+           .fixed-nav-item {
+                display: flex;
+                align-items: center;
+                height: 100%;
+                padding: 0 20px;
+                font-size: 16px;
+                color: #333;
+                transition: color 0.3s ease;
+            }
+
+           .fixed-nav-item:hover {
+                color: #f78ca0;
+            }
+
+
+
+           .iconfont {
+                font-size: 24px;
+                margin-right: 10px;
+            }
+
+           .icon-home::before {
+                content: "❤️"; /* 首页 */
+            }
+
+           .icon-domain::before {
+                content: "🌹"; /* 推荐 */
+            }
+
+           .icon-notice::before {
+                content: "📢"; /* 通知 */
+            }
+
+
+
+            				/* CSS部分 */
+					    #themeToggleBtn {
+					        padding: 10px 20px;
+					        border: none;
+					        border-radius: 5px;
+					        cursor: pointer;
+					        transition: background-color 0.3s ease, transform 0.2s ease;
+					        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+					        font-size: 16px;
+					        font-weight: bold;
+					    }
+					
+					    /* 黑色主题下按钮颜色 */
+					    body.dark-theme #themeToggleBtn {
+					        color: #f78ca0; /* 修改字体颜色 */
+					        background-color: black;
+					    }
+					
+					    /* 白色主题下按钮颜色 */
+					    body.light-theme #themeToggleBtn {
+					        color: #f78ca0; /* 修改字体颜色 */
+					        background-color: white;
+					    }
+					
+					    #themeToggleBtn:hover {
+					        background-color: #ff030365; /* 悬停时的背景色，黑色主题下略微深色 */
+					        transform: translateY(-2px);
+					        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+					    }
+					
+					    #themeToggleBtn:active {
+					        transform: translateY(0);
+					        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+					    }
+					
+					    /* 禁用状态 */
+					    #themeToggleBtn:disabled {
+					        background-color: #ccc;
+					        color: #666;
+					        cursor: not-allowed;
+					    }
+                           
+    .footer {
+        background-color: #333;
+        color: #fff;
+        padding: 30px 0;
+        text-align: center;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+    }
+    .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 0 20px;
+    }
+    .footer-left,
+    .footer-right {
+        flex: 1;
+        text-align: left;
+        margin: 0 15px;
+    }
+    .footer-left p,
+    .footer-right p {
+        margin: 0;
+    }
+    .footer-left a,
+    .footer-right a {
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+    .footer-left a:hover,
+    .footer-right a:hover {
+        color: #1DA1F2; /* Twitter blue color */
+    }
+    .footer-social {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .footer-social a {
+        margin: 0 10px;
+    }
+    .footer-social img {
+        width: 30px;
+        height: 30px;
+    }
+    #currentYear {
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+    /* 添加一些阴影效果，使底部信息栏看起来更有层次感 */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 30px 0;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 调整文本和链接的样式 */
+.footer-left a,
+.footer-right a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+    font-size: 1.1em;
+}
+
+/* 添加悬停效果，使链接在悬停时稍微放大 */
+.footer-left a:hover,
+.footer-right a:hover {
+    color: #1DA1F2; /* Twitter blue color */
+    transform: scale(1.05);
+}
+
+/* 为社交媒体图标添加悬停效果 */
+.footer-social a:hover img {
+    filter: brightness(0) saturate(100%) invert(47%) sepia(97%) saturate(4000%) hue-rotate(900deg) brightness(102%) contrast(102%);
+}
+
+/* 添加一些动画效果，使社交媒体图标在悬停时旋转 */
+.footer-social a:hover img {
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* 为版权年份添加一些特殊样式 */
+#currentYear {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #1DA1F2; /* Twitter blue color */
+}
+
+#socialShare {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#socialShare a {
+    display: inline-block;
+    margin: 10px;
+    text-decoration: none;
+}
+
+#socialShare img {
+    width: 40px;
+    height: 40px;
+}
+
+#qrcodeArea {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#qrcodeArea img {
+    width: 120px;
+    /* 调整二维码图片大小 */
+    height: 120px;
+    margin: 10px;
+    border: 3px solid #3498db;
+    /* 边框颜色为深蓝色 */
+    border-radius: 10px;
+    /* 边框圆角半径，可根据需要调整 */
+    padding: 5px;
+    /* 边框内边距，可根据需要调整 */
+}
