@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <title>晚夜深秋发布页</title>
+    <meta name="keywords" content="晚夜深秋">
+    <meta name="description" content="晚夜开发。">
+    <meta name="author" content="晚夜深秋">
+    <meta name="description" content="晚夜深秋">
+    <meta name="keywords" content="晚夜深秋">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
+    <meta itemprop="name" property="og:title" content="晚夜深秋" />
+    <meta itemprop="description" property="og:description" content="晚夜深秋" />
+    <meta name="renderer" content="webkit" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="shortcut icon" href="./asset/logo.png">
+    <link rel="stylesheet" href="./asset/style.css?v=1.0.0">
+</head>
+<body class="article" onload="getD1()">
+    <!-- 悬浮导航栏 -->
+    <div class="fixed-nav">
+        <div class="fixed-nav-container">
+            <a href="#main" class="fixed-nav-item">
+                <i class="iconfont icon-home"></i>
+                <span>首页</span>
+            </a>
+            <a href="#domain" class="fixed-nav-item">
+                <i class="iconfont icon-domain"></i>
+                <span>推荐</span>
+            </a>
+            <a href="#intro" class="fixed-nav-item">
+                <i class="iconfont icon-notice"></i>
+                <span>通知</span>
+            </a>
+            <a href="#domain" class="fixed-nav-item">
+                <i class="iconfont icon-domain"></i>
+                <span>推荐</span>
+            </a>
+            <a href="#domain" class="fixed-nav-item">
+                <i class="iconfont icon-domain"></i>
+                <span>推荐</span>
+            </a>
+        </div>
+    </div>
+    <main id="main" class="wrapper">
+        <div class="content">
+            <div class="page-title" title="晚夜深秋引导页网">
+                <img src="./asset/logo.png">
+            </div>
+            <!-- HTML部分 -->
+            <button id="themeToggleBtn" onclick="toggleTheme()">切换主题</button>
+            <span id="currentThemeText"></span>
+
+            <script>
+                // JavaScript部分
+                function toggleTheme() {
+                    var currentTheme = getCurrentTheme();
+
+                    // 切换主题
+                    var newTheme = currentTheme === 'light-mode' ? 'dark-mode' : 'light-mode';
+                    setTheme(newTheme);
+
+                    // 更新按钮和文本显示
+                    updateThemeToggleBtn();
+                    updateCurrentThemeText();
+
+                    // 更新.box区域的背景颜色
+                    updateBoxBackground(newTheme);
+                }
+
+                function getCurrentTheme() {
+                    return localStorage.getItem('theme') || 'light-mode'; // 默认为明亮模式
+                }
+
+                function setTheme(theme) {
+                    document.body.className = theme;
+                    localStorage.setItem('theme', theme);
+                }
+
+                function updateThemeToggleBtn() {
+                    var themeToggleBtn = document.getElementById('themeToggleBtn');
+                    var currentTheme = getCurrentTheme();
+                    themeToggleBtn.textContent = currentTheme === 'light-mode' ? '切换暗黑模式' : '切换明亮模式';
+                }
+
+                function updateCurrentThemeText() {
+                    var currentThemeText = document.getElementById('currentThemeText');
+                    var currentTheme = getCurrentTheme();
+                    currentThemeText.textContent = '当前主题：' + (currentTheme === 'light-mode' ? '☀️ 明亮模式' : '🌙 暗黑模式');
+                }
+
+                function updateBoxBackground(theme) {
+                    var box = document.querySelector('.box');
+                    box.style.background = theme === 'light-mode' ? '#fff' : '#000';
+                }
+
+                document.addEventListener('DOMContentLoaded', function () {
+                    // 页面加载时恢复用户的主题选择
+                    var savedTheme = getCurrentTheme();
+                    setTheme(savedTheme);
+
+                    // 更新按钮和文本显示
+                    updateThemeToggleBtn();
+                    updateCurrentThemeText();
+
+                    // 更新.box区域的背景颜色
+                    updateBoxBackground(savedTheme);
+                });
+            </script>
+            <div class="box">
+                <div class="article-content" style="margin-bottom: -50px;">
+                    <h1 id="siteurl" style="margin-bottom: 60px;">
+                        <a href="#siteurl">请 Ctrl+D 收藏本页到浏览器收藏夹</a>
+                    </h1>
+                    <h2 style="margin-bottom: 60px;">
+                        <a href="#intro" id="datetime"></a>
+                    </h2>
+                    <h2 id="siteurl" style="margin-bottom: 60px;">
+                        <a href="#siteurl">晚夜深秋发布页</a>
+                    </h2>
+
+                    <ul class="speedlist">
+                        <p class="popup-domain">
+                            <a href="https://chatbot.weixin.qq.com/webapp/1cvFPYylGZUzvnzbyeQO7YzpwxcgeP?robotName=%E6%99%9A%E5%A4%9C%E6%B7%B1%E7%A7%8B" target="_blank" class="mdui-shadow-3">
+                                <strong>晚夜深秋机器人</strong>
+                            </a>
+                            <span class="ms1" id="lineMs1">测试中</span>
+                        </p>
+                    </ul>
+                    <ul class="speedlist">
+                        <p class="popup-domain">
+                            <a href="https://about.li1023.cn/" target="_blank" class="mdui-shadow-3">
+                                <strong>晚夜深秋-官网</strong>
+                            </a>
+                            <span class="ms1" id="lineMs2">测速中</span>
+                        </p>
+                    </ul>
+                    <ul class="speedlist">
+                        <p class="popup-domain">
+                            <a href="http://wan.li1023.cn/" target="_blank" class="mdui-shadow-3">
+                                <strong>晚夜深秋(测试)</strong>
+                            </a>
+                            <span class="ms1" id="lineMs3">测试中</span>
+                        </p>
+                    </ul>
+                    <ul class="speedlist">
+                        <p class="popup-domain">
+                            <a href="http://wan.free.idcfengye.com" target="_blank" class="mdui-shadow-3">
+                                <strong>晚夜深秋-知识库</strong>
+                            </a>
+                            <span class="ms1" id="lineMs4">测速中</span>
+                        </p>
+                    </ul>
+                    <h2 id="domain">
+                        <a href="#domain">经文网</a>
+                    </h2>
+                    <br>
+                    <ul class="speedlist">
+                        <p class="popup-domain">
+                            <a href="http://suka.free.idcfengye.com/" target="_blank" class="mdui-shadow-3">
+                                <strong>经文网-首页(由经文独家编写)</strong>
+                            </a>
+                            <span class="ms1" id="lineMs5">测试中</span>
+                        </p>
+                    </ul>
+                    <h2 id="intro">
+                        <a href="#intro">通知公告</a>
+                    </h2>
+                    <ul style="margin: 30px 0;">
+                        <li>
+                            <em>
+                                <b>晚夜深秋公告</b>
+                            </em>：为防止失联和查收重要通知，请亲们务必收藏此发布页！
+                        </li>
+                        <!--<li><em><b>OVO通知</b></em>：【服务器维护中···请稍后重试~】</li>-->
+                        <li>
+                            <em>
+                                <b>OVO通知</b>
+                            </em>：最近服务器线路有些波动，如遇到无法访问的情况请稍后重试~
+                        </li>
+                    </ul>
+                    <h2 id="domain">
+                        <a href="#domain">友情推荐</a>
+                    </h2>
+                    <div class="scroll-box scroll-domain-prompt">
+                        <div class="scroll-content">
+                            <ul class="speedlist">
+                                <p class="popup-domain">
+                                    <a href="https://admin.microsoft.com/" target="_blank" class="mdui-shadow-3">
+                                        <strong>晚夜深秋-office365管理员</strong>
+                                    </a>
+                                    <span class="ms1" id="lineMs6">管理员</span>
+                                </p>
+								</ul>
+								<ul class="speedlist">
+									<p class="popup-domain">
+										<a href="https://www.microsoft365.com/" target="_blank" class="mdui-shadow-3">
+											<strong>晚夜深秋-office365</strong>
+										</a>
+										<span class="ms1" id="lineMs7">测速中</span>
+									</p>
+								</ul>
+								<ul class="speedlist">
+									<p class="popup-domain">
+										<a href="https://site-cdn.easygpt.work/" target="_blank" class="mdui-shadow-3">
+											<strong>EasyGPT</strong>
+										</a>
+										<span class="ms1" id="lineMs8">测速中</span>
+									</p>
+								</ul>
+							</div>
+						</div>
+						<h2 id="domain">
+							<a href="#domain">关注我们</a>
+						</h2>
+						<div class="scroll-box scroll-domain-prompt">
+							<div class="scroll-content">
+								<div class="module-domain-prompt">
+									<div class="module-domain-title">晚夜</div>
+									<div class="module-domain-main">
+										<a href="https://blog.csdn.net/li1023qwq" target="_blank">CSDN</a>
+									</div>
+								</div>
+								<div class="module-domain-prompt">
+									<div class="module-domain-title">晚夜</div>
+									<div class="module-domain-main">
+										<a href="https://github.com/li1023qwq" target="_blank">GitHub</a>
+									</div>
+								</div>
+								<div class="module-domain-prompt">
+									<div class="module-domain-title">晚夜</div>
+									<div class="module-domain-main">
+										<a href="https://weibo.com/u/7849892498" target="_blank">微博</a>
+									</div>
+								</div>
+								<div class="module-domain-prompt">
+									<div class="module-domain-title">晚夜</div>
+									<div class="module-domain-main">
+										<a href="#" target="_blank">QQ频道</a>
+									</div>
+								</div>
+								<div class="module-domain-prompt">
+									<div class="module-domain-title">晚夜</div>
+									<div class="module-domain-main">
+										<a href="#" target="_blank">QQ群</a>
+									</div>
+								</div>
+
+							</div>
+						</div>
+						<p style="margin-top: 10px;font-size: 16px;">
+							<br>
+							<b>如果您喜欢晚夜深秋，请分享给您的好友！</b>
+						</p>
+						<br>
+					</div>
+					<div class="article-bg"></div>
+					<div class="article-bg01"></div>
+				</div>
+			</div>
+		</main>
+		<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+		<script src="./asset/main.js?v=1.0.0"></script>
+		<!-- 社交分享按钮 -->
+		<div id="socialShare">
+			<a href="https://weibo.com" target="_blank">
+				<img src="images/微博.png" alt="微博">
+			</a>
+			<a href="https://web.wechat.com" target="_blank">
+				<img src="images/微信.png" alt="WeChat">
+			</a>
+			<a href="https://im.qq.com" target="_blank">
+				<img src="images/QQ.png" alt="QQ">
+			</a>
+		</div>
+		<!-- 微信小程序和公众号二维码区域 -->
+		<div id="qrcodeArea">
+			<h6>微信公众号二维码</h6>
+			<img src="images/gzh.jpg" alt="微信公众号二维码">
+		</div>
+        <!-- //底部信息 -->
+        <div class="footer">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <p>
+                        &copy; <span id="currentYear"></span> 晚夜深秋. All Rights Reserved.
+                        <br>
+                        <a href="https://about.li1023.cn/about.html/">关于我们</a>
+                        <br>
+                        <a href="https://about.li1023.cn/contact.html/">联系我们</a>
+                        <br>
+                        <a href="https://about.li1023.cn/links.html/">友情链接</a>
+                        <br>
+                        <a href="https://about.li1023.cn/donate.html/">捐助我们</a>
+                    </p>
+                </div>
+                <div class="footer-right">
+                    <p>
+                        <a href="https://about.li1023.cn/terms.html/">服务条款</a>
+                        <br>
+                        <a href="https://about.li1023.cn/privacy.html/">隐私政策</a>
+                        <br>
+                        <a href="https://about.li1023.cn/notice.html/">通知公告</a>
+                        <br>
+                        <a href="https://about.li1023.cn/faq.html/">常见问题</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <script>
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+        </script>
+		<script>
+			function getD1() {
+			            var now = new Date();
+			            var year = now.getFullYear();
+			            var month = now.getMonth() + 1;
+			            var day = now.getDate();
+			            var hours = now.getHours();
+			            var minutes = now.getMinutes();
+			            var seconds = now.getSeconds();
+			
+			            var timeString = year + "-" + addZero(month) + "-" + addZero(day) + " " + addZero(hours) + ":" + addZero(minutes) + ":" + addZero(seconds);
+			
+			            document.getElementById("datetime").innerHTML = timeString;
+			
+			            setTimeout("getD1()", 1000);
+			        }
+			
+			        function addZero(num) {
+			            return num < 10 ? "0" + num : num;
+			        }
+			
+			        // 调用getD1()函数
+			        getD1();
+		</script>
+	</body>
+</html>
