@@ -176,6 +176,32 @@
 .bg-bubbles {
   z-index: 1;
 }
+
+/* 新增卡片滚动样式 */
+.content {
+  max-height: 550px; /* 设置最大高度 */
+  overflow-y: auto; /* 添加垂直滚动条 */
+  padding-right: 10px; /* 为滚动条留出空间 */
+}
+
+/* 自定义滚动条样式 */
+.content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.content::-webkit-scrollbar-thumb {
+  background: #02a982;
+  border-radius: 3px;
+}
+
+.content::-webkit-scrollbar-thumb:hover {
+  background: #55acee;
+}
 </style>
 </head>
 <body>
@@ -222,6 +248,12 @@
       晚夜深秋（内网）
       <a href="http://192.168.2.5:21080" target="_blank">
         <i>http://192.168.2.5:21080</i>
+      </a>
+    </li>
+    <li style="border-top: 1px solid #e2e0de; margin-top: 10px; padding-top: 15px;">
+      宝塔面板（内网）
+      <a href="https://192.168.2.5:33141/home" target="_blank">
+        <i>https://192.168.2.5:33141/home</i>
       </a>
     </li>
   </ul>
